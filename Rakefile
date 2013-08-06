@@ -1,5 +1,4 @@
 #!/usr/bin/env rake
-require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 require "yard"
 
@@ -20,4 +19,4 @@ YARD::Rake::YardocTask.new do |config|
 end
 
 desc "Default: run tests and generate docs"
-task :default => [ :spec, :yard ]
+task default: [ :spec, :yard ]
