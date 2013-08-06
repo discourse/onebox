@@ -1,16 +1,16 @@
-oneboxer
---------
+onebox
+------
 
   - TODO: register to rubygems.org
-  - [![Code Climate](https://codeclimate.com/github/dysania/oneboxer.png)](https://codeclimate.com/github/dysania/oneboxer)
-  - [![Build Status](https://travis-ci.org/dysania/oneboxer.png)](https://travis-ci.org/dysania/oneboxer)
-  - [![Dependency Status](https://gemnasium.com/dysania/oneboxer.png)](https://gemnasium.com/dysania/oneboxer)
-  - [![Coverage Status](https://coveralls.io/repos/dysania/oneboxer/badge.png)](https://coveralls.io/r/dysania/oneboxer)
+  - [![Code Climate](https://codeclimate.com/github/dysania/onebox.png)](https://codeclimate.com/github/dysania/onebox)
+  - [![Build Status](https://travis-ci.org/dysania/onebox.png)](https://travis-ci.org/dysania/onebox)
+  - [![Dependency Status](https://gemnasium.com/dysania/onebox.png)](https://gemnasium.com/dysania/onebox)
+  - [![Coverage Status](https://coveralls.io/repos/dysania/onebox/badge.png)](https://coveralls.io/r/dysania/onebox)
 
 
-`oneboxer` is a library for turning media URLs into previews.
+`onebox` is a library for turning media URLs into previews.
 
-`oneboxer` currently has support for page, image, and video URLs from these sites:
+`onebox` currently has support for page, image, and video URLs from these sites:
 
   - Amazon
   - Android App Store
@@ -45,24 +45,24 @@ oneboxer
   - yFrog
 
 
-Using oneboxer
-==============
+Using
+=====
 
-You can include `oneboxer` modules into a class like so:
+You can include `onebox` modules into a class like so:
 
 ``` ruby
-require "oneboxer"
+require "onebox"
 ```
 
 TODO: write example
 
 
-Installing oneboxer
-==================
+Installing
+==========
 
 Add this line to your application's Gemfile:
 
-    gem "oneboxer", "~> 1.0"
+    gem "onebox", "~> 1.0"
 
 And then execute:
 
@@ -70,7 +70,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install oneboxer
+    $ gem install onebox
 
 
 Contributing

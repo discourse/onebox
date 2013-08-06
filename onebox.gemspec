@@ -1,16 +1,16 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'oneboxer/version'
+require "onebox/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "oneboxer"
-  spec.version       = Oneboxer::VERSION
+  spec.name          = "onebox"
+  spec.version       = Onebox::VERSION
   spec.authors       = ["Kurtis Rainbolt-Greene", "Joanna Zeta", "Vyki Englert"]
   spec.email         = ["me@kurtisrainboltgreene.name", "holla@jzeta.com", "vyki.englert@gmail.com"]
   spec.summary       = %q{A gem for turning URLs into previews.}
   spec.description   = spec.summary
-  spec.homepage      = "http://krainboltgreene.github.com/oneboxer"
+  spec.homepage      = "http://krainboltgreene.github.com/onebox"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
