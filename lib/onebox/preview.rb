@@ -1,6 +1,7 @@
 require_relative "preview/example"
 require_relative "preview/amazon"
 require_relative "preview/stackexchange"
+require_relative "preview/qik"
 
 module Onebox
   class Preview
@@ -15,6 +16,7 @@ module Onebox
       when /example\.com/ then Example
       when /amazon\.com/ then Amazon
       when /stackexchange\.com/ then StackExchange
+      when /qik\.com/ then Qik
       end.new(@document, @url).to_html
     end
 
