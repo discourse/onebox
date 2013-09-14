@@ -3,10 +3,10 @@ module Onebox
     attr_reader :cache
 
     def initialize(link, parameters = Onebox.defaults)
-      @url = link
+      @url     = link
       @options = parameters
-      @cache = options.cache
-      @engine = Matcher.new(@url).oneboxed
+      @cache   = options.cache
+      @engine  = Matcher.new(@url).oneboxed
     end
 
     def to_s
