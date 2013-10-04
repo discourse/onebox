@@ -1,11 +1,7 @@
 onebox
-----------
+=======
 
-  - [![Gem Version](https://badge.fury.io/rb/onebox.png)](https://rubygems.org/gems/onebox)
-  - [![Code Climate](https://codeclimate.com/github/dysania/onebox.png)](https://codeclimate.com/github/dysania/onebox)
-  - [![Build Status](https://travis-ci.org/discourse/onebox.png)](https://travis-ci.org/discourse/onebox)
-  - [![Dependency Status](https://gemnasium.com/discourse/onebox.png)](https://gemnasium.com/discourse/onebox)
-
+[![Gem Version](https://badge.fury.io/rb/onebox.png)](https://rubygems.org/gems/onebox) [![Code Climate](https://codeclimate.com/github/dysania/onebox.png)](https://codeclimate.com/github/dysania/onebox) [![Build Status](https://travis-ci.org/dysania/onebox.png)](https://travis-ci.org/dysania/onebox) [![Dependency Status](https://gemnasium.com/dysania/onebox.png)](https://gemnasium.com/dysania/onebox) [![Coverage Status](https://coveralls.io/repos/dysania/onebox/badge.png)](https://coveralls.io/r/dysania/onebox)
 
 Onebox is a library for turning media URLs into simple HTML previews of the resource.
 
@@ -185,6 +181,43 @@ The Whitedlisted Generic Onebox has some caveats for it's use, beyond simply whi
   2. The URL you're oneboxing cannot be a root url (e.g. `http://example.com` won't work, but `http://example.com/page` will)
   3. If the oneboxed URL responds with oEmbed and has a `rich` type: the `html` content must contain an `<iframe>`. Responses without an iframe will not be oneboxed.
 
+Supported Sites
+=======
+
+Onebox currently has support for page, image, and video URLs from these sites:
+
+  - Amazon
+  - Android App Store
+  - Apple Store
+  - BlipTV
+  - Clikthrough
+  - College Humor
+  - Dailymotion
+  - Dotsub
+  - Flickr
+  - Funny or Die
+  - GitHub
+    - Blob
+    - Commit
+    - Gist
+    - Pull Request
+  - Hulu
+  - Imgur
+  - Kinomap
+  - NFB
+  - Open Graph
+  - Qik
+  - Revision
+  - Rotten Tomatoes
+  - Slideshare
+  - SmugMug
+  - SoundCloud
+  - Stack Exchange
+  - TED
+  - Twitter
+  - Wikipedia
+  - yFrog
+
 
 Installing
 ==========
@@ -206,7 +239,7 @@ Issues / Discussion
 ===================
 
 Discussion of the Onebox gem, its development and features should be done on
-[Discourse Meta](https://meta.discourse.org). 
+[Discourse Meta](https://meta.discourse.org).
 
 Contributing
 ============
