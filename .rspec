@@ -1,5 +1,5 @@
 --color
---format documentation
+--format NyanCatWideFormatter
 --fail-fast
 --backtrace
 
