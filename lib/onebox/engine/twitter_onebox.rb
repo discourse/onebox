@@ -2,6 +2,7 @@ module Onebox
   module Engine
     class TwitterOnebox
       include Engine
+      include LayoutSupport
       include HTML
 
       matches do
