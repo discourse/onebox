@@ -1,7 +1,12 @@
+require 'onebox/engine'
+require 'onebox/engine/json'
+require 'onebox/layout_support'
+
 module Onebox
   module Engine
     class GithubCommitOnebox
       include Engine
+      include LayoutSupport
       include JSON
 
       matches do

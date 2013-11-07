@@ -77,7 +77,7 @@ Setup
     module Onebox
       module Engine
         class NameOnebox
-          include Engine
+          include LayoutSupport
           include HTML
 
           private
@@ -153,7 +153,7 @@ Setup
     # in lib/onebox/engine/engine.rb
     require_relative "engine/name_onebox"
     ```
-    
+
 Onebox currently has support for page, image, and video URLs from these sites:
 
   - Amazon

@@ -1,7 +1,12 @@
+require 'onebox/engine'
+require 'onebox/engine/html'
+require 'onebox/layout_support'
+
 module Onebox
   module Engine
     class ImgurImageOnebox
       include Engine
+      include LayoutSupport
       include HTML
 
       matches do

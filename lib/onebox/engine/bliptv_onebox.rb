@@ -1,7 +1,12 @@
+require 'onebox/engine'
+require 'onebox/engine/open_graph'
+require 'onebox/layout_support'
+
 module Onebox
   module Engine
     class BliptvOnebox
       include Engine
+      include LayoutSupport
       include OpenGraph
 
       matches do
