@@ -21,8 +21,8 @@ shared_context "engines" do
     @onebox = described_class.new(@link)
     @html = @onebox.to_html
     @data = @onebox.send(:data)
+    Onebox.options.cache.clear
   end
-  before(:each) { Onebox.options.cache.clear }
 
   let(:onebox) { @onebox }
   let(:html) { @html }
@@ -40,7 +40,7 @@ shared_examples_for "an engine" do
   end
 
   it "responds to record" do
-    expect(described_class.private_instance_methods).to include(:record)
+    expect(onebox).to respond_to(:record)
   end
 
   it "correctly matches the url" do

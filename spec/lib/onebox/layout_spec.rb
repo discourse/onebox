@@ -2,12 +2,21 @@ require "spec_helper"
 
 describe Onebox::Layout do
   let(:cache) { Moneta.new(:Memory, expires: true, serializer: :json) }
-  let(:record) { {} }
-  let(:onebox) { described_class.new("amazon", record, cache) }
-  let(:html) { onebox.to_html }
+  let(:record) { { link: "foo" } }
+  let(:onebox) { double("Onebox") }
+  let(:layout) { described_class.new("amazon", onebox) }
+  let(:html) { layout.to_html }
+  let(:expanded) { false }
+
+  before(:each) do
+    Onebox.options.cache.clear
+    allow(onebox).to receive(:record).and_return(record)
+    allow(onebox).to receive(:cache).and_return(cache)
+    allow(onebox).to receive(:expanded).and_return(expanded)
+  end
 
   describe ".template_path" do
-    let(:template_path) { onebox.template_path }
+    let(:template_path) { layout.template_path }
 
     before(:each) do
       Onebox.options.load_paths << "directory_a"
@@ -59,14 +68,14 @@ describe Onebox::Layout do
     end
 
     it "reads from cache if rendered template is cached" do
-      described_class.new("amazon", record, cache).to_html
+      described_class.new("amazon", onebox).to_html
       expect(cache).to receive(:fetch)
-      described_class.new("amazon", record, cache).to_html
+      described_class.new("amazon", onebox).to_html
     end
 
     it "stores rendered template if it isn't cached" do
       expect(cache).to receive(:store)
-      described_class.new("wikipedia", record, cache).to_html
+      described_class.new("wikipedia", onebox).to_html
     end
 
     it "contains layout template" do
@@ -74,8 +83,7 @@ describe Onebox::Layout do
     end
 
     it "contains the view" do
-      record = { link: "foo" }
-      html = described_class.new("amazon", record, cache).to_html
+      html = described_class.new("amazon", onebox).to_html
       expect(html).to include(%|"foo"|)
     end
   end
