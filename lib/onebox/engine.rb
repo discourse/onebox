@@ -13,11 +13,19 @@ module Onebox
     attr_reader :url
     attr_reader :cache
     attr_reader :timeout
+    attr_reader :expanded
+    attr_reader :record
 
-    def initialize(link, cache = nil, timeout = nil)
+    def initialize(link, cache = nil, timeout = nil, expanded = false)
       @url = link
       @cache = cache || Onebox.options.cache
       @timeout = timeout || Onebox.options.timeout
+      @expanded = expanded
+      @record = if @cache.key?(url)
+        @cache.fetch(url)
+      else
+        @cache.store(url, data)
+      end
     end
 
     # raises error if not defined in onebox engine. This is the output method for
@@ -27,14 +35,6 @@ module Onebox
     end
 
     private
-
-    def record
-      if cache.key?(url)
-        cache.fetch(url)
-      else
-        cache.store(url, data)
-      end
-    end
 
     # raises error if not defined in onebox engine
     # in each onebox, uses either Nokogiri or OpenGraph to get raw HTML from url

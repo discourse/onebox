@@ -1,16 +1,18 @@
 module Onebox
   class Layout < Mustache
+    extend Forwardable
     VERSION = "1.0.0"
 
-    attr_reader :cache
-    attr_reader :record
+    def_delegator :@onebox, :cache
+    def_delegator :@onebox, :record
+    def_delegator :@onebox, :expanded
+
     attr_reader :view
 
-    def initialize(name, record, cache)
-      @cache = cache
-      @record = record
+    def initialize(name, onebox)
+      @onebox = onebox
       @md5 = Digest::MD5.new
-      @view = View.new(name, record)
+      @view = View.new(name, record, expanded)
       @template_name = "_layout"
       @template_path = load_paths.last
     end
@@ -51,6 +53,5 @@ module Onebox
         view: view.to_html
       }
     end
-
   end
 end

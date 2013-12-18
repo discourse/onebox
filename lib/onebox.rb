@@ -8,6 +8,7 @@ require "hexpress/web"
 require "ostruct"
 require "moneta"
 require "cgi"
+require "forwardable"
 
 module Onebox
   DEFAULTS = {
