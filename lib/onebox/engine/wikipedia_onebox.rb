@@ -28,7 +28,7 @@ module Onebox
             paras = raw.search("p") #default get all the paras
           else #section id not found, id are case sensetive 
             cur_element = section_header[0]
-            while ( (next_sibling = cur_element.next_sibling).name =~ /p|text/ ) do  #start from the article section header node and and find all related section <p> tags. (<text> node or a <p> node)
+            while ( (next_sibling = cur_element.next_sibling).name =~ /p|text|div/ ) do  #start from the article section header node and and find all related section <p> tags. (<text> node or a <p> node)
               cur_element = next_sibling
               if cur_element.name == "p"
                 paras.push(cur_element)
