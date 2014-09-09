@@ -23,11 +23,10 @@ module Onebox
         end
 
         unless m_url_hash.nil?
-          puts "Pattern " + "//span[@id='#{m_url_hash_name}']/.."
           section_header = raw.xpath("//span[@id='#{m_url_hash_name}']/..")
           if section_header.empty?
             paras = raw.search("p") #default get all the paras
-          else #provided section id not found, id are case sensetive 
+          else #section id not found, id are case sensetive 
             cur_element = section_header[0]
             while ( (next_sibling = cur_element.next_sibling).name =~ /p|text/ ) do  #start from the article section header node and and find all related section <p> tags. (<text> node or a <p> node)
               cur_element = next_sibling
@@ -37,7 +36,7 @@ module Onebox
             end
           end
         else # no hash found in url
-          paras = raw.search("p") # get all the paras
+          paras = raw.search("p") #default get all the paras
         end 
 
   
