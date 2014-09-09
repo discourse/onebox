@@ -10,10 +10,36 @@ module Onebox
       private
 
       def data
-        # get all the paras
-        paras = raw.search("p")
+        
+        paras = []
         text = ""
 
+        
+        # Detect Section URL Hash and retrive section paragraphs instead the default first article paragraph
+        # Author Lidlanca
+        # Date 9/8/2014
+        if ( m_url_hash = @url.match /#([^\/?]+)/ ) #extract url hash
+          m_url_hash_name= m_url_hash[1]
+        end
+
+        unless m_url_hash.nil?
+          section_header = raw.xpath("//span[@id='#{m_url_hash_name}']/..")
+          if section_header.empty?
+            paras = raw.search("p") #default get all the paras
+          else #section id not found, id are case sensetive 
+            cur_element = section_header[0]
+            while ( (next_sibling = cur_element.next_sibling).name =~ /p|text|div/ ) do  #start from the article section header node and and find all related section <p> tags. (<text> node or a <p> node)
+              cur_element = next_sibling
+              if cur_element.name == "p"
+                paras.push(cur_element)
+              end 
+            end
+          end
+        else # no hash found in url
+          paras = raw.search("p") #default get all the paras
+        end 
+
+  
         unless paras.empty?
           cnt = 0
           while text.length < Onebox::LayoutSupport.max_text && cnt <= 3
