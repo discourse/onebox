@@ -1,5 +1,60 @@
 <h4><a href="{{link}}" target="_blank">{{title}}</a></h4>
-<pre><code class='{{lang}}'>{{content}}</code></pre>
+{{^has_lines}}
+<pre>
+	<code class="{{lang}}">
+{{content}}
+	</code>
+</pre>
+{{/has_lines}}
+
+
+{{#has_lines}}
+<script>
+{{!
+/*
+Author: Lidlanca 2014
+$.Onebox JS Helper
+ 
+Usage
+Load $.Onebox definition once. 
+ 
+In the onebox template use
+$.Onebox.loadStyle("style_name",cssRule);
+ 
+$.Onebox definition can be included in the code multiple times. it will not override it self.
+styles can not be overwritten either unless removed first.
+ 
+Styles tag are given a unique id based on a (prefix + style name)
+Use a unique prefix to avoid ID collision.
+ 
+Methods
+ loadStyle        load new style if not already exists or loaded
+ removeStyle      remove a previously loaded style from DOM
+ appendStyle      append style to dom (used by LoadStyle Internally)
+ listLoadedStyles trace all styles in console
+
+Unminified Version of $.Onebox can be found here.
+https://gist.github.com/lidlanca/5a17d77ed8654d408e54
+*/
+}}
+(function(e){if(!!e.Onebox){return}e.Onebox=new function(){var t={};var n="onebox_";this.loadStyle=function(e,n){if(!t.hasOwnProperty(e)){t[e]={content:n,added:false};this.appendStyle(e)}else{if(t[e].added==false){console.log(n);t[e].content=n;this.appendStyle(e)}else{}}};this.listLoadedStyles=function(){console.log(t)};this.removeStyle=function(r){if(t.hasOwnProperty(r)){t[r].added=false;e("#"+n+r).remove()}else{}};this.appendStyle=function(r){if(!t.hasOwnProperty(r))return;t[r].added=true;var i=e("<style id='"+n+r+"'>"+t[r].content+"</style>");e("body").append(i)}}})(jQuery);
+cssRule="pre.onebox ol{background:#EBEBEB;padding-top:5px;padding-bottom:5px;overflow:auto;color:#fff;word-break:break-word;padding-left:5px;margin:0;counter-reset:li-counter;list-style-type:none}pre.onebox ol li{background:#fff;font-size:small;color:#000;border-bottom:1px solid #E3E3E3;width:inherit;padding-left:45px;position:relative}pre.onebox ol li.selected{background-color:#F8EEC7}pre.onebox ol li:before{background-color:#cfcfcf;position:absolute;left:0;width:40px;display:inline-block;color:#fff;font-weight:700;text-align:right;z-index:1;overflow:hidden;content:counter(li-counter);counter-increment:li-counter}pre.onebox code{white-space:normal;padding:0;margin:0;position:relative}pre.onebox{white-space:normal}";
+$.Onebox.loadStyle("code_lines",cssRule)
+</script>
+{{/has_lines}}
+
+{{#has_lines}}
+<pre class='onebox' >
+    <code class='hljs' >
+<ol  class='start' start="{{cr_results.from}}" style='counter-reset: li-counter {{cr_results.from_minus_one}} ;'>
+{{#lines}}
+<li{{#selected}} class="selected"{{/selected}}>{{data}}</li>
+{{/lines}}
+</ol>
+    </code>
+</pre>
+{{/has_lines}}
+
 
 {{#truncated}}
   This file has been truncated. <a href="{{link}}" target="_blank">show original</a>
