@@ -7,6 +7,7 @@
 <style>
 pre.onebox code ol{
 	margin-left:0px;
+	white-space: normal;
 }
 pre.onebox code ol .lines{
 	margin-left:30px;
@@ -27,7 +28,7 @@ pre.onebox code li.selected{
 }
 </style>
 }}
-<pre class='onebox' ><code class='{{lang}}'><ol  class='start lines' start="{{cr_results.from}}" style='counter-reset: li-counter {{cr_results.from_minus_one}} ;'>
+<pre class='onebox' ><code class='{{lang}}'><ol  class='start lines' start="{{cr_results.from}}" style='counter-reset: li-counter {{cr_results.from_minus_one}} ;white-space: normal;padding-left: 25px;'>
 {{#lines}}<li{{#selected}} class="selected"{{/selected}}>{{data}}</li>{{/lines}}
 </ol></code></pre>
 {{/has_lines}}
