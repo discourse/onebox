@@ -78,6 +78,7 @@ module Onebox
           nba.com
           nytimes.com
           npr.org
+          pcpartpicker.com
           photobucket.com
           pinterest.com
           reference.com
