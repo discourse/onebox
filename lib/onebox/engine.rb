@@ -140,3 +140,5 @@ require_relative "engine/whitelisted_generic_onebox"
 require_relative "engine/pubmed_onebox"
 require_relative "engine/video_onebox"
 require_relative "engine/audio_onebox"
+require_relative "engine/spreadsheet_onebox"
+
