@@ -12,7 +12,7 @@ StringLiterals:
 # Limit lines to 79 characters.
 LineLength:
   Enabled: true
-  Max: 180
+  Max: 79
 
 # Avoid methods longer than 10 lines of code
 MethodLength:
