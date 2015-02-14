@@ -1,17 +1,12 @@
 require "spec_helper"
 
 describe Onebox::Engine::PttOnebox do
-  before(:each) do
-    @onebox = described_class.new(@link)
-    @html = @onebox.to_html
-    @data = Onebox::Helpers.symbolize_keys(@onebox.send(:data))
-  end
 
   include_context "engines"
 
   describe "gossiping work" do
     before(:all) do
-      @link = "https://www.ptt.cc/bbs/Gossiping/M.1421846278.A.824.html"
+      @ptt_link = "https://www.ptt.cc/bbs/Gossiping/M.1421846278.A.824.html"
     end
 
     it "#title" do
