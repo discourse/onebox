@@ -6,7 +6,7 @@ describe Onebox::Engine::PttOnebox do
 
   describe "gossiping work" do
     before(:all) do
-      @ptt_link = "https://www.ptt.cc/bbs/Gossiping/M.1421846278.A.824.html"
+      @link = "https://www.ptt.cc/bbs/Gossiping/M.1421846278.A.824.html"
     end
 
     it "#title" do
