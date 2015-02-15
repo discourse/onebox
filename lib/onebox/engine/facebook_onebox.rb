@@ -69,7 +69,7 @@ module Onebox
             fb_graph_api = get_user_fb_graph_api
             post_content = fb_graph_api.get_object(post_id)
           else
-            raise Koala::Facebook::ClientError
+            raise
           end
         end
         result = {
@@ -114,7 +114,7 @@ module Onebox
             fb_graph_api = get_user_fb_graph_api
             link_content = fb_graph_api.get_object(link_id)
           else
-            raise Koala::Facebook::ClientError
+            raise
           end
         end
         result = {
@@ -160,7 +160,7 @@ module Onebox
           post_id = [fb_user_id, path_elements.last].join('_')
           return parse_fb_post(post_id)
         else
-          raise Net::HTTPError
+          raise Net::HTTPError.new("Error: Facebook URI Parse error", nil)
         end
       end
     end
