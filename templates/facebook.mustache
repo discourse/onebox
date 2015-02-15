@@ -3,14 +3,15 @@
   {{date}}
 </div>
 
-{{#image?}}
-  <p><img src="{{image}}" class="thumbnail"/></p>
-{{/image?}}
-
 <p>{{source_url}}</p>
+
+{{#has_image?}}
+  <p><img src="{{image}}" class="thumbnail"/></p>
+{{/has_image?}}
 
 <p>{{{description}}}</p>
 
 {{#comments}}
-  <p><b>{{author}}</b>：{{{content}}}</p>
+  <p><b>{{author}}</b></p>
+  <p>{{{content}}}</p>
 {{/comments}}
