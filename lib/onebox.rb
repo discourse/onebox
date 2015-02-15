@@ -8,7 +8,7 @@ require "moneta"
 require "cgi"
 require "net/http"
 require "digest"
-require 'koala'
+require "koala"
 
 module Onebox
   DEFAULTS = {

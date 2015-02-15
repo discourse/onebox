@@ -28,7 +28,7 @@ module Onebox
     end
 
     def self.web_exceptions
-     [Net::HTTPServerException, OpenURI::HTTPError, Timeout::Error, Net::HTTPError, Errno::ECONNREFUSED, Koala::Facebook::ClientError]
+     [Net::HTTPServerException, OpenURI::HTTPError, Timeout::Error, Net::HTTPError, Errno::ECONNREFUSED]
     end
 
     private
