@@ -57,7 +57,7 @@ describe Onebox::Engine::PttOnebox do
     end
 
     it "#image" do
-      expect(html).to include("http://i.imgur.com/dWAnhWe.jpg")
+      expect(html).to include('<img src="http://i.imgur.com/dWAnhWe.jpg" class="thumbnail"/>')
     end
   end
 end
