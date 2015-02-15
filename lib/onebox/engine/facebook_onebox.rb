@@ -28,8 +28,17 @@ module Onebox
 
       def parse_fb_photo(photo_id)
         # Parse fb photo
-        fb_graph_api = get_app_fb_graph_api
-        photo_content = fb_graph_api.get_object(photo_id)
+        begin
+          fb_graph_api = get_app_fb_graph_api
+          photo_content = fb_graph_api.get_object(photo_id)
+        rescue
+          if ENV['FACEBOOK_USER_ACCESS_TOKEN']
+            fb_graph_api = get_user_fb_graph_api
+            photo_content = fb_graph_api.get_object(photo_id)
+          else
+            raise
+          end
+        end
         result = {
           link: link,
           has_image?: true,
