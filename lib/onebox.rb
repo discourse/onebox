@@ -8,7 +8,7 @@ require "moneta"
 require "cgi"
 require "net/http"
 require "digest"
-require 'mechanize'
+require "mechanize"
 
 module Onebox
   DEFAULTS = {
