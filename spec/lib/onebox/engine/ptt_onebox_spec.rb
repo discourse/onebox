@@ -55,5 +55,9 @@ describe Onebox::Engine::PttOnebox do
     it "#comment content" do
       expect(html).to include("國民黨不倒 台灣不會好")
     end
+
+    it "#image" do
+      expect(html).to include("http://i.imgur.com/dWAnhWe.jpg")
+    end
   end
 end

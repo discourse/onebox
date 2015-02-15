@@ -35,8 +35,14 @@ module Onebox
           title: title,
           description: content,
           date: date,
+          has_image?: false,
           comments: []
         }
+        image = raw.css('img').first
+        if image
+          result[:has_image?] = true
+          result[:image] = image["src"]
+        end
         comment = nil
         pushes.each do |p|
           comment_author = p.css('span.push-userid')[0].text

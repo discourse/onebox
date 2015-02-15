@@ -4,6 +4,10 @@
   {{date}}
 </div>
 
+{{#has_image?}}
+  <p><img src="{{image}}" class="thumbnail"/></p>
+{{/has_image?}}
+
 <p>{{{description}}}</p>
 
 {{#comments}}
