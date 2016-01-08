@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Onebox::Engine::KalturaOnebox do
-  let(:link) { "http://www.kaltura.com" }
+  let(:link) { "http://www.kaltura.com/tiny/sj0h8" }
   let(:html) { described_class.new(link).to_html }
 
   before do
@@ -13,7 +13,7 @@ describe Onebox::Engine::KalturaOnebox do
   end
 
   it "has the video's still shot" do
-    expect(html).to include("photo.jpg")
+    expect(html).to include("image")
   end
 
   it "has the video's description" do
