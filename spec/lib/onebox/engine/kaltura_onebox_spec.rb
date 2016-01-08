@@ -1,26 +1,12 @@
 require "spec_helper"
-
 describe Onebox::Engine::KalturaOnebox do
-  let(:link) { "http://www.kaltura.com/tiny/sj0h8" }
-  let(:html) { described_class.new(link).to_html }
-
-  before do
-    fake(link, response("name.response"))
+  it "Has entry ID" do
+    expect(Onebox.preview('http://www.kaltura.com/tiny/sj0h8').to_s).to match(/"entry_id": "([0-9a-z_]+)"/)
   end
-
-  it "has the video's title" do
-    expect(html).to include("title")
+  it "Has uiconf ID" do
+    expect(Onebox.preview('http://www.kaltura.com/index.php/extwidget/preview/partner_id/1829791/uiconf_id/32334692/entry_id/1_ddrwr3yz/embed/auto?&flashvars[streamerType]=auto').to_s).to match(/"uiconf_id": ([0-9]+)/)
   end
-
-  it "has the video's still shot" do
-    expect(html).to include("image")
-  end
-
-  it "has the video's description" do
-    expect(html).to include("description")
-  end
-
-  it "has the URL to the resource" do
-    expect(html).to include(link)
+  it "Has embedIframeJs" do
+    expect(Onebox.preview('http://www.kaltura.com/index.php/extwidget/preview/partner_id/1829791/uiconf_id/32334692/entry_id/1_ddrwr3yz/embed/auto?&flashvars[streamerType]=auto').to_s).to match(/"<script src=".*\/embedIframeJs\//)
   end
 end
