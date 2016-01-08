@@ -7,17 +7,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta property="og:url" content="http://www.kaltura.com/index.php/extwidget/preview/partner_id/1829791/uiconf_id/32334692/entry_id/1_zln6nl7s/embed/auto" />
-	<meta property="og:title" content="Kaltura Management Console (KMC) Overview" />
-	<meta property="og:description" content="This video tutorial explores the various features Kaltura's Management Console or 'KMC' has to offer. The video will equip every KMC user with the skills and knowledge to make full use of all the features we offer as well as troubleshoot basic issues." />
+		<meta property="og:url" content="http://www.kaltura.com/index.php/extwidget/preview/partner_id/1829791/uiconf_id/32334692/entry_id/1_ddrwr3yz/embed/auto?&flashvars[streamerType]=auto" />
+	<meta property="og:title" content="vid_file.mp4" />
+	<meta property="og:description" content="" />
 	<meta property="og:type" content="video.other" />
-	<meta property="og:image" content="http://cfvod.kaltura.com/p/1829791/sp/182979100/thumbnail/entry_id/1_zln6nl7s/version/100000/acv/91/width/400" />
-	<meta property="og:image:secure_url" content="https://cfvod.kaltura.com/p/1829791/sp/182979100/thumbnail/entry_id/1_zln6nl7s/version/100000/acv/91/width/400" />
+	<meta property="og:image" content="http://cfvod.kaltura.com/p/1829791/sp/182979100/thumbnail/entry_id/1_ddrwr3yz/version/100000/acv/111/width/400" />
+	<meta property="og:image:secure_url" content="https://cfvod.kaltura.com/p/1829791/sp/182979100/thumbnail/entry_id/1_ddrwr3yz/version/100000/acv/111/width/400" />
 	
-		<meta property="og:video" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/playManifest/entryId/1_zln6nl7s/flavorId/1_4my03q9o/format/url/protocol/http/a.mp4" />
+		<meta property="og:video" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/playManifest/entryId/1_ddrwr3yz/flavorId/1_nsyr561r/format/url/protocol/http/a.mp4" />
 	<meta property="og:video:type" content="video/mp4" />
-		<meta property="og:video:url" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/embedIframeJs/uiconf_id/32334692/partner_id/1829791?iframeembed=true&entry_id=1_zln6nl7s&flashvars[streamerType]=auto">
-	<meta property="og:video:secure_url" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/embedIframeJs/uiconf_id/32334692/partner_id/1829791?iframeembed=true&entry_id=1_zln6nl7s&flashvars[streamerType]=auto">
+		<meta property="og:video:url" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/embedIframeJs/uiconf_id/32334692/partner_id/1829791?iframeembed=true&entry_id=1_ddrwr3yz&flashvars[streamerType]=auto">
+	<meta property="og:video:secure_url" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/embedIframeJs/uiconf_id/32334692/partner_id/1829791?iframeembed=true&entry_id=1_ddrwr3yz&flashvars[streamerType]=auto">
 	<meta property="og:video:type" content="text/html">	
 	<meta property="og:video:width" content="400" />
 	<meta property="og:video:height" content="333" />	
@@ -25,17 +25,17 @@
 	<meta name="twitter:card" content="player"/>
     <meta name="twitter:site" content="@kaltura"/>
     <meta name="twitter:creator" content="@kaltura"/>
-    <meta name="twitter:title" content="Kaltura Management Console (KMC) Overview" />
-    <meta name="twitter:description" content="This video tutorial explores the various features Kaltura's Management Console or 'KMC' has to offer. The video will equip every KMC user with the skills and knowledge to make full use of all the features we offer as well as troubleshoot basic issues." />
-    <meta name="twitter:image" content="https://cfvod.kaltura.com/p/1829791/sp/182979100/thumbnail/entry_id/1_zln6nl7s/version/100000/acv/91/width/400" />
-    <meta name="twitter:player" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/embedIframeJs/uiconf_id/32334692/partner_id/1829791?iframeembed=true&entry_id=1_zln6nl7s&flashvars[streamerType]=auto" />
-        <meta name="twitter:player:stream" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/playManifest/entryId/1_zln6nl7s/flavorId/1_4my03q9o/format/url/protocol/http/a.mp4" />
+    <meta name="twitter:title" content="vid_file.mp4" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://cfvod.kaltura.com/p/1829791/sp/182979100/thumbnail/entry_id/1_ddrwr3yz/version/100000/acv/111/width/400" />
+    <meta name="twitter:player" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/embedIframeJs/uiconf_id/32334692/partner_id/1829791?iframeembed=true&entry_id=1_ddrwr3yz&flashvars[streamerType]=auto" />
+        <meta name="twitter:player:stream" content="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/playManifest/entryId/1_ddrwr3yz/flavorId/1_nsyr561r/format/url/protocol/http/a.mp4" />
     	<meta name="twitter:player:stream:content_type" content="video/mp4"/>
     <meta name="twitter:player:height" content="333" />
     <meta name="twitter:player:width" content="400" />
 
 	<meta property="og:site_name" content="Kaltura" />
-		<title>Kaltura Management Console (KMC) Overview</title>
+		<title>vid_file.mp4</title>
 	<link type="text/css" rel="stylesheet" href="/lib/css/shortlink.css" />
 		<style>
 	#main .content .title h1 { font-size: 24px; font-weight: bold; }
@@ -52,15 +52,15 @@
 
 		<div class="content">
 			<div class="title">
-				<h1>Kaltura Management Console (KMC) Overview</h1>
+				<h1>vid_file.mp4</h1>
 			</div>
 			<div class="contwrap">
-			<p>This video tutorial explores the various features Kaltura's Management Console or 'KMC' has to offer. The video will equip every KMC user with the skills and knowledge to make full use of all the features we offer as well as troubleshoot basic issues.</p>
+			<p></p>
 			<div id="videoContainer">
 					<div id="framePlayerContainer">
 <script>
 var scriptToEval = '';
-var code = new kEmbedCodeGenerator({"host":"cdnapi.kaltura.com","securedHost":"cdnapisec.kaltura.com","partnerId":1829791,"protocol":"http","embedType":"auto","uiConfId":32334692,"width":"400","height":"333","includeKalturaLinks":true,"cacheSt":1452173726,"entryId":"1_zln6nl7s","includeSeoMetadata":true,"entryMeta":{"name":"Kaltura Management Console (KMC) Overview","description":"This video tutorial explores the various features Kaltura's Management Console or 'KMC' has to offer. The video will equip every KMC user with the skills and knowledge to make full use of all the features we offer as well as troubleshoot basic issues.","thumbnailUrl":"http:\/\/cfvod.kaltura.com\/p\/1829791\/sp\/182979100\/thumbnail\/entry_id\/1_zln6nl7s\/version\/100000\/acv\/91","duration":342}}).getCode();
+var code = new kEmbedCodeGenerator({"host":"cdnapi.kaltura.com","securedHost":"cdnapisec.kaltura.com","partnerId":1829791,"protocol":"http","embedType":"auto","uiConfId":32334692,"width":"400","height":"333","includeKalturaLinks":true,"cacheSt":1452257581,"entryId":"1_ddrwr3yz","includeSeoMetadata":true,"entryMeta":{"name":"vid_file.mp4","description":null,"thumbnailUrl":"http:\/\/cfvod.kaltura.com\/p\/1829791\/sp\/182979100\/thumbnail\/entry_id\/1_ddrwr3yz\/version\/100000\/acv\/111","duration":6.76},"flashVars":{"streamerType":"auto"}}).getCode();
 var embedType = 'auto';
 var ltIE10 = $('html').hasClass('lt-ie10');
 
