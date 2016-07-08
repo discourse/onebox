@@ -20,6 +20,10 @@ describe Onebox::Engine::TwitterStatusOnebox do
     #   expect(html).to include("6:59 PM - 1 Aug 13")
     # end
 
+    it "gets the correct timestamp" do
+      expect(onebox.send(:timestamp)).to eq("7:29 AM - 2 Aug 2013")
+    end
+
     it "includes name" do
       expect(html).to include("Vyki Englert")
     end
