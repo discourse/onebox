@@ -70,7 +70,7 @@ module Onebox
           offset = (user_offset >= 0 ? "+" : "-") + Time.at(user_offset.abs).gmtime.strftime("%H%M")
           date.new_offset(offset).strftime("%l:%M %p - %e %b %Y")
         else
-          raw.css(".tweet-timestamp")[0].attribute('title')
+          raw.at_css(".tweet-timestamp").attr('title')
         end
       end
 
