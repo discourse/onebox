@@ -1,0 +1,1273 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"99d9f7fe9b5c54d8f0e0e7f178a16fd2",petok:"37b24b1f992abca57e3378fc29011ac00f4014a6-1469694620-1800",zone:"ppy.sh",rocket:"0",apps:{"abetterbrowser":{"ie":"7"}},sha2test:0}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=0489c402f5/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="shortcut icon" href="//s.ppy.sh/favicon.ico" type="image/vnd.microsoft.icon"/>
+<link rel="icon" href="//s.ppy.sh/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="description" content="osu! &raquo; Detailed difficulty and ranking information for Hatsuki Yura - Eclipse Parade (mapped by Vert)."/>
+<meta name="keywords" content="osu, peppy, ouendan, elite, beat, agents, ds, windows, game, taiko, tatsujin, simulator, sim, xna, ddr, beatmania, osu!, osume"/>
+<meta name="viewport" content="width=864, user-scalable=yes"/>
+<script>
+	var STATIC_DOMAIN = "//s.ppy.sh";
+    var STATIC_DOMAIN_BEATMAP = "//b.ppy.sh";
+        var downloadCount = 0
+</script>
+<script type="text/javascript" src="//s.ppy.sh/js/jquery.min.js?1433126077"></script>
+<script type="text/javascript" src="//s.ppy.sh/js/main.js?1448256939"></script>
+<script src="//s.ppy.sh/js/jquery.autocomplete.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="//s.ppy.sh/css/style.css?1448620186" media="all"/>
+<title>Hatsuki Yura - Eclipse Parade (mapped by Vert)</title>
+<script type="text/javascript">
+
+$.getScript('//cse.google.com/coop/cse/brand?form=cse-search-box&lang=en');
+
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-4774947-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+</head>
+<body><a name="top"></a>
+<div class="bodytopbg">
+<div class="mainbody"><div class="mainbody2">
+<div id="coolheader" style="background-image: url('//s.ppy.sh/images/right-pippi.jpg');"></div>
+<a id="top_facebook" class="top_button" href='http://facebook.com/osugame'> </a>
+<a id="top_follow" class="top_button" href='/p/twitter'> </a>
+<a id="top_support" class="top_button" href='/p/support'> </a>
+<div class="main-osu-logo"><img src='//s.ppy.sh/images/head-logo.png'/></div>
+<a class="main-osu-logo-clickable" alt="home" href="/"></a>
+<div class="header clickable-cell">
+<a class='hidden' href='/'>home</a>
+<div id="playstats">
+<b>8,592,726</b> users, <b>9,593</b> online now.<br/>
+A total of <b><span id='playcount'>4.85 billion</span></b> ranked plays!
+</div>
+<div class="menu">
+<ul class="sf-menu">
+<li>
+<a href="/wiki/Welcome">Info</a>
+<ul>
+<li><a href="/p/changelog">Changelog</a></li>
+<li><a href="/wiki/History_of_osu!">History</a></li>
+<li><a href="/wiki/The_Team">The Team</a></li>
+<li><a href="/wiki/Osu!:Rules">Rules</a></li>
+</ul>
+</li>
+<li><a href="/p/download">Download</a></li>
+<li><a href="/wiki/">Wiki / Help</a>
+<ul>
+<li><a href="/wiki/FAQ">FAQ</a></li>
+<li><a href="https://osu.ppy.sh/forum/5">Report a Bug</a></li>
+<li><a href="http://help.ppy.sh/">Help Centre</a></li>
+</ul>
+</li>
+<li><a href="/p/beatmaplist">Beatmaps</a>
+<ul>
+<li><a href="/p/beatmaplist&s=4&r=0">Ranked</a></li>
+<li><a href="/p/beatmaplist&s=4&r=11">Qualified</a></li>
+<li><a href="/p/beatmaplist&s=7&r=2">Pending</a></li>
+<li><a href="/p/packlist">Beatmap Packs</a></li>
+</ul>
+</li>
+<li><a href="/p/pp">Rankings</a>
+<ul>
+<li><a href="/p/pp">Performance</a></li>
+<li><a href="/p/chart">Charts</a></li>
+<li><a href="/p/playerranking">Score</a></li>
+<li><a href="/p/countryranking">Countries</a></li>
+<li><a href="/p/kudosu">Kudosu</a></li>
+</ul>
+</li>
+<li><a href="/forum/">Community</a>
+<ul>
+<li><a href="/forum/">Forums</a></li>
+<li><a href="/p/support">Supporting osu!</a></li>
+<li><a href="/p/live">Live Streams</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="content">
+<div class="content-infoline">
+<form class="inline-form" action="/p/search" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="007714945049801807819:fwdivvi5sik"/>
+<input type="hidden" name="cof" value="FORID:10"/>
+<input type="hidden" name="ie" value="UTF-8"/>
+<input type="text" name="q" size="18"/>
+</div>
+</form>
+<form class="inline-form" onsubmit="return userSearch()">
+<input type="text" name="user-search" id="user-search" size="10" placeholder="User"/>
+</form>
+<form class="inline-form" onsubmit="return beatmapSearch()">
+<input type="text" name="beatmap-search" id="beatmap-search" size="10" placeholder="Beatmap"/>
+</form>
+<div style="float:right; color: #666666;">
+Welcome, guest!
+<a class='login-open-button'><i class='icon-caret-down'></i> Login</a>
+<a class='new-user-button' href="https://osu.ppy.sh/p/register" title="Register New Account"><i class='icon-magic'></i> I'm new!</a>
+</div>
+</div>
+<div class='login-dropdown'>
+<form action="https://osu.ppy.sh/forum/ucp.php?mode=login" method="post">
+<input type="hidden" name="redirect" value="/s/430339"/>
+<input type="hidden" name="sid" value=""/>
+Please enter your credentials:<br/>
+<input class="post" type="text" id='username-field' name="username" placeholder="Username" maxlength="30" value="" tabindex="0"/><br/>
+<input class="post" type="password" id='password-field' name="password" placeholder="Password" maxlength="100" tabindex="0"/><br/>
+<input type="checkbox" class="radio" name="autologin" id="autologin"/> <label for="autologin">Remember Me</label>
+<input type="submit" class='btn' name="login" value="login" tabindex="5"/>
+<div class='smaller'><a href="https://osu.ppy.sh/p/forgot" title="Forgot Password">Forgotten username or password?</a></div>
+<div class='smaller'><a href="https://osu.ppy.sh/p/register" title="Register New Account" class='new-user-button'>Create new account!</a></div>
+</form>
+</div>
+<div class="content-with-bg">
+<script type="text/javascript" language="javascript">
+	function updatebms()
+	{
+		$("#updatestatus").html("updating...");
+
+		$.ajax({
+		    url: "/pages/include/beatmap-update.php",
+		    data: {
+		    	s: "430339",
+		    	o: $("#offset").attr("value"),
+		    	t: $("#disptitle").attr("value"),
+		    	g: $("#genres").val(),
+		    	l: $("#languages").val(),
+		    	tags: $("#tags").val()
+		    },
+		    type: "POST"
+		}).done(function(text) {
+			$("#updatestatus").html(text);
+		});
+	}
+
+	function reportscore(score_id)
+	{
+		check('/b/952010&action=report&score=' + score_id + '&m=0&sid=','report this score for foul play.');
+	}
+
+	function removescore(score_id)
+	{
+		check('/b/952010&action=remove&score=' + score_id + '&m=0&sid=','delete this score. be careful!');
+	}
+</script>
+<h1><a href='/p/beatmaplist'>Beatmap Listing</a> &raquo; Hatsuki Yura - Eclipse Parade</h1>
+<div id='tablist'>
+<ul>
+<li><a class='beatmapTab ' href='/b/956090&m=0'><div class='diffIcon normal'></div><span>Yomi&#039;s Easy</span></a></li>
+<li><a class='beatmapTab ' href='/b/962396&m=0'><div class='diffIcon normal'></div><span>Mei&#039;s Normal</span></a></li>
+<li><a class='beatmapTab ' href='/b/944640&m=0'><div class='diffIcon hard'></div><span>Lyric&#039;s Hard</span></a></li>
+<li><a class='beatmapTab ' href='/b/929453&m=0'><div class='diffIcon insane'></div><span>Zero&#039;s Insane</span></a></li>
+<li><a class='beatmapTab ' href='/b/944717&m=0'><div class='diffIcon insane'></div><span>Gxy&#039;s Insane</span></a></li>
+<li><a class='beatmapTab ' href='/b/928371&m=0'><div class='diffIcon insane'></div><span>Insane</span></a></li>
+<li><a class='beatmapTab active' href='/b/952010&m=0'><div class='diffIcon expert'></div><span>FreeSongs&#039; Parade</span></a></li>
+</ul>
+</div>
+<div>
+<table id='songinfo' width=100% cellspacing=0>
+<tr>
+<td width=0%>Artist:</td><td width=23% class='colour'><a href='/p/beatmaplist?q=Hatsuki Yura'>Hatsuki Yura</a></td>
+<td width=0%>Circle Size:</td><td width=23% class='colour'><div class='starfield' style='width:140px'><div class='active' style='width:56px'></div></div></td>
+<td width=0%>Approach Rate:</td><td class="colour"><div class='starfield' style='width:140px'><div class='active' style='width:133px'></div></div></td>
+</tr>
+<tr>
+<td width=0%>Title:</td><td class="colour"><a href='/p/beatmaplist?q=Eclipse Parade'>Eclipse Parade</a></td>
+<td width=0%>HP Drain:</td><td class="colour"><div class='starfield' style='width:140px'><div class='active' style='width:84px'></div></div></td>
+<td width=0%><strong>Star Difficulty</strong>:</td><td width=23% class='colour'><div class='starfield' style='width:140px'><div class='active' style='width:74.2797574997px'></div></div> (5.31)</td>
+</tr>
+<tr>
+<td width=0%>Creator:</td><td class="colour"><a href='/u/3420746'>Vert<a/></td>
+<td width=0%>Accuracy:</td><td class="colour"><div class='starfield' style='width:140px'><div class='active' style='width:120.4px'></div></div></td>
+<td width=0%>Length:</td><td class="colour">4:22 (4:04 drain)</td>
+</tr>
+<tr>
+<td width=0%>Source:</td><td class="colour"><a href='/p/beatmaplist?q='></a></td>
+<td width=0%>Genre:</td><td class="colour"><a href='/p/beatmaplist?g=5'>Pop</a> (<a href='/p/beatmaplist?la=3'>Japanese</a>)</td>
+<td width=0%>BPM:</td><td class="colour">208</td>
+</tr>
+<tr>
+<td width=0%>Tags:</td><td class="colour"><a href="/p/beatmaplist?q=newspaper">newspaper</a> <a href="/p/beatmaplist?q=cup">cup</a> <a href="/p/beatmaplist?q=gxytcgxytc">gxytcgxytc</a> <a href="/p/beatmaplist?q=mei">mei</a> <a href="/p/beatmaplist?q=tsukuyomi">tsukuyomi</a> <a href="/p/beatmaplist?q=baldrace">baldrace</a> <a href="/p/beatmaplist?q=lyric">lyric</a> <a href="/p/beatmaplist?q=freesongs">freesongs</a> <a href="/p/beatmaplist?q=zero__wind">zero__wind</a> <a href="/p/beatmaplist?q=drop">drop</a> <a href="/p/beatmaplist?q=清風明月">清風明月</a> <a href="/p/beatmaplist?q=seifuu">seifuu</a> <a href="/p/beatmaplist?q=meigetsu">meigetsu</a> </td>
+<td width=0%>User Rating:</td><td class="colour">
+<table width="100%" height="20px" style="color:#fff;">
+<tr>
+<td style="background-color:#BC2036;text-align:right;border:solid 1px #82000B;" width="4.65949820789">12</td>
+<td style="background-color:#78AB23;text-align:left;border:solid 1px #718F0A;" width="96.0573476703">267</td>
+</tr>
+</table>
+<td width=0% rowspan=2 valign=top>
+Success Rate:<br/>
+Points of Failure:<br/>
+<span style='font-size:80%'>(graph is accumulative, based on % at fail/retry)</span></td>
+<td class="colour" rowspan=2>
+<b>7.1%</b> (2815 of 39703 plays)<br/>
+<img width="200" height="60" src='/pages/include/beatmap-fail-graph.php?b=952010'/>
+</td>
+</tr>
+<tr>
+<td width=0%>
+Submitted:<br/>
+Ranked:
+</td>
+<td class="colour">
+Mar 16, 2016<br/>
+Jun 19, 2016
+</td>
+<td>Rating Spread:</td>
+<td class="colour">
+<img width="200" height="40" src='/pages/include/beatmap-rating-graph.php?s=430339'/>
+</td>
+</tr>
+<tr>
+<td colspan=4>
+<div><b>Favourited 221 times</b> in total
+</div>
+Users that love this map:
+<a href='/u/399981'>f129787064</a>, <a href='/u/431594'>AMasochism</a>, <a href='/u/466736'>chenwu</a>, <a href='/u/487668'>ShiraKai</a>, <a href='/u/592350'>MusHi</a>, <a href='/u/635238'>Lapis</a>, <a href='/u/676857'>Betbuc</a>, <a href='/u/696435'>Mayzel</a>, <a href='/u/702598'>Spectator</a>, <a href='/u/914448'>Noami</a>, <a href='/u/927520'>pain0728</a>, <a href='/u/944305'>muza</a>, <a href='/u/1002066'>cynthia612</a>, <a href='/u/1122678'>raycopper</a>, <a href='/u/1162535'>sos8500000</a>, <a href='/u/1211167'>electrolytes</a>, <a href='/u/1298844'>Livia</a>, <a href='/u/1349849'>Hanatan</a>, <a href='/u/1448472'>Liana Fimble</a>, <a href='/u/1587427'>- Eucliwood -</a> and <b>many more</b>! </td>
+<td width=0%>Options:</td><td class="colour"><a href='/forum/t/432118'>This Beatmap's Thread</a>
+<td class="colour"></td>
+</tr>
+</table>
+</table>
+</div>
+<br/>
+<div class="paddingboth">
+<div class="beatmapDownloadButton">
+<a href="#" onclick='return showLoginForm();'><img src="//s.ppy.sh/images/osu-download-login.png"/></a>
+</div>
+<div class="posttext">
+<a href="#" onclick="playBeatmapPreview(430339); return false;"><img class='bmt' src="//b.ppy.sh/thumb/430339l.jpg"></a>
+27th beatmap #2 for ranked<br/>Newpaper cup(Mapping contest) <span style="color: #FF0000">#4</span> <span style="background-color: black;">No one plays my diff cuz you cant pass it</span><br/><span style="color: #FF0000">No pp here </span>,plz skip this map if you are farming PP<br/><div class="spoiler"><div class="spoiler_head" onclick="return toggleSpoiler(this);">Mapset</div><div class="spoiler_body">FreeSongs&#39; Expert #3 ------ by <a href='/u/FreeSongs'>FreeSongs</a><br/>Zero&#39;s Insane #2 ------ by <a href='/u/Zero__wind'>Zero__wind</a>  <a class="postlink" href="https://osu.ppy.sh/s/430875">https://osu.ppy.sh/s/430875</a> <br/>gxy&#39;s Insane #6 ------ by <a href='/u/gxytcgxytc'>gxytcgxytc</a><br/>Hard ------ <a href='/u/Lyric'>Lyric</a><br/>Normal ------ <a href='/u/Mei'>Mei</a><br/>Easy ------ <a href='/u/Tsukuyomi'>Tsukuyomi</a><br/>Simple lyric storyboard by me</div></div><br/><a href="http&#58;//www&#46;pixiv&#46;net/member_illust&#46;php?mode=medium&amp;illust_id=52252595" class="postlink">BG source</a><br/>You can find the winner of newspaper cup here  <a class="postlink" href="https://osu.ppy.sh/s/424357">https://osu.ppy.sh/s/424357</a> <br/>also Misure's verson here  <a class="postlink" href="https://osu.ppy.sh/s/430380">https://osu.ppy.sh/s/430380</a> 
+</div>
+</div>
+<div id='tablist' style='margin-top: 15px; margin-bottom: 15px;'>
+<ul>
+<li><a class="active" href='/p/beatmap?b=952010&m=0'>osu! Standard</a></li>
+<li><a href='/p/beatmap?b=952010&m=1'>Taiko</a></li>
+<li><a href='/p/beatmap?b=952010&m=2'>Catch The Beat</a></li>
+<li><a href='/p/beatmap?b=952010&m=3'>osu!mania</a></li>
+</ul>
+</div>
+<div style='text-align: center; width: 100%;'>
+<div style='display: inline-block; margin: 3px; text-align: left;'>
+<table class="scoreLeader" cellpadding='0' cellspacing='0'>
+<tr><td class='title' colspan=3><img class='flag' src="//s.ppy.sh/images/flags/kr.gif"/> <a href='/u/124493'>Cookiezi</a> is in the lead! (<time class='timeago' datetime='2016-06-19T18:31:05Z'>2016-06-19 18:31:05 UTC</time>)</td></tr>
+<tr class='row1p'>
+<td><strong>Score</strong></td><td>55,677,988 (99.62%)</td>
+<td class='rank' width='120px' align='center' colspan='1' rowspan='7'><img src='/images/SH.png'/></td>
+</tr>
+<tr class='row2p'><td><strong>Max Combo</strong></td><td>1636</td></tr>
+<tr class='row1p'><td><strong>300 / 100 / 50</strong></td><td>1036 / 6 / 0</td></tr>
+<tr class='row2p'><td><strong>Misses</strong></td><td>0</td></tr>
+<tr class='row1p'><td><strong>Geki (Elite Beat!)</strong></td><td>224</td></tr>
+<tr class='row2p'><td><strong>Katu (Beat!)</strong></td><td>6</td></tr>
+<tr class='row1p'><td><strong>Mods</strong></td><td>HD</td></tr>
+</table>
+</div>
+<div class='clear'></div>
+</div>
+<a name='scores'></a>
+<h2 style='margin-left: 4px;'>Top 50 Scoreboard</h2>
+<div>
+<form method='GET' action='/p/beatmap#scores'>
+<input type='hidden' name='b' value='952010'/>
+<input type='hidden' name='m' value='0'/>
+<input id='nm' type='checkbox' onchange='this.form.submit()' name='nm' value='1'/> <label for='nm'>Show no-mod plays only</label>
+</form>
+</div>
+<div class="beatmapListing">
+<table width=100% cellspacing=0>
+<tr class='titlerow'><th></th><th><strong>Rank</strong></th><th><strong>Score</strong></th><th><strong>Accuracy</strong></th><th><strong>Player</strong></th><th><strong>Max Combo</th><th><strong>300 / 100 / 50</strong></th><th><strong>Geki</strong></th><th><strong>Katu</strong></th><th><strong>Misses</strong></th><th><strong>Mods</strong></th><th></th></tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132337401&m=0'>#1</a>
+</td>
+<td><img src='/images/SH_small.png'/></td>
+<td><b>55,677,988</b></td>
+<td>99.62%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/kr.gif" title="South Korea"/> <a href='/u/124493'>Cookiezi</a></td>
+<td>1636</td>
+<td>1036&nbsp&nbsp/&nbsp;&nbsp;6&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>224</td>
+<td>6</td>
+<td>0</td>
+<td>HD</td>
+<td>
+<a onclick="reportscore(2132337401);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2136254666&m=0'>#2</a>
+</td>
+<td><img src='/images/SH_small.png'/></td>
+<td>54,755,541</td>
+<td>98.34%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/1431589'>Teriyaki</a></td>
+<td>1636</td>
+<td>1016&nbsp&nbsp/&nbsp;&nbsp;26&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>216</td>
+<td>14</td>
+<td>0</td>
+<td>HD</td>
+<td>
+<a onclick="reportscore(2136254666);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132598827&m=0'>#3</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>52,545,280</td>
+<td>99.62%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/tw.gif" title="Taiwan"/> <a href='/u/147515'>Rucker</a></td>
+<td>1636</td>
+<td>1036&nbsp&nbsp/&nbsp;&nbsp;6&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>224</td>
+<td>6</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2132598827);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2141333788&m=0'>#4</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>52,537,844</td>
+<td>90.34%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/kr.gif" title="South Korea"/> <a href='/u/3478883'>Sequence</a></td>
+<td>1615</td>
+<td>891&nbsp&nbsp/&nbsp;&nbsp;151&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>135</td>
+<td>95</td>
+<td>0</td>
+<td>HD,HR</td>
+<td>
+<a onclick="reportscore(2141333788);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2136243432&m=0'>#5</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>52,150,370</td>
+<td>98.91%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/kr.gif" title="South Korea"/> <a href='/u/1193823'>Sungmo</a></td>
+<td>1637</td>
+<td>1025&nbsp&nbsp/&nbsp;&nbsp;17&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>218</td>
+<td>12</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2136243432);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2139675941&m=0'>#6</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>52,142,540</td>
+<td>98.94%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/635238'>Lapis</a></td>
+<td>1636</td>
+<td>1026&nbsp&nbsp/&nbsp;&nbsp;14&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>217</td>
+<td>11</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2139675941);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132211417&m=0'>#7</a>
+</td>
+<td><img src='/images/SH_small.png'/></td>
+<td>51,776,188</td>
+<td>93.84%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/hk.gif" title="Hong Kong"/> <a href='/u/3871716'>SylviaL</a></td>
+<td>1636</td>
+<td>946&nbsp&nbsp/&nbsp;&nbsp;95&nbsp;&nbsp;/&nbsp;&nbsp;1</td>
+<td>172</td>
+<td>57</td>
+<td>0</td>
+<td>HD</td>
+<td>
+<a onclick="reportscore(2132211417);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132744842&m=0'>#8</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>51,615,770</td>
+<td>98.21%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/360552'>Sinch</a></td>
+<td>1633</td>
+<td>1014&nbsp&nbsp/&nbsp;&nbsp;28&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>211</td>
+<td>19</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2132744842);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132624950&m=0'>#9</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>51,095,319</td>
+<td>92.74%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/kr.gif" title="South Korea"/> <a href='/u/2190336'>Pray</a></td>
+<td>1626</td>
+<td>929&nbsp&nbsp/&nbsp;&nbsp;111&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>164</td>
+<td>64</td>
+<td>0</td>
+<td>HD,SD</td>
+<td>
+<a onclick="reportscore(2132624950);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2148843121&m=0'>#10</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>50,668,840</td>
+<td>96.83%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/80063'>yakidango</a></td>
+<td>1634</td>
+<td>993&nbsp&nbsp/&nbsp;&nbsp;47&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>193</td>
+<td>35</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2148843121);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2134152145&m=0'>#11</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>50,611,500</td>
+<td>96.83%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/kr.gif" title="South Korea"/> <a href='/u/4374853'>AAA</a></td>
+<td>1633</td>
+<td>993&nbsp&nbsp/&nbsp;&nbsp;47&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>205</td>
+<td>24</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2134152145);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132679736&m=0'>#12</a>
+</td>
+<td><img src='/images/SH_small.png'/></td>
+<td>49,425,664</td>
+<td>96.99%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/1787027'>Recia</a></td>
+<td>1506</td>
+<td>995&nbsp&nbsp/&nbsp;&nbsp;47&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>202</td>
+<td>28</td>
+<td>0</td>
+<td>HD,HR</td>
+<td>
+<a onclick="reportscore(2132679736);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2133594084&m=0'>#13</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>49,159,870</td>
+<td>94.23%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/kr.gif" title="South Korea"/> <a href='/u/4600341'>Happy New Year</a></td>
+<td>1634</td>
+<td>952&nbsp&nbsp/&nbsp;&nbsp;89&nbsp;&nbsp;/&nbsp;&nbsp;1</td>
+<td>174</td>
+<td>55</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2133594084);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2142746526&m=0'>#14</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>48,911,960</td>
+<td>93.71%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/2849992'>Garden</a></td>
+<td>1628</td>
+<td>944&nbsp&nbsp/&nbsp;&nbsp;97&nbsp;&nbsp;/&nbsp;&nbsp;1</td>
+<td>171</td>
+<td>58</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2142746526);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2142547835&m=0'>#15</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>48,647,490</td>
+<td>93.41%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/br.gif" title="Brazil"/> <a href='/u/1164677'>Italo</a></td>
+<td>1631</td>
+<td>939&nbsp&nbsp/&nbsp;&nbsp;103&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>168</td>
+<td>62</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2142547835);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2134728926&m=0'>#16</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>48,287,570</td>
+<td>92.95%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/1549088'>Prograf</a></td>
+<td>1626</td>
+<td>932&nbsp&nbsp/&nbsp;&nbsp;109&nbsp;&nbsp;/&nbsp;&nbsp;1</td>
+<td>166</td>
+<td>63</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2134728926);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2133289713&m=0'>#17</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>47,684,160</td>
+<td>92.35%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/4029793'>TenshiMegumin</a></td>
+<td>1629</td>
+<td>923&nbsp&nbsp/&nbsp;&nbsp;117&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>157</td>
+<td>71</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2133289713);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2137669795&m=0'>#18</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>47,351,340</td>
+<td>90.79%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/651307'>Prophet</a></td>
+<td>1633</td>
+<td>900&nbsp&nbsp/&nbsp;&nbsp;134&nbsp;&nbsp;/&nbsp;&nbsp;8</td>
+<td>151</td>
+<td>73</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2137669795);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2149761714&m=0'>#19</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>44,923,831</td>
+<td>97.46%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/kr.gif" title="South Korea"/> <a href='/u/1311140'>Ozinghoon</a></td>
+<td>1467</td>
+<td>1003&nbsp&nbsp/&nbsp;&nbsp;37&nbsp;&nbsp;/&nbsp;&nbsp;1</td>
+<td>203</td>
+<td>26</td>
+<td>1</td>
+<td>HD</td>
+<td>
+<a onclick="reportscore(2149761714);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2134765666&m=0'>#20</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>44,812,970</td>
+<td>96.66%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/at.gif" title="Austria"/> <a href='/u/2323131'>Fedora Goose</a></td>
+<td>1519</td>
+<td>992&nbsp&nbsp/&nbsp;&nbsp;44&nbsp;&nbsp;/&nbsp;&nbsp;3</td>
+<td>194</td>
+<td>33</td>
+<td>3</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2134765666);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132795288&m=0'>#21</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>44,621,940</td>
+<td>98.46%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/fi.gif" title="Finland"/> <a href='/u/926370'>Regnall</a></td>
+<td>1499</td>
+<td>1019&nbsp&nbsp/&nbsp;&nbsp;21&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>216</td>
+<td>13</td>
+<td>2</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2132795288);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2146630175&m=0'>#22</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>44,562,651</td>
+<td>98.56%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/ro.gif" title="Romania"/> <a href='/u/3219026'>Rohulk</a></td>
+<td>1404</td>
+<td>1020&nbsp&nbsp/&nbsp;&nbsp;21&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>215</td>
+<td>14</td>
+<td>1</td>
+<td>HD,HR</td>
+<td>
+<a onclick="reportscore(2146630175);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2149575334&m=0'>#23</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>44,291,090</td>
+<td>97.38%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/ca.gif" title="Canada"/> <a href='/u/2138739'>TrickMirror</a></td>
+<td>1456</td>
+<td>1002&nbsp&nbsp/&nbsp;&nbsp;38&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>202</td>
+<td>26</td>
+<td>2</td>
+<td>HD</td>
+<td>
+<a onclick="reportscore(2149575334);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132230475&m=0'>#24</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>43,594,790</td>
+<td>99.20%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/nl.gif" title="Netherlands"/> <a href='/u/2715937'>Menthuthuyoupi</a></td>
+<td>1473</td>
+<td>1030&nbsp&nbsp/&nbsp;&nbsp;11&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>218</td>
+<td>11</td>
+<td>1</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2132230475);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2133713389&m=0'>#25</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>43,013,260</td>
+<td>98.50%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/2477878'>Sheba</a></td>
+<td>1468</td>
+<td>1019&nbsp&nbsp/&nbsp;&nbsp;21&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>215</td>
+<td>14</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2133713389);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2149526683&m=0'>#26</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>42,862,180</td>
+<td>97.86%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/1704801'>surume yotyan</a></td>
+<td>1469</td>
+<td>1009&nbsp&nbsp/&nbsp;&nbsp;31&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>207</td>
+<td>22</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2149526683);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2142184058&m=0'>#27</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>42,840,620</td>
+<td>98.53%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/de.gif" title="Germany"/> <a href='/u/3468264'>Megure</a></td>
+<td>1466</td>
+<td>1021&nbsp&nbsp/&nbsp;&nbsp;16&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>216</td>
+<td>12</td>
+<td>3</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2142184058);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2135208974&m=0'>#28</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>42,716,300</td>
+<td>96.02%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/1243669'>yf_bmp</a></td>
+<td>1493</td>
+<td>981&nbsp&nbsp/&nbsp;&nbsp;57&nbsp;&nbsp;/&nbsp;&nbsp;3</td>
+<td>190</td>
+<td>38</td>
+<td>1</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2135208974);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2146905933&m=0'>#29</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>42,439,580</td>
+<td>97.65%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/nz.gif" title="New Zealand"/> <a href='/u/2997708'>Kysteria</a></td>
+<td>1465</td>
+<td>1006&nbsp&nbsp/&nbsp;&nbsp;34&nbsp;&nbsp;/&nbsp;&nbsp;1</td>
+<td>203</td>
+<td>25</td>
+<td>1</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2146905933);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2148480565&m=0'>#30</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>42,208,850</td>
+<td>97.04%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/ar.gif" title="Argentina"/> <a href='/u/2840499'>Enhu</a></td>
+<td>1467</td>
+<td>999&nbsp&nbsp/&nbsp;&nbsp;36&nbsp;&nbsp;/&nbsp;&nbsp;1</td>
+<td>200</td>
+<td>26</td>
+<td>6</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2148480565);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2133526505&m=0'>#31</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>42,195,980</td>
+<td>98.14%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/589550'>Mercurius</a></td>
+<td>1456</td>
+<td>1016&nbsp&nbsp/&nbsp;&nbsp;19&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>211</td>
+<td>16</td>
+<td>5</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2133526505);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2135184066&m=0'>#32</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>41,219,830</td>
+<td>89.97%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/1002066'>cynthia612</a></td>
+<td>1519</td>
+<td>888&nbsp&nbsp/&nbsp;&nbsp;143&nbsp;&nbsp;/&nbsp;&nbsp;11</td>
+<td>152</td>
+<td>70</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2135184066);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132052488&m=0'>#33</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>40,862,800</td>
+<td>94.47%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/358287'>PEPOTTI</a></td>
+<td>1474</td>
+<td>956&nbsp&nbsp/&nbsp;&nbsp;84&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>189</td>
+<td>39</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2132052488);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2142913564&m=0'>#34</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>39,970,490</td>
+<td>93.52%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/no.gif" title="Norway"/> <a href='/u/2332647'>Storegrisen</a></td>
+<td>1461</td>
+<td>943&nbsp&nbsp/&nbsp;&nbsp;91&nbsp;&nbsp;/&nbsp;&nbsp;7</td>
+<td>171</td>
+<td>54</td>
+<td>1</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2142913564);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2135851547&m=0'>#35</a>
+</td>
+<td><img src='/images/B_small.png'/></td>
+<td>39,585,770</td>
+<td>92.08%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/dk.gif" title="Denmark"/> <a href='/u/4324124'>TheWhiteFox</a></td>
+<td>1459</td>
+<td>920&nbsp&nbsp/&nbsp;&nbsp;117&nbsp;&nbsp;/&nbsp;&nbsp;3</td>
+<td>152</td>
+<td>75</td>
+<td>2</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2135851547);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2144441403&m=0'>#36</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>39,479,620</td>
+<td>97.76%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/kr.gif" title="South Korea"/> <a href='/u/1451035'>SilveRain</a></td>
+<td>1399</td>
+<td>1007&nbsp&nbsp/&nbsp;&nbsp;35&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>203</td>
+<td>27</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2144441403);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2134029267&m=0'>#37</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>39,458,490</td>
+<td>98.30%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/dk.gif" title="Denmark"/> <a href='/u/2533400'>Cerkie</a></td>
+<td>1400</td>
+<td>1018&nbsp&nbsp/&nbsp;&nbsp;18&nbsp;&nbsp;/&nbsp;&nbsp;2</td>
+<td>213</td>
+<td>14</td>
+<td>4</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2134029267);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132078244&m=0'>#38</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>39,108,250</td>
+<td>96.91%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/2627688'>HICCA</a></td>
+<td>1403</td>
+<td>998&nbsp&nbsp/&nbsp;&nbsp;32&nbsp;&nbsp;/&nbsp;&nbsp;7</td>
+<td>204</td>
+<td>19</td>
+<td>5</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2132078244);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2139264181&m=0'>#39</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>38,824,240</td>
+<td>90.85%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/3394580'>phtry</a></td>
+<td>1460</td>
+<td>900&nbsp&nbsp/&nbsp;&nbsp;138&nbsp;&nbsp;/&nbsp;&nbsp;4</td>
+<td>155</td>
+<td>72</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2139264181);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2140366681&m=0'>#40</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>38,459,343</td>
+<td>96.43%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/pl.gif" title="Poland"/> <a href='/u/2246417'>HKrecords_</a></td>
+<td>1345</td>
+<td>989&nbsp&nbsp/&nbsp;&nbsp;47&nbsp;&nbsp;/&nbsp;&nbsp;1</td>
+<td>196</td>
+<td>31</td>
+<td>5</td>
+<td>HD</td>
+<td>
+<a onclick="reportscore(2140366681);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2149468896&m=0'>#41</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>38,423,870</td>
+<td>90.02%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/2548503'>[PLA]</a></td>
+<td>1469</td>
+<td>890&nbsp&nbsp/&nbsp;&nbsp;136&nbsp;&nbsp;/&nbsp;&nbsp;16</td>
+<td>149</td>
+<td>71</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2149468896);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2132637866&m=0'>#42</a>
+</td>
+<td><img src='/images/B_small.png'/></td>
+<td>37,948,590</td>
+<td>89.68%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/th.gif" title="Thailand"/> <a href='/u/6502040'>Ene Chan</a></td>
+<td>1460</td>
+<td>884&nbsp&nbsp/&nbsp;&nbsp;149&nbsp;&nbsp;/&nbsp;&nbsp;5</td>
+<td>146</td>
+<td>75</td>
+<td>4</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2132637866);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2139741769&m=0'>#43</a>
+</td>
+<td><img src='/images/A_small.png'/></td>
+<td>37,680,130</td>
+<td>92.19%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/4507345'>Rosalie Lu</a></td>
+<td>1421</td>
+<td>922&nbsp&nbsp/&nbsp;&nbsp;112&nbsp;&nbsp;/&nbsp;&nbsp;8</td>
+<td>171</td>
+<td>55</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2139741769);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2146252286&m=0'>#44</a>
+</td>
+<td><img src='/images/S_small.png'/></td>
+<td>37,364,160</td>
+<td>94.18%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/us.gif" title="United States"/> <a href='/u/1375606'>Kirinya</a></td>
+<td>1396</td>
+<td>951&nbsp&nbsp/&nbsp;&nbsp;91&nbsp;&nbsp;/&nbsp;&nbsp;0</td>
+<td>177</td>
+<td>53</td>
+<td>0</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2146252286);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2134223789&m=0'>#45</a>
+</td>
+<td><img src='/images/B_small.png'/></td>
+<td>36,083,140</td>
+<td>89.28%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/jp.gif" title="Japan"/> <a href='/u/965360'>howhow777</a></td>
+<td>1421</td>
+<td>879&nbsp&nbsp/&nbsp;&nbsp;148&nbsp;&nbsp;/&nbsp;&nbsp;12</td>
+<td>143</td>
+<td>77</td>
+<td>3</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2134223789);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2139698034&m=0'>#46</a>
+</td>
+<td><img src='/images/B_small.png'/></td>
+<td>35,965,460</td>
+<td>90.82%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/1355695'>z980838928</a></td>
+<td>1408</td>
+<td>901&nbsp&nbsp/&nbsp;&nbsp;133&nbsp;&nbsp;/&nbsp;&nbsp;6</td>
+<td>152</td>
+<td>72</td>
+<td>2</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2139698034);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2150928079&m=0'>#47</a>
+</td>
+<td><img src='/images/B_small.png'/></td>
+<td>35,430,640</td>
+<td>90.95%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/ru.gif" title="Russian Federation"/> <a href='/u/2172718'>S1ntezpro</a></td>
+<td>1392</td>
+<td>903&nbsp&nbsp/&nbsp;&nbsp;130&nbsp;&nbsp;/&nbsp;&nbsp;8</td>
+<td>150</td>
+<td>73</td>
+<td>1</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2150928079);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2135670585&m=0'>#48</a>
+</td>
+<td><img src='/images/B_small.png'/></td>
+<td>35,189,673</td>
+<td>87.64%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/kr.gif" title="South Korea"/> <a href='/u/3737820'>Haruna Kumo</a></td>
+<td>1379</td>
+<td>853&nbsp&nbsp/&nbsp;&nbsp;175&nbsp;&nbsp;/&nbsp;&nbsp;11</td>
+<td>131</td>
+<td>90</td>
+<td>3</td>
+<td>HD</td>
+<td>
+<a onclick="reportscore(2135670585);">Report</a>
+</td>
+</tr>
+<tr class='row1p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2135851548&m=0'>#49</a>
+</td>
+<td><img src='/images/B_small.png'/></td>
+<td>34,108,700</td>
+<td>88.29%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cz.gif" title="Czech Republic"/> <a href='/u/3853840'>nuvasek</a></td>
+<td>1376</td>
+<td>865&nbsp&nbsp/&nbsp;&nbsp;156&nbsp;&nbsp;/&nbsp;&nbsp;18</td>
+<td>125</td>
+<td>93</td>
+<td>3</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2135851548);">Report</a>
+</td>
+</tr>
+<tr class='row2p'>
+<td>
+<a class='require-login' href='/web/osu-getreplay.php?c=2138876478&m=0'>#50</a>
+</td>
+<td><img src='/images/B_small.png'/></td>
+<td>33,246,170</td>
+<td>87.89%</td>
+<td><img class='flag' src="//s.ppy.sh/images/flags/cn.gif" title="China"/> <a href='/u/3383404'>OtakusRin</a></td>
+<td>1358</td>
+<td>855&nbsp&nbsp/&nbsp;&nbsp;179&nbsp;&nbsp;/&nbsp;&nbsp;7</td>
+<td>126</td>
+<td>97</td>
+<td>1</td>
+<td>None</td>
+<td>
+<a onclick="reportscore(2138876478);">Report</a>
+</td>
+</tr>
+</table>
+</div>
+<div id="disqus_thread" class='paddingboth' style='margin-top:10px'></div>
+<script type="text/javascript">
+    var disqus_shortname = 'osugame';
+    var disqus_identifier = 'beatmapset_430339';
+    var disqus_title = "Hatsuki Yura - Eclipse Parade (mapped by Vert) (Vert)";
+    var disqus_url = 'https://osu.ppy.sh/s/430339';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    var disqus_config = function () {
+        this.page.remote_auth_s3 = 'eyJpZCI6IjEiLCJ1c2VybmFtZSI6ImFub255bW91c19vbGQiLCJlbWFpbCI6bnVsbCwiYXZhdGFyIjoiaHR0cDpcL1wvYS5wcHkuc2hcLzEiLCJ1cmwiOiJodHRwOlwvXC9vc3UucHB5LnNoXC91XC8xIn0= 68e0b67e7d11b6b3acaf8e6bc8de7d63f93f6ba5 1469694620';
+        this.page.api_key = 'HRSbK42UYzbU4MhZKPAjNlSiZhteay3ZSzVCGORUE7jwsbfYQyvIKEPdb5Gn8nDz';
+    }
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<div class="clear"></div>
+<div id="google_translate_element"></div>
+</div>
+</div>
+</div>
+<div class="footer">
+</div>
+</div>
+</div>
+</div></div></div></div>
+<div class="final_footer">
+<div class='footer_columns'>
+<div class='centrep' style='opacity: 0.2'>ppy powered 2007-2016</div>
+<ul class='footer_column'>
+<li class='f_header'>General</li>
+<li><a href="/">Home</a></li>
+<li><a href="/p/changelog">Changelog</a></li>
+<li><a href="/p/beatmaplist">Beatmap Listing</a></li>
+<li><a href="/p/download">Download osu!</a></li>
+<li><a href="/wiki">Wiki</a></li>
+</ul>
+<ul class='footer_column'>
+<li class='f_header'>Help and Community</li>
+<li><a href="/wiki/FAQ">Frequently Asked Questions</a></li>
+<li><a href="/forum">Community Forums</a></li>
+<li><a href="/p/live">Live Streams</a></li>
+<li><a href="/forum/posting.php?mode=post&f=5">Report an Issue</a></li>
+</ul>
+<ul class='footer_column'>
+<li class='f_header'>Support osu!</li>
+<li><a href="/p/support">Supporter Tags</a></li>
+<li><a href="https://store.ppy.sh/">Merchandise</a></li>
+</ul>
+<ul class='footer_column'>
+<li class='f_header'>Legal & Status</li>
+<li><a href="/p/terms">Terms of Service</a></li>
+<li><a href="/p/copyright">Copyright (DMCA)</a></li>
+<li><a href="http://stat.ppy.sh">Server Status</a></li>
+<li><a href="http://twitter.com/osustatus">@osustatus</a></li>
+</ul>
+<div>Lost? Looking for something? Maybe need some <a href='https://osu.ppy.sh/wiki/Help_Center'>help</a>?</div>
+<form action="/p/search" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="007714945049801807819:fwdivvi5sik"/>
+<input type="hidden" name="cof" value="FORID:10"/>
+<input type="hidden" name="ie" value="UTF-8"/>
+<input type="text" name="q" size="20" class='footer_search'/>
+</div>
+</form>
+</div>
+</div>
+<script>var enchant = enchant || []</script>
+<script src="//platform.enchant.com" async></script>
+<div class="enchant-help-center" data-id="791f7b9c"></div>
+</body>
+</html>
