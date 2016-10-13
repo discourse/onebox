@@ -132,7 +132,7 @@ Adding Support for a new URL
        let(:html) { described_class.new(link).to_html }
 
        before do
-         fake(link, response("name.response"))
+         fake(link, response("name"))
        end
 
        it "has the video's title" do
