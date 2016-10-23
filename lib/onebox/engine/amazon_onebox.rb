@@ -43,6 +43,15 @@ module Onebox
           end
         end
 
+        # support for amazon instant video posters
+        if (main_image = raw.css("#aiv-imgpackshot-0")) && main_image.any?
+          raw_html_string = raw.to_s
+
+          images = raw_html_string.scan(/(?:#aiv-imgpackshot-0[^}]*(?:background-image:url\(([^\)]*)\)))/)
+
+          return images.last.first if images.any?
+        end
+
         if (landing_image = raw.css("#landingImage")) && landing_image.any?
           landing_image.first["src"]
         end
