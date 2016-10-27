@@ -267,7 +267,7 @@ module Onebox
       def image_html
         return @image_html if @image_html
 
-        return @image_html = "<img src=\"#{data[:image]}\">" if data[:image]
+        return @image_html = "<img src=\"#{data[:url]}\">" if data[:url]
 
         if data[:thumbnail_url]
           @image_html = "<img src=\"#{data[:thumbnail_url]}\""
