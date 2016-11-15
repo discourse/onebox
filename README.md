@@ -1,5 +1,5 @@
 onebox
-=======
+======
 
 [![Gem Version](https://badge.fury.io/rb/onebox.png)](https://rubygems.org/gems/onebox) [![Code Climate](https://codeclimate.com/github/dysania/onebox.png)](https://codeclimate.com/github/dysania/onebox) [![Build Status](https://travis-ci.org/dysania/onebox.png)](https://travis-ci.org/dysania/onebox) [![Dependency Status](https://gemnasium.com/dysania/onebox.png)](https://gemnasium.com/dysania/onebox) [![Coverage Status](https://coveralls.io/repos/dysania/onebox/badge.png)](https://coveralls.io/r/dysania/onebox)
 
@@ -181,8 +181,9 @@ The Whitedlisted Generic Onebox has some caveats for it's use, beyond simply whi
   2. The URL you're oneboxing cannot be a root url (e.g. `http://example.com` won't work, but `http://example.com/page` will)
   3. If the oneboxed URL responds with oEmbed and has a `rich` type: the `html` content must contain an `<iframe>`. Responses without an iframe will not be oneboxed.
 
+
 Supported Sites
-=======
+===============
 
 Onebox currently has support for page, image, and video URLs from these sites:
 
@@ -194,29 +195,46 @@ Onebox currently has support for page, image, and video URLs from these sites:
   - College Humor
   - Dailymotion
   - Dotsub
+  - Douban
   - Flickr
   - Funny or Die
+  - Giphy
   - GitHub
     - Blob
     - Commit
     - Gist
     - Pull Request
+  - Google apps
+    - Calendar
+    - Docs
+    - Maps
   - Hulu
   - Imgur
   - Kinomap
+  - Media files
+    - Audio (mp3, ogg, wav, m4a)
+    - Image (png, jpg, jpeg, gif, bmp, tif, tiff)
+    - Video (mov, mp4, webm, ogv)
   - NFB
   - Open Graph
+  - Pastebin
+  - Pubmed ([online paper](https://www.ncbi.nlm.nih.gov/pubmed))
   - Qik
   - Revision
   - Rotten Tomatoes
   - Slideshare
   - SmugMug
   - SoundCloud
-  - Stack Exchange
+  - Stack Exchange (and their other network site)
+  - Steam store
   - TED
   - Twitter
   - Wikipedia
+  - XKCD
   - yFrog
+  - youku
+  - Youtube
+  - and [other websites that support oEmbed or Open Graph](https://github.com/discourse/onebox/blob/master/lib/onebox/engine/whitelisted_generic_onebox.rb#L18)
 
 
 Installing
