@@ -3,7 +3,7 @@ module Onebox
     class ImageOnebox
       include Engine
 
-      matches_regexp /^(https?:)?\/\/.+\.(png|jpg|jpeg|gif|bmp|tif|tiff)(\?.*)?$/i
+      matches_regexp(/^(https?:)?\/\/.+\.(png|jpg|jpeg|gif|bmp|tif|tiff)(\?.*)?$/i)
 
       def always_https?
         WhitelistedGenericOnebox.host_matches(uri, WhitelistedGenericOnebox.https_hosts)
@@ -15,7 +15,8 @@ module Onebox
           @url.gsub!("https://www.dropbox.com","https://dl.dropboxusercontent.com")
         end
 
-        "<a href='#{@url}' target='_blank'><img src='#{@url}'></a>"
+        escaped = Onebox::Helpers.normalize_url_for_output(url)
+        "<a href='#{escaped}' target='_blank'><img src='#{escaped}'></a>"
       end
     end
   end

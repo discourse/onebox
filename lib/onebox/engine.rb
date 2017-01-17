@@ -21,17 +21,13 @@ module Onebox
 
     def options=(opt)
       return @options if opt.nil? #make sure options provided
-      if opt.instance_of? OpenStruct
-        @options = @options.merge(opt.to_h)
-      else
-       @options =  @options.merge(opt)
-      end
+      opt = opt.to_h  if opt.instance_of?(OpenStruct)
+      @options.merge!(opt)
       @options
     end
 
 
     def initialize(link, cache = nil, timeout = nil)
-
       @options = DEFAULT
       class_name = self.class.name.split("::").last.to_s
       self.options = Onebox.options[class_name] || {} #Set the engine options extracted from global options.
@@ -161,10 +157,20 @@ require_relative "engine/whitelisted_generic_onebox"
 require_relative "engine/pubmed_onebox"
 require_relative "engine/soundcloud_onebox"
 require_relative "engine/imgur_onebox"
-require_relative "engine/steam_store_widget_onebox"
 require_relative "engine/pastebin_onebox"
 require_relative "engine/slides_onebox"
 require_relative "engine/xkcd_onebox"
 require_relative "engine/giphy_onebox"
 require_relative "engine/gfycat_onebox"
 require_relative "engine/teamup_onebox"
+require_relative "engine/vimeo_onebox"
+require_relative "engine/steam_store_onebox"
+require_relative "engine/sketchfab_onebox"
+require_relative "engine/audioboom_onebox"
+require_relative "engine/replit_onebox"
+require_relative "engine/asciinema_onebox"
+require_relative "engine/mixcloud_onebox"
+require_relative "engine/bandcamp_onebox"
+require_relative "engine/coub_onebox"
+require_relative "engine/flickr_onebox"
+require_relative "engine/five_hundred_px_onebox"

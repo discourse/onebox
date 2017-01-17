@@ -8,6 +8,7 @@ require "moneta"
 require "cgi"
 require "net/http"
 require "digest"
+require "fast_blank"
 
 module Onebox
   DEFAULTS = {
@@ -32,8 +33,7 @@ module Onebox
   end
 
   def self.has_matcher?(url)
-    result = Matcher.new(url).oneboxed
-    !!result
+    !!Matcher.new(url).oneboxed
   end
 
   def self.options=(options)

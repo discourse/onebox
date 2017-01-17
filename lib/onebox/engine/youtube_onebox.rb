@@ -12,9 +12,9 @@ module Onebox
 
       def placeholder_html
         if video_id
-          "<img src='https://i.ytimg.com/vi/#{video_id}/hqdefault.jpg' width='#{WIDTH}' height='#{HEIGHT}'>"
+          "<img src='https://i.ytimg.com/vi/#{video_id}/hqdefault.jpg' width='#{WIDTH}' height='#{HEIGHT}' #{Helpers.title_attr(video_oembed_data)}>"
         elsif list_id
-          "<img src='#{list_thumbnail_url}' width='#{WIDTH}' height='#{HEIGHT}'>"
+          "<img src='#{list_thumbnail_url}' width='#{WIDTH}' height='#{HEIGHT}' #{Helpers.title_attr(list_oembed_data)}>"
         else
           to_html
         end
@@ -43,7 +43,6 @@ module Onebox
           # for channel pages
           html = Onebox::Engine::WhitelistedGenericOnebox.new(@url, @cache, @timeout).to_html
           return if Onebox::Helpers.blank?(html)
-          html.gsub!("http:", "https:")
           html.gsub!(/['"]\/\//, "https://")
           html
         end
@@ -51,9 +50,7 @@ module Onebox
 
       def video_title
         @video_title ||= begin
-          url = "https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v=#{video_id}"
-          data = Onebox::Helpers.symbolize_keys(::MultiJson.load(Onebox::Helpers.fetch_response(url).body))
-          data[:title]
+          video_oembed_data[:title]
         rescue
           nil
         end
@@ -92,6 +89,16 @@ module Onebox
           rescue
             nil
           end
+        end
+
+        def video_oembed_data
+          url = "https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v=#{video_id}"
+          Onebox::Helpers.symbolize_keys(::MultiJson.load(Onebox::Helpers.fetch_response(url).body))
+        end
+
+        def list_oembed_data
+          url = "https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/playlist?list=#{list_id}"
+          Onebox::Helpers.symbolize_keys(::MultiJson.load(Onebox::Helpers.fetch_response(url).body))
         end
 
         def embed_params

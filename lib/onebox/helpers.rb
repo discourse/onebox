@@ -4,14 +4,8 @@ module Onebox
       return {} if hash.nil?
 
       hash.inject({}){|result, (key, value)|
-        new_key = case key
-                  when String then key.to_sym
-                  else key
-                  end
-        new_value = case value
-                    when Hash then symbolize_keys(value)
-                    else value
-                    end
+        new_key = key.is_a?(String) ? key.to_sym : key
+        new_value = value.is_a?(Hash) ? symbolize_keys(value) : value
         result[new_key] = new_value
         result
       }
@@ -57,11 +51,29 @@ module Onebox
     end
 
     def self.blank?(value)
-      value.respond_to?(:empty?) ? !!value.empty? || !value[/\S/] : !value
+      if value.respond_to?(:blank?)
+        value.blank?
+      else
+        value.respond_to?(:empty?) ? !!value.empty? : !value
+      end
     end
 
     def self.truncate(string, length = 50)
-      string.size > length ? string[0..length] + "..." : string
+      string.size > length ? string[0...(string.rindex(" ", length)||length)] + "..." : string
     end
+
+    def self.title_attr(meta)
+      (meta && !blank?(meta[:title])) ? "title='#{CGI.escapeHTML(meta[:title])}'" : ""
+    end
+
+    def self.normalize_url_for_output(url)
+      url = url.dup
+      # expect properly encoded url, remove any unsafe chars
+      url.gsub!("'", "&apos;")
+      url.gsub!('"', "&quot;")
+      url.gsub!(/[^a-zA-Z0-9%\-`._~:\/?#\[\]@!$&'\(\)*+,;=]/, "")
+      url
+    end
+
   end
 end

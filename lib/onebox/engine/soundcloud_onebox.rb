@@ -4,7 +4,7 @@ module Onebox
       include Engine
       include StandardEmbed
 
-      matches_regexp(/^https?:\/\/.*soundcloud\.com/)
+      matches_regexp(/^https?:\/\/soundcloud\.com/)
       always_https
 
       def to_html
@@ -13,7 +13,7 @@ module Onebox
 
       def placeholder_html
         return if Onebox::Helpers.blank?(oembed_data[:thumbnail_url])
-        "<img src='#{oembed_data[:thumbnail_url]}'>"
+        "<img src='#{oembed_data[:thumbnail_url]}' #{Helpers.title_attr(oembed_data)}>"
       end
 
       private

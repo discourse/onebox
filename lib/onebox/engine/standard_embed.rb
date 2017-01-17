@@ -1,3 +1,5 @@
+require "cgi"
+
 module Onebox
   module Engine
     module StandardEmbed
@@ -20,9 +22,13 @@ module Onebox
 
       # Some oembed providers (like meetup.com) don't provide links to themselves
       add_oembed_provider(/www\.meetup\.com\//, 'http://api.meetup.com/oembed')
+      # In order to support Private Videos
+      add_oembed_provider(/vimeo\.com\//, 'https://vimeo.com/api/oembed.json')
+      # NYT requires login so use oembed only
+      add_oembed_provider(/nytimes\.com\//, 'https://www.nytimes.com/svc/oembed/json/')
 
       def always_https?
-        WhitelistedGenericOnebox.host_matches(uri, WhitelistedGenericOnebox.https_hosts)
+        WhitelistedGenericOnebox.host_matches(uri, WhitelistedGenericOnebox.https_hosts) || super
       end
 
       def raw
@@ -44,60 +50,73 @@ module Onebox
       protected
 
         def html_doc
-          return @html_doc if @html_doc
-          response = Onebox::Helpers.fetch_response(url)
-          @html_doc = Nokogiri::HTML(response.body)
+          @html_doc ||= Nokogiri::HTML(Onebox::Helpers.fetch_response(url).body) rescue nil
         end
 
         def get_oembed
-          application_json = html_doc.at("//link[@type='application/json+oembed']/@href")
-          oembed_url = application_json.value if application_json
+          oembed_url = nil
 
-          text_json = html_doc.at("//link[@type='text/json+oembed']/@href")
-          oembed_url ||= text_json.value if text_json
+          StandardEmbed.oembed_providers.each do |regexp, endpoint|
+            if url =~ regexp
+              oembed_url = "#{endpoint}?url=#{url}"
+              break
+            end
+          end
 
-          if Onebox::Helpers.blank?(oembed_url)
-            StandardEmbed.oembed_providers.each do |regexp, endpoint|
-              if url[regexp]
-                oembed_url = "#{endpoint}?url=#{url}"
-                break
-              end
+          if html_doc
+            if Onebox::Helpers.blank?(oembed_url)
+              application_json = html_doc.at("//link[@type='application/json+oembed']/@href")
+              oembed_url = application_json.value if application_json
+            end
+
+            if Onebox::Helpers.blank?(oembed_url)
+              text_json = html_doc.at("//link[@type='text/json+oembed']/@href")
+              oembed_url ||= text_json.value if text_json
             end
           end
 
           return {} if Onebox::Helpers.blank?(oembed_url)
 
-          Onebox::Helpers.symbolize_keys(::MultiJson.load(Onebox::Helpers.fetch_response(oembed_url).body))
-        rescue Errno::ECONNREFUSED, Net::HTTPError, MultiJson::LoadError
+          oe = Onebox::Helpers.symbolize_keys(::MultiJson.load(Onebox::Helpers.fetch_response(oembed_url).body))
+
+          # never use oembed from WordPress 4.4 (it's broken)
+          oe.delete(:html) if oe[:html] && oe[:html]["wp-embedded-content"]
+
+          oe
+        rescue Errno::ECONNREFUSED, Net::HTTPError, Net::HTTPFatalError, MultiJson::LoadError
           {}
         end
 
         def get_opengraph
+          return {} unless html_doc
+
           og = {}
 
           html_doc.css('meta').each do |m|
             if (m["property"] && m["property"][/^og:(.+)$/i]) || (m["name"] && m["name"][/^og:(.+)$/i])
               value = (m["content"] || m["value"]).to_s
-              og[$1.tr('-:','_').to_sym] ||= value unless Onebox::Helpers::blank?(value)
+              og[$1.tr('-:','_').to_sym] ||= CGI.escapeHTML(value) unless Onebox::Helpers::blank?(value)
             end
           end
 
           # Attempt to retrieve the title from the meta tag
           title_element = html_doc.at_css('title')
           if title_element && title_element.text
-            og[:title] ||= title_element.text unless Onebox::Helpers.blank?(title_element.text)
+            og[:title] ||= CGI.escapeHTML(title_element.text) unless Onebox::Helpers.blank?(title_element.text)
           end
 
           og
         end
 
         def get_twitter
+          return {} unless html_doc
+
           twitter = {}
 
           html_doc.css('meta').each do |m|
             if (m["property"] && m["property"][/^twitter:(.+)$/i]) || (m["name"] && m["name"][/^twitter:(.+)$/i])
               value = (m["content"] || m["value"]).to_s
-              twitter[$1.tr('-:','_').to_sym] ||= value unless Onebox::Helpers::blank?(value)
+              twitter[$1.tr('-:','_').to_sym] ||= CGI.escapeHTML(value) unless Onebox::Helpers::blank?(value)
             end
           end
 
