@@ -62,6 +62,7 @@ module Onebox
           foxnews.com
           funnyordie.com
           gfycat.com
+          gifs.com
           groupon.com
           howtogeek.com
           huffingtonpost.ca
