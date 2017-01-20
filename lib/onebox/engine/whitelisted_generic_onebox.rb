@@ -103,6 +103,7 @@ module Onebox
           speakerdeck.com
           spotify.com
           squidoo.com
+          streamable.com
           techcrunch.com
           ted.com
           thefreedictionary.com
