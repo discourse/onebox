@@ -7,6 +7,7 @@ module Onebox
     attr_reader :record
 
     def initialize(name, record)
+      super()
       @record = record
       self.template_name = name
       self.template_path = load_paths.last
