@@ -22,7 +22,9 @@ module Onebox
       end
 
       def to_html
-        iframe_url = @url.gsub('/app/', '/widget/')
+        # FIX: Steam widgets fail on extra paths and the Steam store has started added extra paths to app names
+        widget_id = /(?<=store.steampowered.com\/app)\/\d+/.match(@url)
+        iframe_url = "https://store.steampowered.com/widget#{widget_id}"
         escaped_src = ::Onebox::Helpers.normalize_url_for_output(iframe_url)
 
         <<-HTML
