@@ -16,7 +16,7 @@ end
 
 RSpec.configure do |config|
   config.before(:all) do
-    FakeWeb.allow_net_connect = false
+    FakeWeb.allow_net_connect = %r[^https?://coveralls.io]
   end
   config.include HTMLSpecHelper
 end
