@@ -1,5 +1,8 @@
 module Onebox
   module Helpers
+
+    class DownloadTooLarge < StandardError; end;
+
     def self.symbolize_keys(hash)
       return {} if hash.nil?
 
@@ -15,34 +18,92 @@ module Onebox
       html.gsub(/<[^>]+>/, ' ').gsub(/\n/, '')
     end
 
-    def self.fetch_response(location, limit = 5, domain = nil, headers = nil)
+    def self.fetch_response(location, limit=5, domain=nil, headers=nil)
       raise Net::HTTPError.new('HTTP redirect too deep', location) if limit == 0
 
       uri = URI(location)
       uri = URI("#{domain}#{location}") if !uri.host
 
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.open_timeout = Onebox.options.connect_timeout
-      http.read_timeout = Onebox.options.timeout
-      if uri.is_a?(URI::HTTPS)
-        http.use_ssl = true
-        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      result = StringIO.new
+      Net::HTTP.start(uri.host, uri.port, use_ssl: uri.is_a?(URI::HTTPS)) do |http|
+        http.open_timeout = Onebox.options.connect_timeout
+        http.read_timeout = Onebox.options.timeout
+        if uri.is_a?(URI::HTTPS)
+          http.use_ssl = true
+          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        end
+
+        request = Net::HTTP::Get.new(uri.request_uri, headers)
+        start_time = Time.now
+
+        size_bytes = Onebox.options.max_download_kb * 1024
+        http.request(request) do |response|
+
+          if cookie = response.get_fields('set-cookie')
+            header = { 'cookie' => cookie.join }
+          end
+
+          header = nil unless header.is_a? Hash
+
+          code = response.code.to_i
+          unless code === 200
+            response.error! unless [301, 302].include?(code)
+            return fetch_response(
+              response['location'],
+              limit - 1,
+              "#{uri.scheme}://#{uri.host}",
+              header
+            )
+          end
+
+          response.read_body do |chunk|
+            result.write(chunk)
+            raise DownloadTooLarge.new if result.size > size_bytes
+            raise Timeout::Error.new if (Time.now - start_time) > Onebox.options.timeout
+          end
+
+          return result.string
+        end
       end
+    end
 
-      response = http.request_get(uri.request_uri,headers)
+    def self.fetch_content_length(location)
+      uri = URI(location)
 
-      if cookie = response.get_fields('set-cookie')
-        header = { 'cookie' => cookie.join }
+      Net::HTTP.start(uri.host, uri.port, use_ssl: uri.is_a?(URI::HTTPS)) do |http|
+        http.open_timeout = Onebox.options.connect_timeout
+        http.read_timeout = Onebox.options.timeout
+        if uri.is_a?(URI::HTTPS)
+          http.use_ssl = true
+          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        end
+
+        http.request_head([uri.path, uri.query].join("?")) do |response|
+          code = response.code.to_i
+          unless code === 200 || response.header['content-length'].blank?
+            return nil
+          end
+          return response.header['content-length']
+        end
       end
+    end
 
-      header = nil unless header.is_a? Hash
+    def self.pretty_filesize(size)
+      conv = [ 'B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB' ];
+      scale = 1024;
 
-      case response
-        when Net::HTTPSuccess     then response
-        when Net::HTTPRedirection then fetch_response(response['location'], limit - 1, "#{uri.scheme}://#{uri.host}",header)
-        else
-          response.error!
+      ndx=1
+      if( size < 2*(scale**ndx)  ) then
+        return "#{(size)} #{conv[ndx-1]}"
       end
+      size=size.to_f
+      [2,3,4,5,6,7].each do |i|
+        if (size < 2*(scale**i)) then
+          return "#{'%.2f' % (size/(scale**(i-1)))} #{conv[i-1]}"
+        end
+      end
+      ndx=7
+      return "#{'%.2f' % (size/(scale**(ndx-1)))} #{conv[ndx-1]}"
     end
 
     def self.click_to_scroll_div(width = 690, height = 400)
@@ -71,7 +132,7 @@ module Onebox
       # expect properly encoded url, remove any unsafe chars
       url.gsub!("'", "&apos;")
       url.gsub!('"', "&quot;")
-      url.gsub!(/[^\w\-`._~:\/?#\[\]@!$&'\(\)*+,;=]/, "")
+      url.gsub!(/[^\w\-`.~:\/?#\[\]@!$&'\(\)*+,;=%]/, "")
       url
     end
 
