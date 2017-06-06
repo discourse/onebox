@@ -11,6 +11,7 @@ module Onebox
     attr_reader :view
 
     def initialize(name, record, cache)
+      super()
       @cache = cache
       @record = Onebox::Helpers.symbolize_keys(record)
 
