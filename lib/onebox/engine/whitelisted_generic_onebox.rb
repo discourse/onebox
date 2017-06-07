@@ -104,6 +104,7 @@ module Onebox
           spotify.com
           squidoo.com
           streamable.com
+          streamlike.com
           techcrunch.com
           ted.com
           thefreedictionary.com
