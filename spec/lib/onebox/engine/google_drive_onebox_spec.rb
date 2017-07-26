@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Onebox::Engine::YoutubeOnebox do
+describe Onebox::Engine::GoogleDriveOnebox do
   before do
     fake("https://drive.google.com/file/d/0Bz_47yXhlsjRRkluaTFjc09IaVU/view", response("googledrive-video"))
   end
