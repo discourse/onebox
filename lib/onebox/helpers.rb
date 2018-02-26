@@ -161,6 +161,8 @@ module Onebox
     def self.blank?(value)
       if value.respond_to?(:blank?)
         value.blank?
+      elsif value.respond_to?(:strip)
+        !!value.strip.empty?
       else
         value.respond_to?(:empty?) ? !!value.empty? : !value
       end
