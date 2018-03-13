@@ -82,7 +82,7 @@ module Onebox
           title = raw.at("h1#title")&.inner_text
           authors = raw.at_css('#byline_secondary_view_div') ? multiple_authors("//div[@id='byline_secondary_view_div']//span[@class='a-text-bold']") : raw.at("#byline")&.inner_text
           rating = raw.at("#averageCustomerReviews_feature_div .a-icon")&.inner_text || raw.at("#cmrsArcLink .a-icon")&.inner_text
-          description =  raw.at_css('#productDescription_fullView')&.inner_text
+          description = raw.at_css('#productDescription_fullView')&.inner_text
           table_xpath = "//div[@id='productDetails_secondary_view_div']//table[@id='productDetails_techSpec_section_1']"
           isbn = raw.xpath("#{table_xpath}//tr[8]//td").inner_text.strip
 
