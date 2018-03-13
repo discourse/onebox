@@ -41,7 +41,7 @@ module Onebox
 
     def self.fetch_html_doc(url, headers = nil)
       response = (fetch_response(url, nil, nil, headers) rescue nil)
-      doc = Nokogiri::HTML(response)
+      doc = Nokogiri::HTML(response.force_encoding("utf-8"))
 
       ignore_canonical = doc.at('meta[property="og:ignore_canonical"]')
       unless ignore_canonical && ignore_canonical['content'].to_s == 'true'
