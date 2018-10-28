@@ -1,0 +1,15 @@
+{{#image}}<img src='{{image}}' class='thumbnail'/>{{/image}}
+
+<h3><a href='{{link}}' target='_blank'>{{title}}</a></h3>
+<p>{{description}}</p>
+{{#request}}
+<p>
+<span>Created by <a href='{{author_link}}' target='_blank'>{{author_name}}</a></span>
+<span style='float:right;'>{{fuzzy_time}}</span>
+</p>
+{{/request}}
+{{#packages}}
+<p>
+<span><a href='https://software.opensuse.org/download.html?project={{project}}&package={{package}}' target='_blank'>Download package</a></span>
+</p>
+{{/packages}}

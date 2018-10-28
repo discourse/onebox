@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-4c5c2eea1610835f4e55fc37c28ed6ce2c6393f9e35c4af123e20d0678030f4b.ico" />
+
+    <title>Show server:dns / knot - openSUSE Build Service</title>
+
+    <link rel="stylesheet" media="screen" href="/assets/webui/application-8903a352bafa1cbe430b77c0a88c1f1d98c1197d9565960b74f26b70e7cbe2af.css" />
+    
+
+    <script src="/assets/webui/application-dd47eed4016907bdb62b26a359ff77de7d2332c731e249c4deda7383cc99d309.js"></script>
+    <script>
+//<![CDATA[
+
+      
+      var _paq = _paq || [];
+      $(function() {
+        
+  $("#advanced_tabs_trigger").click(function() {
+    $("#advanced_tabs").show();
+    $("#advanced_list_item").hide();
+  });
+        $('#files_table').dataTable({
+        'columns': [null, null, null, {'orderable': false}],
+        });
+
+          callPiwik();
+      });
+
+//]]>
+</script>
+    <link rel="alternate" type="application/rss+xml" title="News" href="/main/news.rss" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="hxe9N9AXZBwFrU43T27QpU5crjD+wgpRhHQ0JiY7UCOa3CDDvJ5jx0kxYYI4LrWKtAzMpLGPKIg9skkGyaJ/uw==" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    
+    <!-- Start: Header -->
+<div id='header'>
+<div class='container_12' id='header-content'>
+<a id="header-logo" href="/"><img class="icons-header-logo" alt="header-logo" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+<ul id='global-navigation'>
+<li id='item-downloads'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Downloads'>Downloads</a>
+</li>
+<li id='item-support'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Support'>Support</a>
+</li>
+<li id='item-community'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Community'>Community</a>
+</li>
+<li id='item-development'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Development'>Development</a>
+</li>
+</ul>
+<form id="global-search-form" class="label-overlay" action="/search?name=1&amp;package=1&amp;project=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="MfoaSTgynlS+plBWIxXsrVMtEE1XRgXZgKCPb/VQvdwsMYe9VLuZj/I6f+NUVYmCqX1y2RgLJwA5ZvJPGsmSRA==" />
+<div style='display: inline'>
+<label class='hidden' for='search'>Search</label>
+<input type="text" name="search_text" id="search" value="" />
+<input class='hidden' type='submit' value='Search'>
+</div>
+</form>
+
+
+</div>
+</div>
+
+
+    <div id="subheader" class="container_16">
+      <div id="breadcrump" class="grid_10 alpha">
+        <img title="Logo" class="icons-home_grey" alt="Logo" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /><a href="/">openSUSE Build Service</a>
+            &gt;
+                          <a href="/project/list_public">Projects</a>
+      </div>
+
+      <div class='grid_6 omega' style='text-align: right'>
+<a href="https://secure-www.novell.com/selfreg/jsp/createOpenSuseAccount.jsp?%22">Sign Up</a>
+|
+<a id="login-trigger" href="/session/new">Log In</a>
+<div id='login-form'>
+<form id="login_form" enctype="application/x-www-form-urlencoded" action="https://build.opensuse.org/ICSLogin/auth-up" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ziDJG2QGQVdCtKE1nPkhG73WkSvYRaDlnJY0JVrdC/PT61TvCI9GjA4ojoDruUQ0R4bzv5cIgjwlUEkFtUQkaw==" />
+<p>
+<input type="hidden" name="context" id="context" value="default" />
+<input type="hidden" name="proxypath" id="proxypath" value="reserve" />
+<input type="hidden" name="message" id="message" value="Please log in" />
+<input type="hidden" name="url" id="url" value="/package/show/server:dns/knot" />
+<label for="username">Username</label>
+<input type="text" name="username" id="username" value="" />
+</p>
+<p>
+<label for="password">Password</label>
+<input type="password" name="password" id="password" value="" />
+</p>
+<p><input type="submit" name="commit" value="Log In" onclick="fillEmptyFields();" data-disable-with="Log In" /></p>
+<p class='slim-footer'><a id="close-login" href="#">Cancel</a></p>
+</form>
+
+</div>
+</div>
+
+    </div>
+
+
+    <div class='container_16' id='flash-messages'>
+</div>
+
+
+      
+
+    <!-- this is needed for the delete confirm dialogues -->
+    <div id="dialog_wrapper" style="display: none"></div>
+
+    <!-- Start: Main Content Area -->
+    <div id="content" class="container_16 content-wrapper">
+        
+<div class="grid_16 alpha omega box box-shadow">
+  
+<div class="box-header header-tabs" id="package_tabs">
+  <ul>
+    <li id="tab-overview" class="selected"><a href="/package/show/server:dns/knot">Overview</a></li>
+      <li id="advanced_list_item"><a href="#" id="advanced_tabs_trigger">Advanced</a></li>
+  </ul>
+</div>
+
+  <div class="grid_10 alpha">
+    <h3 id="package_title">
+      Knot DNS
+    </h3>
+    <pre id="description-text" class="plain">Knot DNS is a high-performance authoritative DNS server implementation.</pre>
+  </div>
+  <div class="grid_6 omega">
+    <ul class="clean_list">
+
+        
+
+            <li>
+              <img title="" class="icons-information" alt="" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" />
+              Devel package for
+                  
+                  <a href="/package/show/openSUSE:Factory/knot">openSUSE:Factory</a>
+            </li>
+            <li>
+              <img title="" class="icons-information" alt="" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" />
+              1 <a data-remote="true" href="/package/linking_packages/server:dns/knot">derived packages</a>
+            </li>
+            <li>
+              <img title="" class="icons-package_link" alt="" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /> Links to
+              <a class="project" title="openSUSE:Factory" href="/project/show/openSUSE:Factory">openSUSE:Factory</a> / <a class="package" title="knot" href="/package/show/openSUSE:Factory/knot">knot</a>
+            </li>
+        <li>
+<img class="icons-application_get" alt="application_get" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" />
+<a href='https://software.opensuse.org//download.html?project=server%3Adns&amp;package=knot'>Download package</a>
+</li>
+
+</ul>  </div>
+
+  <div class="grid_16 alpha omega">
+      </div>
+</div>
+
+<div class="grid_10 alpha box box-shadow">
+  <h3>Source Files <img id="spinner_files" class="hidden" src="/assets/ajax-loader-43a526a07a078d736e5c9d67d8479dd54072b7e5c6ddd2cd466f86a086e49ef5.gif" />
+  <span style="font-size: small; font-weight: normal">
+      <a href="/package/show/server:dns/knot?expand=1">(show merged sources derived from linked package)</a>
+  </span>
+  </h3>
+          <table id="files_table" class="compact">
+      <thead>
+      <tr>
+        <th>Filename</th>
+        <th>Size</th>
+        <th>Changed</th>
+        <th style="width: 1%">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+          <tr id="file-_0001-loosen-openssl-dependency_patch">
+            <td>
+              <a href="/package/view_file/server:dns/knot/0001-loosen-openssl-dependency.patch?expand=0">0001-loosen-openssl-dependency.patch</a>
+            </td>
+            <td><span class="hidden">0000000620</span>620 Bytes
+            </td>
+            <td><span class="hidden">1448404702</span>almost 3 years ago
+            </td>
+            <!-- limit download for anonymous user to avoid getting killed by crawlers -->
+            <td><a href="/source/server:dns/knot/0001-loosen-openssl-dependency.patch?rev=b18555094c222a57c3b6902d8d92edd9"><img title="Download File" class="icons-page_white_put" alt="Download File" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+            </td>
+          </tr>
+          <tr id="file-_0002-make-configure_ac-compatible-with-old-tools_patch">
+            <td>
+              <a href="/package/view_file/server:dns/knot/0002-make-configure.ac-compatible-with-old-tools.patch?expand=0">0002-make-configure.ac-compatible-with-old-tools.p<wbr>atch</a>
+            </td>
+            <td><span class="hidden">0000000587</span>587 Bytes
+            </td>
+            <td><span class="hidden">1496653421</span>over 1 year ago
+            </td>
+            <!-- limit download for anonymous user to avoid getting killed by crawlers -->
+            <td><a href="/source/server:dns/knot/0002-make-configure.ac-compatible-with-old-tools.patch?rev=b18555094c222a57c3b6902d8d92edd9"><img title="Download File" class="icons-page_white_put" alt="Download File" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+            </td>
+          </tr>
+          <tr id="file-_link">
+            <td>
+              <a href="/package/view_file/server:dns/knot/_link?expand=0">_link</a>
+            </td>
+            <td><span class="hidden">0000000124</span>124 Bytes
+            </td>
+            <td><span class="hidden">1515876441</span>10 months ago
+            </td>
+            <!-- limit download for anonymous user to avoid getting killed by crawlers -->
+            <td><a href="/source/server:dns/knot/_link?rev=b18555094c222a57c3b6902d8d92edd9"><img title="Download File" class="icons-page_white_put" alt="Download File" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+            </td>
+          </tr>
+          <tr id="file-knot-1_6_8_tar_xz">
+            <td>
+              knot-1.6.8.tar.xz
+            </td>
+            <td><span class="hidden">0000806748</span>788 KB
+            </td>
+            <td><span class="hidden">1486986984</span>over 1 year ago
+            </td>
+            <!-- limit download for anonymous user to avoid getting killed by crawlers -->
+            <td><a href="/source/server:dns/knot/knot-1.6.8.tar.xz?rev=b18555094c222a57c3b6902d8d92edd9"><img title="Download File" class="icons-page_white_put" alt="Download File" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+            </td>
+          </tr>
+          <tr id="file-knot-openssl-1_1__patch">
+            <td>
+              <a href="/package/view_file/server:dns/knot/knot-openssl-1.1+.patch?expand=0">knot-openssl-1.1+.patch</a>
+            </td>
+            <td><span class="hidden">0000011353</span>11.1 KB
+            </td>
+            <td><span class="hidden">1515653112</span>10 months ago
+            </td>
+            <!-- limit download for anonymous user to avoid getting killed by crawlers -->
+            <td><a href="/source/server:dns/knot/knot-openssl-1.1+.patch?rev=b18555094c222a57c3b6902d8d92edd9"><img title="Download File" class="icons-page_white_put" alt="Download File" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+            </td>
+          </tr>
+          <tr id="file-knot_changes">
+            <td>
+              <a href="/package/view_file/server:dns/knot/knot.changes?expand=0">knot.changes</a>
+            </td>
+            <td><span class="hidden">0000021289</span>20.8 KB
+            </td>
+            <td><span class="hidden">1515415208</span>10 months ago
+            </td>
+            <!-- limit download for anonymous user to avoid getting killed by crawlers -->
+            <td><a href="/source/server:dns/knot/knot.changes?rev=b18555094c222a57c3b6902d8d92edd9"><img title="Download File" class="icons-page_white_put" alt="Download File" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+            </td>
+          </tr>
+          <tr id="file-knot_conf">
+            <td>
+              <a href="/package/view_file/server:dns/knot/knot.conf?expand=0">knot.conf</a>
+            </td>
+            <td><span class="hidden">0000000178</span>178 Bytes
+            </td>
+            <td><span class="hidden">1341225722</span>over 6 years ago
+            </td>
+            <!-- limit download for anonymous user to avoid getting killed by crawlers -->
+            <td><a href="/source/server:dns/knot/knot.conf?rev=b18555094c222a57c3b6902d8d92edd9"><img title="Download File" class="icons-page_white_put" alt="Download File" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+            </td>
+          </tr>
+          <tr id="file-knot_service">
+            <td>
+              <a href="/package/view_file/server:dns/knot/knot.service?expand=0">knot.service</a>
+            </td>
+            <td><span class="hidden">0000000228</span>228 Bytes
+            </td>
+            <td><span class="hidden">1341225722</span>over 6 years ago
+            </td>
+            <!-- limit download for anonymous user to avoid getting killed by crawlers -->
+            <td><a href="/source/server:dns/knot/knot.service?rev=b18555094c222a57c3b6902d8d92edd9"><img title="Download File" class="icons-page_white_put" alt="Download File" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+            </td>
+          </tr>
+          <tr id="file-knot_spec">
+            <td>
+              <a href="/package/view_file/server:dns/knot/knot.spec?expand=0">knot.spec</a>
+            </td>
+            <td><span class="hidden">0000004610</span>4.5 KB
+            </td>
+            <td><span class="hidden">1515415210</span>10 months ago
+            </td>
+            <!-- limit download for anonymous user to avoid getting killed by crawlers -->
+            <td><a href="/source/server:dns/knot/knot.spec?rev=b18555094c222a57c3b6902d8d92edd9"><img title="Download File" class="icons-page_white_put" alt="Download File" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+</div>
+
+<div class="grid_6 omega box box-shadow">
+  <div class='box-header header-tabs'>
+<ul id='result_select_'>
+<li class='selected'>
+<a data-id='result_display__0' href='#' id='result_select_link__0'>Build Results</a>
+<img title="Reload" onclick="update_build_result_()" class="result_reload icons-reload" id="result_reload__0" alt="Reload" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" />
+<img id="result_spinner__0" src="/assets/ajax-loader-43a526a07a078d736e5c9d67d8479dd54072b7e5c6ddd2cd466f86a086e49ef5.gif" />
+</li>
+<li>
+<a data-id='result_display__1' href='#' id='result_select_link__1'>Rpmlint Results</a>
+<img title="Reload" onclick="update_rpmlint_result_()" class="result_reload icons-reload" id="result_reload__1" style="display: none" alt="Reload" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" />
+<img id="result_spinner__1" class="hidden" src="/assets/ajax-loader-43a526a07a078d736e5c9d67d8479dd54072b7e5c6ddd2cd466f86a086e49ef5.gif" />
+</li>
+</ul>
+</div>
+<div class='content-tabs'>
+<div class='content-tab' id='result_display__0'></div>
+<div class='content-tab hidden' id='result_display__1'></div>
+</div>
+<script>
+//<![CDATA[
+function update_rpmlint_result_() {
+  $('#result_spinner__1').show();
+  $('#result_reload__1').hide();
+  $.ajax({
+    url: '/package/rpmlint_result',
+    data: {'project': 'server:dns', 'package': 'knot', 'index': ''},
+    success: function(data) {
+      $('#result_display__1').html(data);
+    },
+    error: function(data) {
+      $('#result_display__1').html('<p>No rpmlint results available</p>');
+    },
+    complete: function(data) {
+      $('#result_spinner__1').hide();
+      if ($('#result_select_link__1').parent().hasClass('selected')) {
+        $('#result_reload__1').show();
+      }
+    }
+  });
+}
+
+update_rpmlint_result_();
+
+
+function update_build_result_() {
+  $('#result_spinner__0').show();
+  $('#result_reload__0').hide();
+  $.ajax({
+    url: '/package/buildresult',
+    data: {
+      'show_all': $('#show_all_').is(':checked'),
+      'project': 'server:dns', 'package': 'knot', 'index': ''
+    },
+    success: function(data) {
+      $('#result_display__0').html(data);
+    },
+    error: function(data) {
+      $('#result_display__0').html('<p>No build results available</p>');
+    },
+    complete: function(data) {
+      $('#result_spinner__0').hide();
+      if ($('#result_select_link__0').parent().hasClass('selected')) {
+        $('#result_reload__0').show();
+      }
+    }
+  });
+}
+
+update_build_result_();
+
+
+//]]>
+</script>
+</div>
+
+<div class="grid_16 box box-shadow alpha omega">
+  <h2 class="box-header">Comments for server:dns (0)</h2>
+  <div id="comments">
+    <div class='comments'>
+<div class='comment_new alpha omega'>
+<h3>
+Login required, please
+<a href="https://build.opensuse.org/session/new">login</a>
+or
+<a href="https://build.opensuse.org/user/register_user">signup</a>
+in order to comment
+</h3>
+
+</div>
+</div>
+
+  </div>
+</div>
+
+  <div class="dialog darkgrey_box hidden" id="package_branch_dialog">
+    <div class="box box-shadow">
+      <h2 class="box-header">Branch Confirmation</h2>
+      <div class="dialog-content branching-details">
+        <p><strong>Source</strong></p>
+        <p><a class="project" title="server:dns" href="/project/show/server:dns">server:dns</a> / <a class="package" title="knot" href="/package/show/server:dns/knot">knot</a></p>
+        <p><strong>Destination</strong></p>
+        <p>home:_nobody_:branches:server:dns</p>
+        <p><a data-target="#branching-options" data-hidetext="[-] Hide options" data-showtext="[+] More options" class="show-hide">[+] More options</a></p>
+      </div>
+
+      <form action="/package/branch" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="MAi2nUS80mm9+x+bBjrV6kIgaqnap28SM4+gt3e0LSEtwytpKDXVsvFnMC5xerDFuHAIPZXqTcuKSd2XmC0CuQ==" />
+        <div id="branching-options" class="hidden branching-details">
+          <input type="hidden" name="linked_project" id="linked_project" value="server:dns" />
+          <input type="hidden" name="linked_package" id="linked_package" value="knot" />
+          <p>
+<strong>Change Branch Destination</strong>
+</p>
+<p>
+<label for='target_project'>
+<strong>Branch project name</strong>
+</label>
+<input type="text" name="target_project" id="target_project" value="home:_nobody_:branches:server:dns" size="80" maxlength="200" />
+</p>
+<p>
+<label for='target_package'>
+<strong>Branch package name</strong>
+</label>
+<input type="text" name="target_package" id="target_package" value="knot" size="80" maxlength="200" />
+</p>
+<p>
+<input type="checkbox" name="current_revision" id="current_revision" value="false" />
+<label for='current_revision'>Stay on this revision</label>
+(#90)
+<input type="hidden" name="revision" id="revision" value="90" />
+</p>
+<p>
+<input id='disable-autocleanup' type='checkbox'>
+<label for='disable-autocleanup'>Disable Autocleanup</label>
+</p>
+<input type="hidden" name="autocleanup" id="autocleanup" value="true" />
+<script>
+  $("#disable-autocleanup").click(function(){
+    $("#autocleanup").val($("#disable-autocleanup").prop("checked") ? "false" : "true");
+  });
+</script>
+
+        </div>
+
+        <div class="dialog-buttons">
+          <a title="Close" class="close-dialog" data-target="#package_branch_dialog" href="#">Cancel</a>
+          <input type="submit" name="commit" value="Ok" data-disable-with="Ok" />
+        </div>
+</form>    </div>
+  </div>
+
+
+    </div>
+    <!-- End: Main Content Area -->
+
+    <div style="clear: both;"></div>
+
+    <div id="footer" class="container_12">
+
+      <div class="grid_3">
+        <strong class="grey-medium spacer1">Locations</strong>
+        <ul>
+          <li><a href="/project">Projects</a></li>
+          <li><a class="search-link" href="/search">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="grid_3">
+        <strong class="grey-medium spacer1">Help</strong>
+        <ul>
+              <li><a href="http://openbuildservice.org/">Open Build Service</a></li>
+              <li><a href="http://openbuildservice.org/help/manuals/">OBS Manuals</a></li>
+              <li><a href="http://en.opensuse.org/Portal:Build_service">openSUSEs OBS Portal</a></li>
+              <li><a href="http://openbuildservice.org/support/">Reporting a Bug</a></li>
+        </ul>
+      </div>
+
+      <div class="grid_3">
+        <strong class="grey-medium spacer1">Contact</strong>
+        <ul>
+               <li><a href="http://lists.opensuse.org/opensuse-buildservice/">Mailing List</a></li>
+               <li><a href="http://forums.opensuse.org/forumdisplay.php/692-Open-Build-Service-%28OBS%29">Forums</a></li>
+               <li><a href="irc://irc.opensuse.org/opensuse-buildservice">Chat (IRC)</a></li>
+               <li><a href="http://twitter.com/OBShq">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <div id="footer-legal" class="grid_12">
+        <p>
+          <a href="http://openbuildservice.org">Open Build Service (OBS)</a> is an <a href="http://www.opensuse.org">openSUSE project</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

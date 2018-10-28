@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-4c5c2eea1610835f4e55fc37c28ed6ce2c6393f9e35c4af123e20d0678030f4b.ico" />
+
+    <title>Request 643996 - openSUSE Build Service</title>
+
+    <link rel="stylesheet" media="screen" href="/assets/webui/application-8903a352bafa1cbe430b77c0a88c1f1d98c1197d9565960b74f26b70e7cbe2af.css" />
+      <style type="text/css">
+        .CodeMirror {
+border-width: 0 0 0 0;
+width: 550px; 
+}
+
+      </style>
+    <script src="/assets/webui/application/cm2/index-diff-cf258bead085d1a524d23648f774c81222ed5ca750e84b06673b4f6e93c8a761.js"></script>
+
+    <script src="/assets/webui/application-dd47eed4016907bdb62b26a359ff77de7d2332c731e249c4deda7383cc99d309.js"></script>
+    <script>
+//<![CDATA[
+
+      
+      var _paq = _paq || [];
+      $(function() {
+        
+  $("#advanced_tabs_trigger").click(function() {
+    $("#advanced_tabs").show();
+    $("#advanced_list_item").hide();
+  });
+
+      setupActionLink();
+$('#expand_unbound_changes_diff_action_0_submit_0_0').hide();
+use_codemirror(1, true, 'diff');
+$('#collapse_root_anchor_diff_action_0_submit_0_1').hide();
+$('#collapse_root_key_diff_action_0_submit_0_2').hide();
+                  requestShowReview();
+
+          callPiwik();
+      });
+
+//]]>
+</script>
+    <link rel="alternate" type="application/rss+xml" title="News" href="/main/news.rss" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="QyXAAC6sDqp+rVixEYfqJeoqiXcS7dA7u9ayLRQ1D8Nlgli7W5hCI70NYgg4RizZMqht/9z6awsAFIO0FjXpdA==" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    
+    <!-- Start: Header -->
+<div id='header'>
+<div class='container_12' id='header-content'>
+<a id="header-logo" href="/"><img class="icons-header-logo" alt="header-logo" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+<ul id='global-navigation'>
+<li id='item-downloads'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Downloads'>Downloads</a>
+</li>
+<li id='item-support'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Support'>Support</a>
+</li>
+<li id='item-community'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Community'>Community</a>
+</li>
+<li id='item-development'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Development'>Development</a>
+</li>
+</ul>
+<form id="global-search-form" class="label-overlay" action="/search?name=1&amp;package=1&amp;project=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="7V+v7rp4IvEhBi/yVS9p2YExBLJXlS9kjo0GmrEm7i3L+DdVz0xueOKmFUt87q8lWbPgOpmClFQ1TzcDsyYImg==" />
+<div style='display: inline'>
+<label class='hidden' for='search'>Search</label>
+<input type="text" name="search_text" id="search" value="" />
+<input class='hidden' type='submit' value='Search'>
+</div>
+</form>
+
+
+</div>
+</div>
+
+
+    <div id="subheader" class="container_16">
+      <div id="breadcrump" class="grid_10 alpha">
+        <img title="Logo" class="icons-home_grey" alt="Logo" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /><a href="/">openSUSE Build Service</a>
+            &gt;
+                          Request 643996
+      </div>
+
+      <div class='grid_6 omega' style='text-align: right'>
+<a href="https://secure-www.novell.com/selfreg/jsp/createOpenSuseAccount.jsp?%22">Sign Up</a>
+|
+<a id="login-trigger" href="/session/new">Log In</a>
+<div id='login-form'>
+<form id="login_form" enctype="application/x-www-form-urlencoded" action="https://build.opensuse.org/ICSLogin/auth-up" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="5WddKNXUqOkkPENr5UQzTW0IysG7jezsUeIgOpI5XhPDwMWToODkYOecedLMhfWxtYouSXWaV9zqIBGjkDm4pA==" />
+<p>
+<input type="hidden" name="context" id="context" value="default" />
+<input type="hidden" name="proxypath" id="proxypath" value="reserve" />
+<input type="hidden" name="message" id="message" value="Please log in" />
+<input type="hidden" name="url" id="url" value="/request/show/643996" />
+<label for="username">Username</label>
+<input type="text" name="username" id="username" value="" />
+</p>
+<p>
+<label for="password">Password</label>
+<input type="password" name="password" id="password" value="" />
+</p>
+<p><input type="submit" name="commit" value="Log In" onclick="fillEmptyFields();" data-disable-with="Log In" /></p>
+<p class='slim-footer'><a id="close-login" href="#">Cancel</a></p>
+</form>
+
+</div>
+</div>
+
+    </div>
+
+
+    <div class='container_16' id='flash-messages'>
+</div>
+
+
+      
+
+    <!-- this is needed for the delete confirm dialogues -->
+    <div id="dialog_wrapper" style="display: none"></div>
+
+    <!-- Start: Main Content Area -->
+    <div id="content" class="container_16 content-wrapper">
+        
+<div id="request_navigation_box" style="position: absolute; right: 0.3em;">
+</div>
+
+<div class="grid_16 alpha omega box box-shadow">
+  
+<div class="box-header header-tabs">
+  <ul>
+    <li id="tab-overview" class="selected"><a href="/request/show/643996">Overview</a></li>
+  </ul>
+</div>
+
+  <div class="grid_10 alpha">
+    <h3>Request 643996 (new)</h3>
+    <pre id="description-text" class="plain">- Drop pre-rollover key 19036 from 2010, only leave 2017/2018 rollover
+  key 20326
+</pre>
+
+    <div class="grid_16 alpha omega">
+
+          </div>
+
+  </div>
+  <div class="grid_6 omega">
+    <ul class="clean_list">
+        <li><img class="icons-user_green" alt="user_green" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /> Created
+          by <a href="/user/show/dstoecker">dstoecker</a> <span title='2018-10-23 15:57 UTC' class='fuzzy-time'>5 days ago</span></li>
+        <li><img class="icons-information" alt="information" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /> In
+          state <a style="color: green;" href="/request/show/643996#request_history">new</a></li>
+        <li><img class="icons-eye" alt="eye" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /> 2 package maintainers
+          (<a class="show_dialog" data-target="#maintainers_dialog" href="#">show who</a>)</li>
+            <li><img title="" class="icons-information" alt="" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /> Supersedes
+                <a href="/request/show/642371">642371</a>
+            </li>
+</ul>  </div>
+</div>
+
+
+<div class="grid_16 alpha omega box-invisible">
+  <div class='grid_16 alpha omega box-invisible'>
+<div class='ui-state-info ui-corner-all ui-widget-shadow padding-10pt' id='request-supersedes-hint'>
+<span class='ui-icon ui-icon-info'>
+This request supersedes:
+<a href="/request/show/642371">request 642371</a>
+(<a href="/request/show/643996?diff_to_superseded=642371">Show diff</a>)
+</span>
+</div>
+</div>
+
+</div>
+
+<div class="grid_16 alpha omega box box-shadow">
+
+  <div class="box-header header-tabs">
+    <ul id="action_select">
+            <li class="selected">
+              <a class="action_select_link" id="action_select_link_0" href="#">Submit unbound</a>
+            </li>
+</ul>  </div>
+        <div class="action_display" style="" id="action_display_0">
+        <p>
+              <b>Submit
+                package <a class="project" title="home:dstoecker:oldos" href="/project/show/home:dstoecker:oldos">home:dstoecker:oldos</a> / <a class="package" title="unbound" href="/package/show/home:dstoecker:oldos/unbound">unbound</a> (<a class="package" title="11" href="/package/show/home:dstoecker:oldos/unbound?rev=11">revision 11</a>)
+                to
+                package <a class="project" title="server:dns" href="/project/show/server:dns">server:dns</a> / <a class="package" title="unbound" href="/package/show/server:dns/unbound">unbound</a>
+              </b>
+
+        </p>
+
+                <div class="grid_10 alpha">
+
+                      <div data-url="/request/sourcediff" id="diff_action_0_submit_0" class="table_wrapper "><table style='table-layout: fixed; width: 98%;'>
+<tbody>
+<tr id='diff_headline_unbound_changes_diff_action_0_submit_0_0'>
+<td style='width: 16px'>
+<a href='#' id='collapse_unbound_changes_diff_action_0_submit_0_0' onclick='collapse_expand(&#39;unbound_changes_diff_action_0_submit_0_0&#39;); return false;'>[-]</a>
+<a href='#' id='expand_unbound_changes_diff_action_0_submit_0_0' onclick='collapse_expand(&#39;unbound_changes_diff_action_0_submit_0_0&#39;); return false;'>[+]</a>
+</td>
+<td class='file_state_changed' style='width: 10%'>Changed</td>
+<td>
+<!--
+Most files don't exist when the package is linked, so keeping in mind the statement below don't even bother to try to show them
+-->
+<a href="/package/view_file/home:dstoecker:oldos/unbound/unbound.changes?rev=11">unbound.changes</a>
+</td>
+</tr>
+<tr id='diff_view_unbound_changes_diff_action_0_submit_0_0'>
+<td colspan='3'>
+<textarea id="editor_1" style="display: inline-block" class="editor" cols="0" rows="0">
+@@ -1,4 +1,10 @@&#x000A; -------------------------------------------------------------------&#x000A;+Tue Oct 16 17:47:13 UTC 2018 - Dirk Stoecker &lt;opensuse@dstoecker.de&gt;&#x000A;+&#x000A;+- Drop pre-rollover key 19036 from 2010, only leave 2017/2018 rollover&#x000A;+  key 20326&#x000A;+&#x000A;+-------------------------------------------------------------------&#x000A; Tue Oct 16 15:01:15 UTC 2018 - Karol Babioch &lt;kbabioch@suse.com&gt;&#x000A; &#x000A; - Removed intermediate certificates from certificate bundle (bsc#1112033)&#x000A;</textarea>
+
+</td>
+</tr>
+<tr id='diff_headline_root_anchor_diff_action_0_submit_0_1'>
+<td style='width: 16px'>
+<a href='#' id='collapse_root_anchor_diff_action_0_submit_0_1' onclick='collapse_expand(&#39;root_anchor_diff_action_0_submit_0_1&#39;); return false;'>[-]</a>
+<a href='#' id='expand_root_anchor_diff_action_0_submit_0_1' onclick='collapse_expand(&#39;root_anchor_diff_action_0_submit_0_1&#39;); return false;'>[+]</a>
+</td>
+<td class='file_state_changed' style='width: 10%'>Changed</td>
+<td>
+<!--
+Most files don't exist when the package is linked, so keeping in mind the statement below don't even bother to try to show them
+-->
+<a href="/package/view_file/home:dstoecker:oldos/unbound/root.anchor?rev=11">root.anchor</a>
+<span style='float: right'>
+<a href="/request/show/643996#diff_headline_unbound_changes_diff_action_0_submit_0_0">^</a>
+</span>
+</td>
+</tr>
+<tr class='hidden' id='diff_view_root_anchor_diff_action_0_submit_0_1'>
+<td colspan='3' data-mode='diff' data-uid='2' id='diff_view_root_anchor_diff_action_0_submit_0_1_placeholder'>@@ -1,2 +1,1 @@
+ .	172800	IN	DNSKEY	257 3 8 AwEAAaz/tAm8yTn4Mfeh5eyI96WSVexTBAvkMgJzkKTOiW1vkIbzxeF3+/4RgWOq7HrxRixHlFlExOLAJr5emLvN7SWXgnLh4+B5xQlNVz8Og8kvArMtNROxVQuCaSnIDdD5LKyWbRd2n9WGe2R8PzgCmr3EgVLrjyBxWezF0jLHwVN8efS3rCj/EWgvIWgb9tarpVUDK/b58Da+sqqls3eNbuv7pr+eoZG+SrDK6nWeL3c6H5Apxz7LjVc1uTIdsIXxuOLYA4/ilBmSVIzuDWfdRUfhHdY6+cn8HFRm+2hM8AnXGXws9555KrUB5qihylGa8subX2Nn6UwNR1AkUTV74bU= ;{id = 20326 (ksk), size = 2048b}
+-.	98799	IN	DNSKEY	257 3 8 AwEAAagAIKlVZrpC6Ia7gEzahOR+9W29euxhJhVVLOyQbSEW0O8gcCjFFVQUTf6v58fLjwBd0YI0EzrAcQqBGCzh/RStIoO8g0NfnfL2MTJRkxoXbfDaUeVPQuYEhg37NZWAJQ9VnMVDxP/VHL496M/QZxkjf5/Efucp2gaDX6RS6CXpoY68LsvPVjR0ZSwzz1apAzvN9dlzEheX7ICJBBtuA6G3LQpzW5hOA2hzCTMjJPJ8LbqF6dsV6DoBQzgul0sGIcGOYl7OyQdXfZ57relSQageu+ipAdTTJ25AsRTAoub8ONGcLmqrAmRLKBP1dfwhYB4N7knNnulqQxA+Uk1ihz0= ;{id = 19036 (ksk), size = 2048b}
+</td>
+</tr>
+<tr id='diff_headline_root_key_diff_action_0_submit_0_2'>
+<td style='width: 16px'>
+<a href='#' id='collapse_root_key_diff_action_0_submit_0_2' onclick='collapse_expand(&#39;root_key_diff_action_0_submit_0_2&#39;); return false;'>[-]</a>
+<a href='#' id='expand_root_key_diff_action_0_submit_0_2' onclick='collapse_expand(&#39;root_key_diff_action_0_submit_0_2&#39;); return false;'>[+]</a>
+</td>
+<td class='file_state_changed' style='width: 10%'>Changed</td>
+<td>
+<!--
+Most files don't exist when the package is linked, so keeping in mind the statement below don't even bother to try to show them
+-->
+<a href="/package/view_file/home:dstoecker:oldos/unbound/root.key?rev=11">root.key</a>
+<span style='float: right'>
+<a href="/request/show/643996#diff_headline_root_anchor_diff_action_0_submit_0_1">^</a>
+</span>
+</td>
+</tr>
+<tr class='hidden' id='diff_view_root_key_diff_action_0_submit_0_2'>
+<td colspan='3' data-mode='diff' data-uid='3' id='diff_view_root_key_diff_action_0_submit_0_2_placeholder'>@@ -1,8 +1,7 @@
+ ; https://ftp.isc.org/isc/bind9/keys/9.11/bind.keys.v9_11
+ ; // The root key in bind format. This can be read by most tools, including
+ ; // named, unbound, et. For libunbound, use ub_ctx_trustedkeys() to load this
+-; // first key 19036 (2010), second key 20326 (key-rollover 2017/2018)
++; // key 20326 (key-rollover 2017/2018)
+ trusted-keys {
+-&quot;.&quot; 257 3 8 &quot;AwEAAagAIKlVZrpC6Ia7gEzahOR+9W29euxhJhVVLOyQbSEW0O8gcCjFFVQUTf6v58fLjwBd0YI0EzrAcQqBGCzh/RStIoO8g0NfnfL2MTJRkxoXbfDaUeVPQuYEhg37NZWAJQ9VnMVDxP/VHL496M/QZxkjf5/Efucp2gaDX6RS6CXpoY68LsvPVjR0ZSwzz1apAzvN9dlzEheX7ICJBBtuA6G3LQpzW5hOA2hzCTMjJPJ8LbqF6dsV6DoBQzgul0sGIcGOYl7OyQdXfZ57relSQageu+ipAdTTJ25AsRTAoub8ONGcLmqrAmRLKBP1dfwhYB4N7knNnulqQxA+Uk1ihz0=&quot;; // key id = 19036
+ &quot;.&quot; 257 3 8 &quot;AwEAAaz/tAm8yTn4Mfeh5eyI96WSVexTBAvkMgJzkKTOiW1vkIbzxeF3+/4RgWOq7HrxRixHlFlExOLAJr5emLvN7SWXgnLh4+B5xQlNVz8Og8kvArMtNROxVQuCaSnIDdD5LKyWbRd2n9WGe2R8PzgCmr3EgVLrjyBxWezF0jLHwVN8efS3rCj/EWgvIWgb9tarpVUDK/b58Da+sqqls3eNbuv7pr+eoZG+SrDK6nWeL3c6H5Apxz7LjVc1uTIdsIXxuOLYA4/ilBmSVIzuDWfdRUfhHdY6+cn8HFRm+2hM8AnXGXws9555KrUB5qihylGa8subX2Nn6UwNR1AkUTV74bU=&quot;; // key id = 20326
+ };
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+                </div>
+                <div class="grid_6 omega">
+                  <div class='box-header header-tabs'>
+<ul id='result_select_0'>
+<li class='selected'>
+<a data-id='result_display_0_0' href='#' id='result_select_link_0_0'>Build Results</a>
+<img title="Reload" onclick="update_build_result_0()" class="result_reload icons-reload" id="result_reload_0_0" alt="Reload" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" />
+<img id="result_spinner_0_0" src="/assets/ajax-loader-43a526a07a078d736e5c9d67d8479dd54072b7e5c6ddd2cd466f86a086e49ef5.gif" />
+</li>
+<li>
+<a data-id='result_display_0_1' href='#' id='result_select_link_0_1'>Rpmlint Results</a>
+<img title="Reload" onclick="update_rpmlint_result_0()" class="result_reload icons-reload" id="result_reload_0_1" style="display: none" alt="Reload" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" />
+<img id="result_spinner_0_1" class="hidden" src="/assets/ajax-loader-43a526a07a078d736e5c9d67d8479dd54072b7e5c6ddd2cd466f86a086e49ef5.gif" />
+</li>
+</ul>
+</div>
+<div class='content-tabs'>
+<div class='content-tab' id='result_display_0_0'></div>
+<div class='content-tab hidden' id='result_display_0_1'></div>
+</div>
+<script>
+//<![CDATA[
+function update_rpmlint_result_0() {
+  $('#result_spinner_0_1').show();
+  $('#result_reload_0_1').hide();
+  $.ajax({
+    url: '/package/rpmlint_result',
+    data: {'project': 'home:dstoecker:oldos', 'package': 'unbound', 'index': '0'},
+    success: function(data) {
+      $('#result_display_0_1').html(data);
+    },
+    error: function(data) {
+      $('#result_display_0_1').html('<p>No rpmlint results available</p>');
+    },
+    complete: function(data) {
+      $('#result_spinner_0_1').hide();
+      if ($('#result_select_link_0_1').parent().hasClass('selected')) {
+        $('#result_reload_0_1').show();
+      }
+    }
+  });
+}
+
+update_rpmlint_result_0();
+
+
+function update_build_result_0() {
+  $('#result_spinner_0_0').show();
+  $('#result_reload_0_0').hide();
+  $.ajax({
+    url: '/package/buildresult',
+    data: {
+      'show_all': $('#show_all_0').is(':checked'),
+      'project': 'home:dstoecker:oldos', 'package': 'unbound', 'index': '0'
+    },
+    success: function(data) {
+      $('#result_display_0_0').html(data);
+    },
+    error: function(data) {
+      $('#result_display_0_0').html('<p>No build results available</p>');
+    },
+    complete: function(data) {
+      $('#result_spinner_0_0').hide();
+      if ($('#result_select_link_0_0').parent().hasClass('selected')) {
+        $('#result_reload_0_0').show();
+      }
+    }
+  });
+}
+
+update_build_result_0();
+
+
+//]]>
+</script>
+                </div>
+      </div>
+</div>
+
+<div class="grid_16 alpha omega">
+  <div class="grid_10 alpha">
+          <div class="grid_10 box box-shadow alpha omega">
+            <h2 class="box-header">
+              <a class="supersed_comments_link">Show outdated comments</a>for superseded
+              <a href="/request/show/642371">request 642371</a>
+            </h2>
+            <div class="superseded_comments hidden">
+              <div class='comments'>
+<div class='comment thread_level_0'>
+<a href="/user/show/dstoecker">dstoecker</a>
+wrote
+<span class='comment_time'>
+<span title='2018-10-21 12:51 UTC' class='fuzzy-time'>7 days ago</span>
+</span>
+<p>Which bsc number?</p>
+
+
+<div class='comment_new hidden' id='reply_form_of_776448'>
+<form class="new_comment" id="new_comment" action="/comments" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><p>
+<input type="hidden" name="commentable_type" id="commentable_type" value="BsRequest" />
+<input type="hidden" name="commentable_id" id="commentable_id" value="1148184" />
+<input type="hidden" name="no_switch" id="no_switch" value="true" />
+<textarea onkeyup="sz(this);" onclick="sz(this);" class="comment_reply_body" id="reply_body_776448" placeholder="Comment Text" required="required" name="comment[body]" cols="80" rows="1"></textarea>
+<input value="776448" id="reply_parent_id_776448" type="hidden" name="comment[parent_id]" />
+</p>
+<p>
+<input type="submit" name="commit" value="Add reply" id="add_reply_776448" data-disable-with="Add reply" />
+</p>
+</form></div>
+
+</div>
+<div class='comment thread_level_1'>
+<a href="/user/show/MargueriteSu">MargueriteSu</a>
+wrote
+<span class='comment_time'>
+<span title='2018-10-23 12:54 UTC' class='fuzzy-time'>5 days ago</span>
+</span>
+<p><a href="https://build.opensuse.org/request/show/642277">https://build.opensuse.org/request/show/642277</a></p>
+
+<p>I saw you provided this update stack, and there&#39;s 2 bugzilla numbers mentioned there. I see those changelog items are similar, so I think maybe those bugs also take effect here.</p>
+
+
+<div class='comment_new hidden' id='reply_form_of_778176'>
+<form class="new_comment" id="new_comment" action="/comments" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><p>
+<input type="hidden" name="commentable_type" id="commentable_type" value="BsRequest" />
+<input type="hidden" name="commentable_id" id="commentable_id" value="1148184" />
+<input type="hidden" name="no_switch" id="no_switch" value="true" />
+<textarea onkeyup="sz(this);" onclick="sz(this);" class="comment_reply_body" id="reply_body_778176" placeholder="Comment Text" required="required" name="comment[body]" cols="80" rows="1"></textarea>
+<input value="778176" id="reply_parent_id_778176" type="hidden" name="comment[parent_id]" />
+</p>
+<p>
+<input type="submit" name="commit" value="Add reply" id="add_reply_778176" data-disable-with="Add reply" />
+</p>
+</form></div>
+
+</div>
+<div class='comment_new alpha omega'>
+<h3>
+Login required, please
+<a href="https://build.opensuse.org/session/new">login</a>
+or
+<a href="https://build.opensuse.org/user/register_user">signup</a>
+in order to comment
+</h3>
+
+</div>
+</div>
+
+            </div>
+          </div>
+
+    <div class="grid_10 box box-shadow alpha omega">
+      <h2 class="box-header">Comments for request 643996 (3)</h2>
+      <div id="comments">
+        <div class='comments'>
+<div class='comment thread_level_0'>
+<a href="/user/show/dstoecker">dstoecker</a>
+wrote
+<span class='comment_time'>
+<span title='2018-10-23 16:00 UTC' class='fuzzy-time'>5 days ago</span>
+</span>
+<p>The changes in <a href="https://build.opensuse.org/request/show/642277">https://build.opensuse.org/request/show/642277</a> were already solved for this package with this:</p>
+
+<p>Mon May 28 16:44:10 UTC 2018 - <a href="mailto:opensuse@dstoecker.de">opensuse@dstoecker.de</a></p>
+
+<ul>
+<li><p>add upcomming key rollover trust anchor</p></li>
+<li><p>make trust anchor files world readable - these files are open knowledge and will be used by other software packages</p></li>
+</ul>
+
+<p>Sadly nobody though about backporting this to existing systems as security fixes. And May was already late for that, it should have been done early 2017!</p>
+
+<p>This request is a followup to that one. Now the old keys are obsolete and can be dropped.</p>
+
+
+<div class='comment_new hidden' id='reply_form_of_778362'>
+<form class="new_comment" id="new_comment" action="/comments" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><p>
+<input type="hidden" name="commentable_type" id="commentable_type" value="BsRequest" />
+<input type="hidden" name="commentable_id" id="commentable_id" value="1153080" />
+<input type="hidden" name="no_switch" id="no_switch" value="true" />
+<textarea onkeyup="sz(this);" onclick="sz(this);" class="comment_reply_body" id="reply_body_778362" placeholder="Comment Text" required="required" name="comment[body]" cols="80" rows="1"></textarea>
+<input value="778362" id="reply_parent_id_778362" type="hidden" name="comment[parent_id]" />
+</p>
+<p>
+<input type="submit" name="commit" value="Add reply" id="add_reply_778362" data-disable-with="Add reply" />
+</p>
+</form></div>
+
+</div>
+<div class='comment thread_level_0'>
+<a href="/user/show/MargueriteSu">MargueriteSu</a>
+wrote
+<span class='comment_time'>
+<span title='2018-10-24 09:27 UTC' class='fuzzy-time'>4 days ago</span>
+</span>
+<p>..I mean, &quot;adjust for root KSK rollover (<a href='https://bugzilla.opensuse.org/show_bug.cgi?id=1112009'>bsc#1112009</a>, <a href='https://bugzilla.opensuse.org/show_bug.cgi?id=1004165'>bsc#1004165</a>)&quot;, we&#39;d better mention these BSC numbers in ubound.changes. I fully understand why you make this SR, but changelog is for the end users. They will just know something was dropped, but will not know why, then won&#39;t know it&#39;s worthable to update.</p>
+
+
+<div class='comment_new hidden' id='reply_form_of_779907'>
+<form class="new_comment" id="new_comment" action="/comments" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><p>
+<input type="hidden" name="commentable_type" id="commentable_type" value="BsRequest" />
+<input type="hidden" name="commentable_id" id="commentable_id" value="1153080" />
+<input type="hidden" name="no_switch" id="no_switch" value="true" />
+<textarea onkeyup="sz(this);" onclick="sz(this);" class="comment_reply_body" id="reply_body_779907" placeholder="Comment Text" required="required" name="comment[body]" cols="80" rows="1"></textarea>
+<input value="779907" id="reply_parent_id_779907" type="hidden" name="comment[parent_id]" />
+</p>
+<p>
+<input type="submit" name="commit" value="Add reply" id="add_reply_779907" data-disable-with="Add reply" />
+</p>
+</form></div>
+
+</div>
+<div class='comment thread_level_0'>
+<a href="/user/show/dstoecker">dstoecker</a>
+wrote
+<span class='comment_time'>
+<span title='2018-10-24 12:52 UTC' class='fuzzy-time'>4 days ago</span>
+</span>
+<p>Hmm unbound-anchor can regenerate the root.key. That sounds like a better way than packaging it. Probably packaging should be replaced by autogen anyway. With faster changes that&#39;s anyway broken.</p>
+
+
+<div class='comment_new hidden' id='reply_form_of_780075'>
+<form class="new_comment" id="new_comment" action="/comments" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><p>
+<input type="hidden" name="commentable_type" id="commentable_type" value="BsRequest" />
+<input type="hidden" name="commentable_id" id="commentable_id" value="1153080" />
+<input type="hidden" name="no_switch" id="no_switch" value="true" />
+<textarea onkeyup="sz(this);" onclick="sz(this);" class="comment_reply_body" id="reply_body_780075" placeholder="Comment Text" required="required" name="comment[body]" cols="80" rows="1"></textarea>
+<input value="780075" id="reply_parent_id_780075" type="hidden" name="comment[parent_id]" />
+</p>
+<p>
+<input type="submit" name="commit" value="Add reply" id="add_reply_780075" data-disable-with="Add reply" />
+</p>
+</form></div>
+
+</div>
+<div class='comment_new alpha omega'>
+<h3>
+Login required, please
+<a href="https://build.opensuse.org/session/new">login</a>
+or
+<a href="https://build.opensuse.org/user/register_user">signup</a>
+in order to comment
+</h3>
+
+</div>
+</div>
+
+      </div>
+    </div>
+
+    <div class="grid_10 alpha">
+      <div class="box box-shadow">
+        <div class="box-header header-tabs">
+          <p><i>There's nothing to be done right now</i></p>        </div>
+        <div class="review_descision_display" style="" id="review_descision_display_-1">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid_6 omega">
+    <div class="box box-shadow" id="request_history">
+      <h2 class="box-header">Request History</h2>
+      <table>
+  <tbody>
+    <!-- add a history item based on the request creation information -->
+    <tr>
+      <td class="nowrap" style="width: 1%;">
+        <img width="20" height="20" alt="Dirk Stoecker" src="https://www.gravatar.com/avatar/6b2ec66c6a7057e2d6744b539e7f8dda?s=20&amp;d=wavatar" /> <a href="/user/show/dstoecker">dstoecker</a>
+      </td>
+      <td>
+        <span style="color: black;">created request</span>
+      </td>
+      <td class="nowrap" style="width: 1%;">
+        <span class="hidden">1540310231</span>
+        <span title='2018-10-23 15:57 UTC' class='fuzzy-time'>5 days ago</span>
+      </td>
+    </tr>
+    <tr class="odd">
+      <td colspan="3" class="expandable_event_comment"><pre class="plain"><span data-toggle-id="toggle_sliced_text_154070411009525"><span>- Drop pre-rollover key 19036 from 2010, only le </span><a onclick="$(&quot;[data-toggle-id='toggle_sliced_text_154070411009525']&quot;).toggle();" href="javascript:void(0)">[+]</a></span><span data-toggle-id="toggle_sliced_text_154070411009525" style="display: none;"><span>- Drop pre-rollover key 19036 from 2010, only leave 2017/2018 rollover
+  key 20326
+ </span><a onclick="$(&quot;[data-toggle-id='toggle_sliced_text_154070411009525']&quot;).toggle();" href="javascript:void(0)">[-]</a></span></pre></td>
+    </tr>
+    <!-- and now everything from the history log -->
+  </tbody>
+</table>
+
+    </div>
+  </div>
+</div>
+
+   <div id="maintainers_dialog" class="dialog darkgrey_box hidden">
+    <div class="box box-shadow">
+      <h2 class="box-header">2 Package Maintainers</h2>
+      <div class="dialog-content">
+        <table>
+          <tbody>
+          <tr>
+            <td>
+              <img width="20" height="20" alt="Darin Perusich" src="https://www.gravatar.com/avatar/25983f2ffe32e6632742b50c1a959c8b?s=20&amp;d=wavatar" /> <a href="/user/show/deadpoint">deadpoint</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img width="20" height="20" alt="Michael Ströder" src="https://www.gravatar.com/avatar/022a482927e713146ced675bb5399746?s=20&amp;d=wavatar" /> <a href="/user/show/stroeder">stroeder</a>
+            </td>
+          </tr>
+          </tbody>
+         </table>
+
+        <div class="dialog-buttons">
+          <a title="Close" class="close-dialog" data-target="#maintainers_dialog" href="#">close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    </div>
+    <!-- End: Main Content Area -->
+
+    <div style="clear: both;"></div>
+
+    <div id="footer" class="container_12">
+
+      <div class="grid_3">
+        <strong class="grey-medium spacer1">Locations</strong>
+        <ul>
+          <li><a href="/project">Projects</a></li>
+          <li><a class="search-link" href="/search">Search</a></li>
+            <li><a href="/monitor">Status Monitor</a></li>
+        </ul>
+      </div>
+
+      <div class="grid_3">
+        <strong class="grey-medium spacer1">Help</strong>
+        <ul>
+              <li><a href="http://openbuildservice.org/">Open Build Service</a></li>
+              <li><a href="http://openbuildservice.org/help/manuals/">OBS Manuals</a></li>
+              <li><a href="http://en.opensuse.org/Portal:Build_service">openSUSEs OBS Portal</a></li>
+              <li><a href="http://openbuildservice.org/support/">Reporting a Bug</a></li>
+        </ul>
+      </div>
+
+      <div class="grid_3">
+        <strong class="grey-medium spacer1">Contact</strong>
+        <ul>
+               <li><a href="http://lists.opensuse.org/opensuse-buildservice/">Mailing List</a></li>
+               <li><a href="http://forums.opensuse.org/forumdisplay.php/692-Open-Build-Service-%28OBS%29">Forums</a></li>
+               <li><a href="irc://irc.opensuse.org/opensuse-buildservice">Chat (IRC)</a></li>
+               <li><a href="http://twitter.com/OBShq">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <div id="footer-legal" class="grid_12">
+        <p>
+          <a href="http://openbuildservice.org">Open Build Service (OBS)</a> is an <a href="http://www.opensuse.org">openSUSE project</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-4c5c2eea1610835f4e55fc37c28ed6ce2c6393f9e35c4af123e20d0678030f4b.ico" />
+
+    <title>Home of dstoecker - openSUSE Build Service</title>
+
+    <link rel="stylesheet" media="screen" href="/assets/webui/application-8903a352bafa1cbe430b77c0a88c1f1d98c1197d9565960b74f26b70e7cbe2af.css" />
+    
+
+    <script src="/assets/webui/application-dd47eed4016907bdb62b26a359ff77de7d2332c731e249c4deda7383cc99d309.js"></script>
+    <script>
+//<![CDATA[
+
+      var mainProjects = [ ['server:search', 'Websearch engines and tools'],
+['filesharing', 'Filesharing applications'],
+['devel:languages:perl', 'perl modules'],
+['science', 'Software for Scientists and Engineers'],
+['Application:Geo', 'Applications related to the earth (GIS, Mapping, geodesy, GPS, astronomy)'],
+['games', 'openSUSE Games'],
+['graphics', 'Graphics Project'],
+['devel:ARM:Factory:Contrib:RaspberryPi', 'RaspberryPi specific contributions'],
+['editors', 'Text editors and hex editors for Linux'],
+['X11:Utilities', 'X11 Utilities'],
+['Documentation:Tools', 'SUSE Documentation Tools'],
+['devel:ARM:13.1:Contrib:RaspberryPi', 'openSUSE 13.1 for RaspberryPi'],
+['games:tools', 'Tools for Gamers'],
+['home:dstoecker', 'Dirk Stoecker\&#39;s Home Project'],
+['devel:ARM:13.2:Contrib:RaspberryPi', 'RaspberryPi Specific blobs'],
+['devel:languages:D', 'The D programming language'],
+['server:php:applications', 'PHP libraries and applications'],
+['home:dstoecker:base', 'Base build project definitions'],
+['home:dstoecker:oldos', 'Rebuilding for old OS'],
+['home:dstoecker:openssl', 'Rebuilding for old OS'] ];
+var exclProjects = [];
+
+      var _paq = _paq || [];
+      $(function() {
+        var ipackages = [  ['trac', 'devel:tools:scm'],
+['trac-plugin-accountmanager', 'devel:tools:scm'],
+['trac-plugin-iniadmin', 'devel:tools:scm'],
+['trac-plugin-nevernotifyupdater', 'devel:tools:scm'],
+['trac-plugin-spamfilter', 'devel:tools:scm'],
+['trac-plugin-iniadminpanel', 'devel:tools:scm'],
+['cutecom', 'devel:tools'],
+['sersniff', 'devel:tools'],
+['libcgic', 'server:http'],
+['cutecom-qt3', 'KDE:KDE3'],
+['moxa', 'hardware'],
+['trac-plugin-stats', 'devel:tools:scm'],
+['trac-plugin-wikiprint', 'devel:tools:scm'],
+['thrift', 'devel:tools'],
+['trac-plugin-advancedticketworkflow', 'devel:tools:scm'],
+['trac-plugin-navadd', 'devel:tools:scm'],
+['R-shinyIncubator', 'devel:languages:R:released'],
+['R-shinyRGL', 'devel:languages:R:released'],
+['trac-plugin-migrate', 'devel:tools:scm'],
+['dcc', 'server:mail'],
+['hash-slinger', 'server:dns'],
+['cutecom-qt4', 'devel:tools'],
+['python-Genshi', 'devel:tools:scm'],
+['tracebox', 'network:utilities'],
+['opendmarc', 'server:mail'],
+['ghpsdr3-alex', 'hardware:sdr']];
+renderPackagesProjectsTable({packages: ipackages, length: 10, name: 'ipackages-wrapper'});
+renderProjectsTable(length=10);
+$('#excludefilter').change(renderProjectsTable);
+$( "#involved" ).tabs();
+
+          callPiwik();
+      });
+
+//]]>
+</script>
+    <link rel="alternate" type="application/rss+xml" title="News" href="/main/news.rss" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="dZzmS6Gs3fFu288GIoVUPJ5uyC57BW0w4vq8UXkQLMUWeYvJwCrrk4YRahqleWxbPr0cN06gjz+BhR+o9jqFcA==" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    
+    <!-- Start: Header -->
+<div id='header'>
+<div class='container_12' id='header-content'>
+<a id="header-logo" href="/"><img class="icons-header-logo" alt="header-logo" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /></a>
+<ul id='global-navigation'>
+<li id='item-downloads'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Downloads'>Downloads</a>
+</li>
+<li id='item-support'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Support'>Support</a>
+</li>
+<li id='item-community'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Community'>Community</a>
+</li>
+<li id='item-development'>
+<a href='http://en.opensuse.org/openSUSE:Browse#Development'>Development</a>
+</li>
+</ul>
+<form id="global-search-form" class="label-overlay" action="/search?name=1&amp;package=1&amp;project=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="mnrnaL2qnKcy4fUxW24Wp5GF6aNjzmHm81lpoUIMuSn5n4rq3CyqxdorUC3cki7AMVY9ulZrg+mQJspYzSYQnA==" />
+<div style='display: inline'>
+<label class='hidden' for='search'>Search</label>
+<input type="text" name="search_text" id="search" value="" />
+<input class='hidden' type='submit' value='Search'>
+</div>
+</form>
+
+
+</div>
+</div>
+
+
+    <div id="subheader" class="container_16">
+      <div id="breadcrump" class="grid_10 alpha">
+        <img title="Logo" class="icons-home_grey" alt="Logo" src="/assets/s-ef1955ae757c8b966c83248350331bd3a30f658ced11f387f8ebf05ab3368629.gif" /><a href="/">openSUSE Build Service</a>
+            &gt;
+                          Home of dstoecker
+      </div>
+
+      <div class='grid_6 omega' style='text-align: right'>
+<a href="https://secure-www.novell.com/selfreg/jsp/createOpenSuseAccount.jsp?%22">Sign Up</a>
+|
+<a id="login-trigger" href="/session/new">Log In</a>
+<div id='login-form'>
+<form id="login_form" enctype="application/x-www-form-urlencoded" action="https://build.opensuse.org/ICSLogin/auth-up" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="6TtHKhrmAST4uWekA22dRgUwgt8VwiWC82nRxgkE4kSK3iqoe2A3RhBzwriEkaUhpeNWxiBnx42QFnI/hi5L8Q==" />
+<p>
+<input type="hidden" name="context" id="context" value="default" />
+<input type="hidden" name="proxypath" id="proxypath" value="reserve" />
+<input type="hidden" name="message" id="message" value="Please log in" />
+<input type="hidden" name="url" id="url" value="/user/show/dstoecker" />
+<label for="username">Username</label>
+<input type="text" name="username" id="username" value="" />
+</p>
+<p>
+<label for="password">Password</label>
+<input type="password" name="password" id="password" value="" />
+</p>
+<p><input type="submit" name="commit" value="Log In" onclick="fillEmptyFields();" data-disable-with="Log In" /></p>
+<p class='slim-footer'><a id="close-login" href="#">Cancel</a></p>
+</form>
+
+</div>
+</div>
+
+    </div>
+
+
+    <div class='container_16' id='flash-messages'>
+</div>
+
+
+      
+
+    <!-- this is needed for the delete confirm dialogues -->
+    <div id="dialog_wrapper" style="display: none"></div>
+
+    <!-- Start: Main Content Area -->
+    <div id="content" class="container_16 content-wrapper">
+        <!-- user -->
+<div class='grid_4 alpha box box-shadow' id='userinfo'>
+<!-- avatar -->
+<img width="200" height="200" alt="Avatar" class="home-avatar" src="https://www.gravatar.com/avatar/6b2ec66c6a7057e2d6744b539e7f8dda?s=200&amp;d=wavatar" />
+<!-- info -->
+<h1>
+<span id='home-realname'>
+Dirk Stoecker
+<br>
+</span>
+<span id='home-username'>dstoecker</span>
+</h1>
+<!-- mail -->
+<!-- groups -->
+<!-- roles -->
+<p>Has the role</p>
+<ul>
+<li>User</li>
+</ul>
+<!-- beta -->
+<!-- edit -->
+</div>
+<div class='grid_12 omega box box-shadow'>
+<div id='involved'>
+<div class='box-header header-tabs'>
+<ul>
+<li>
+<a href='#ipackages' title='Packages that you are involved with'>Involved Packages</a>
+</li>
+<li>
+<a href='#iprojects' title='Projects that you are involved with'>Involved Projects</a>
+</li>
+<li>
+<a href='#iowned' title='Projects/Packages where you are responsible for the maintenance'>Owned Project/Packages</a>
+</li>
+</ul>
+</div>
+<div class='tab' id='ipackages'>
+<div data-url='/package/show/REPLACEPRJ/REPLACEPKG' id='ipackages-wrapper'>
+</div>
+</div>
+<div class='tab' id='iprojects'>
+<div data-url='/project/show/REPLACEIT' id='projects-table-wrapper'>
+</div>
+</div>
+<div class='tab' id='iowned'>
+<p>
+<i>
+dstoecker
+is not involved in any projects
+</i>
+</p>
+</div>
+</div>
+</div>
+
+    </div>
+    <!-- End: Main Content Area -->
+
+    <div style="clear: both;"></div>
+
+    <div id="footer" class="container_12">
+
+      <div class="grid_3">
+        <strong class="grey-medium spacer1">Locations</strong>
+        <ul>
+          <li><a href="/project">Projects</a></li>
+          <li><a class="search-link" href="/search">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="grid_3">
+        <strong class="grey-medium spacer1">Help</strong>
+        <ul>
+              <li><a href="http://openbuildservice.org/">Open Build Service</a></li>
+              <li><a href="http://openbuildservice.org/help/manuals/">OBS Manuals</a></li>
+              <li><a href="http://en.opensuse.org/Portal:Build_service">openSUSEs OBS Portal</a></li>
+              <li><a href="http://openbuildservice.org/support/">Reporting a Bug</a></li>
+        </ul>
+      </div>
+
+      <div class="grid_3">
+        <strong class="grey-medium spacer1">Contact</strong>
+        <ul>
+               <li><a href="http://lists.opensuse.org/opensuse-buildservice/">Mailing List</a></li>
+               <li><a href="http://forums.opensuse.org/forumdisplay.php/692-Open-Build-Service-%28OBS%29">Forums</a></li>
+               <li><a href="irc://irc.opensuse.org/opensuse-buildservice">Chat (IRC)</a></li>
+               <li><a href="http://twitter.com/OBShq">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <div id="footer-legal" class="grid_12">
+        <p>
+          <a href="http://openbuildservice.org">Open Build Service (OBS)</a> is an <a href="http://www.opensuse.org">openSUSE project</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
