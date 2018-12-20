@@ -272,7 +272,7 @@ module Onebox
       end
 
       def is_card?
-        data[:card] == 'player'
+        data[:card] == 'player' && data[:player] =~ URI::regexp
       end
 
       def is_article?
@@ -309,8 +309,10 @@ module Onebox
       end
 
       def card_html
+        escaped_url = ::Onebox::Helpers.normalize_url_for_output(data[:player])
+
         <<~RAW
-        <iframe src="#{data[:player]}"
+        <iframe src="#{escaped_url}"
                 width="#{data[:player_width] || "100%"}"
                 height="#{data[:player_height]}"
                 scrolling="no"
