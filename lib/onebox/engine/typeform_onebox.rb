@@ -16,6 +16,8 @@ module Onebox
       def to_html
         og = get_opengraph
         escaped_src = ::Onebox::Helpers.normalize_url_for_output(og[:url])
+        query_params = CGI::parse(URI::parse(escaped_src).query || '')
+        escaped_src = append_embed_param(escaped_src, query_params)
 
         <<-HTML
           <iframe src="#{escaped_src}"
@@ -25,6 +27,17 @@ module Onebox
                   frameborder="0">
           </iframe>
         HTML
+      end
+
+      private
+
+      def append_embed_param(src, query_params)
+        return src if query_params.has_key?('typeform-embed')
+
+        src.tap do |url_to_embed|
+          url_to_embed << '?' if query_params.empty?
+          url_to_embed << 'typeform-embed=embed-widget'
+        end
       end
     end
   end
