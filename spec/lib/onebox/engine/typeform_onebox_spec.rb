@@ -25,16 +25,25 @@ describe Onebox::Engine::TypeformOnebox do
     expect_to_have_embed_widget(query_params)
   end
 
-  def expect_to_have_embed_widget(query_params)
-    embed_widget_params = 'typeform-embed=embed-widget'
+  it 'Appends it to the end when there are other params present' do
+    raw_preview = Onebox.preview('https://basvanleeuwen1.typeform.com/to/NzdRpx?param1=value1').to_s
 
-    expect(query_params).to eq embed_widget_params
+    query_params = get_query_params(raw_preview)
+
+    expect_to_have_embed_widget(query_params)
+  end
+
+  def expect_to_have_embed_widget(query_params)
+    expected_widget_type = ['embed-widget']
+    current_widget_type = query_params.fetch('typeform-embed', [])
+
+    expect(current_widget_type).to eq expected_widget_type
   end
 
   def get_query_params(raw_preview)
     preview = Nokogiri::HTML::DocumentFragment.parse(raw_preview)
 
     form_url = preview.css('iframe').first['src']
-    URI::parse(form_url).query
+    CGI::parse(URI::parse(form_url).query || '')
   end
 end

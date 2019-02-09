@@ -29,7 +29,12 @@ module Onebox
         return escaped_src if query_params.has_key?('typeform-embed')
 
         escaped_src.tap do |src|
-          src << '?' if query_params.empty? && !src.end_with?('?')
+          if query_params.empty?
+            src << '?' unless src.end_with?('?')
+          else
+            src << '&'
+          end
+
           src << 'typeform-embed=embed-widget'
         end
       end
