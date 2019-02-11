@@ -9,7 +9,7 @@ module Onebox
       def to_html
         typeform_src = build_typeform_src
 
-        <<-HTML
+        <<~HTML
           <iframe src="#{typeform_src}"
                   width="100%"
                   height="600px"
@@ -28,15 +28,13 @@ module Onebox
 
         return escaped_src if query_params.has_key?('typeform-embed')
 
-        escaped_src.tap do |src|
-          if query_params.empty?
-            src << '?' unless src.end_with?('?')
-          else
-            src << '&'
-          end
-
-          src << 'typeform-embed=embed-widget'
+        if query_params.empty?
+          escaped_src << '?' unless escaped_src.end_with?('?')
+        else
+          escaped_src << '&'
         end
+
+        escaped_src << 'typeform-embed=embed-widget'
       end
     end
   end
