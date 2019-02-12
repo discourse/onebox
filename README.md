@@ -1,11 +1,9 @@
 onebox
-----------
+======
 
-  - [![Gem Version](https://badge.fury.io/rb/onebox.png)](https://rubygems.org/gems/onebox)
-  - [![Code Climate](https://codeclimate.com/github/dysania/onebox.png)](https://codeclimate.com/github/dysania/onebox)
-  - [![Build Status](https://travis-ci.org/discourse/onebox.png)](https://travis-ci.org/discourse/onebox)
-  - [![Dependency Status](https://gemnasium.com/discourse/onebox.png)](https://gemnasium.com/discourse/onebox)
-
+[![Gem Version](https://badge.fury.io/rb/onebox.png)](https://rubygems.org/gems/onebox)
+[![Code Climate](https://codeclimate.com/github/dysania/onebox.png)](https://codeclimate.com/github/dysania/onebox)
+[![Build Status](https://travis-ci.org/discourse/onebox.png)](https://travis-ci.org/discourse/onebox)
 
 Onebox is a library for turning media URLs into simple HTML previews of the resource.
 
@@ -19,7 +17,7 @@ It was originally created for [Discourse](http://discourse.org) but has since be
 extracted into this convenient gem for all to use!
 
 Usage
-=====
+-----
 
 Using onebox is fairly simple!
 First, make sure the library is required:
@@ -72,8 +70,15 @@ preview = Onebox.preview(url)
 "#{preview}" == preview.to_s #=> true
 ```
 
+Ruby Support
+------------
+
+The onebox library is supported on all "officially" supported versions of Ruby.
+
+This means you must be on Ruby 2.3 or above for it to work.
+
 Development Preview Interface
-=============================
+-----------------------------
 
 The onebox gem comes with a development server for previewing the results
 of your changes. You can run it by running `bundle exec rake server` after checking
@@ -84,7 +89,7 @@ make sure to hit CTRL-C and restart the server to try a code change out.
 
 
 Adding Support for a new URL
-============================
+----------------------------
 
   1. Check if the site supports [oEmbed](http://oembed.com/) or [Open Graph](https://developers.facebook.com/docs/opengraph/).
      If it does, you can probably get away with just whitelisting the URL in `Onebox::Engine::WhitelistedGenericOnebox` (see: [Whitelisted Generic Onebox caveats](#user-content-whitelisted-generic-onebox-caveats)).
@@ -177,9 +182,9 @@ Adding Support for a new URL
 
 
 Whitelisted Generic Onebox caveats
-==================================
+----------------------------------
 
-The Whitedlisted Generic Onebox has some caveats for it's use, beyond simply whitelisting the domain.
+The Whitelisted Generic Onebox has some caveats for it's use, beyond simply whitelisting the domain.
 
   1. The domain must be whitelisted
   2. The URL you're oneboxing cannot be a root url (e.g. `http://example.com` won't work, but `http://example.com/page` will)
@@ -187,7 +192,7 @@ The Whitedlisted Generic Onebox has some caveats for it's use, beyond simply whi
 
 
 Installing
-==========
+----------
 
 Add this line to your application's Gemfile:
 
@@ -203,13 +208,13 @@ Or install it yourself as:
 
 
 Issues / Discussion
-===================
+-------------------
 
 Discussion of the Onebox gem, its development and features should be done on
 [Discourse Meta](https://meta.discourse.org). 
 
 Contributing
-============
+------------
 
   1. Fork it
   2. Create your feature branch (`git checkout -b my-new-feature`)

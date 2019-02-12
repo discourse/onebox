@@ -1,17 +1,17 @@
 module Onebox
   module Helpers
 
-    class DownloadTooLarge < StandardError; end;
+    class DownloadTooLarge < StandardError; end
 
     def self.symbolize_keys(hash)
       return {} if hash.nil?
 
-      hash.inject({}){|result, (key, value)|
+      hash.inject({}) do |result, (key, value)|
         new_key = key.is_a?(String) ? key.to_sym : key
         new_value = value.is_a?(Hash) ? symbolize_keys(value) : value
         result[new_key] = new_value
         result
-      }
+      end
     end
 
     def self.clean(html)
@@ -24,9 +24,9 @@ module Onebox
       og = {}
 
       doc.css('meta').each do |m|
-        if (m["property"] && m["property"][/^og:(.+)$/i]) || (m["name"] && m["name"][/^og:(.+)$/i])
+        if (m["property"] && m["property"][/^(?:og|article|product):(.+)$/i]) || (m["name"] && m["name"][/^(?:og|article|product):(.+)$/i])
           value = (m["content"] || m["value"]).to_s
-          og[$1.tr('-:','_').to_sym] ||= value unless Onebox::Helpers::blank?(value)
+          og[$1.tr('-:', '_').to_sym] ||= value unless Onebox::Helpers::blank?(value)
         end
       end
 
@@ -39,7 +39,24 @@ module Onebox
       og
     end
 
-    def self.fetch_response(location, limit=nil, domain=nil, headers=nil)
+    def self.fetch_html_doc(url, headers = nil)
+      response = (fetch_response(url, nil, nil, headers) rescue nil)
+      doc = Nokogiri::HTML(response)
+
+      ignore_canonical = doc.at('meta[property="og:ignore_canonical"]')
+      unless ignore_canonical && ignore_canonical['content'].to_s == 'true'
+        # prefer canonical link
+        canonical_link = doc.at('//link[@rel="canonical"]/@href')
+        if canonical_link && "#{URI(canonical_link).host}#{URI(canonical_link).path}" != "#{URI(url).host}#{URI(url).path}"
+          response = (fetch_response(canonical_link, nil, nil, headers) rescue nil)
+          doc = Nokogiri::HTML(response) if response
+        end
+      end
+
+      doc
+    end
+
+    def self.fetch_response(location, limit = nil, domain = nil, headers = nil)
 
       limit ||= 5
       limit = Onebox.options.redirect_limit if limit > Onebox.options.redirect_limit
@@ -111,7 +128,7 @@ module Onebox
 
         http.request_head([uri.path, uri.query].join("?")) do |response|
           code = response.code.to_i
-          unless code === 200 || response.header['content-length'].blank?
+          unless code === 200 || Onebox::Helpers.blank?(response.header['content-length'])
             return nil
           end
           return response.header['content-length']
@@ -120,21 +137,21 @@ module Onebox
     end
 
     def self.pretty_filesize(size)
-      conv = [ 'B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB' ];
-      scale = 1024;
+      conv = [ 'B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB' ]
+      scale = 1024
 
-      ndx=1
-      if( size < 2*(scale**ndx)  ) then
-        return "#{(size)} #{conv[ndx-1]}"
+      ndx = 1
+      if (size < 2 * (scale**ndx)) then
+        return "#{(size)} #{conv[ndx - 1]}"
       end
-      size=size.to_f
-      [2,3,4,5,6,7].each do |i|
-        if (size < 2*(scale**i)) then
-          return "#{'%.2f' % (size/(scale**(i-1)))} #{conv[i-1]}"
+      size = size.to_f
+      [2, 3, 4, 5, 6, 7].each do |i|
+        if (size < 2 * (scale**i)) then
+          return "#{'%.2f' % (size / (scale**(i - 1)))} #{conv[i - 1]}"
         end
       end
-      ndx=7
-      return "#{'%.2f' % (size/(scale**(ndx-1)))} #{conv[ndx-1]}"
+      ndx = 7
+      return "#{'%.2f' % (size / (scale**(ndx - 1)))} #{conv[ndx - 1]}"
     end
 
     def self.click_to_scroll_div(width = 690, height = 400)
@@ -142,15 +159,17 @@ module Onebox
     end
 
     def self.blank?(value)
-      if value.respond_to?(:blank?)
-        value.blank?
+      if value.nil?
+        true
+      elsif String === value
+        value.empty? || !(/[[:^space:]]/ === value)
       else
         value.respond_to?(:empty?) ? !!value.empty? : !value
       end
     end
 
     def self.truncate(string, length = 50)
-      string.size > length ? string[0...(string.rindex(" ", length)||length)] + "..." : string
+      string.size > length ? string[0...(string.rindex(" ", length) || length)] + "..." : string
     end
 
     def self.title_attr(meta)
@@ -167,5 +186,19 @@ module Onebox
       url
     end
 
+    def self.get_absolute_image_url(src, url)
+      if src && !!(src =~ /^\/\//)
+        uri = URI(url)
+        src = "#{uri.scheme}:#{src}"
+      elsif src && src.match(/^https?:\/\//i).nil?
+        uri = URI(url)
+        src = if !src.start_with?("/") && uri.path.present?
+          "#{uri.scheme}://#{uri.host.sub(/\/$/, '')}#{uri.path.sub(/\/$/, '')}/#{src.sub(/^\//, '')}"
+        else
+          "#{uri.scheme}://#{uri.host.sub(/\/$/, '')}/#{src.sub(/^\//, '')}"
+        end
+      end
+      src
+    end
   end
 end

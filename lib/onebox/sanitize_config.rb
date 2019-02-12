@@ -4,16 +4,18 @@ class Sanitize
     HTTP_PROTOCOLS ||= ['http', 'https', :relative].freeze
 
     ONEBOX ||= freeze_config merge(RELAXED,
-      elements: RELAXED[:elements] + %w[audio embed iframe source video],
+      elements: RELAXED[:elements] + %w[audio embed iframe source video svg path],
 
       attributes: {
-        'a'      => RELAXED[:attributes]['a'] + %w(target),
-        'audio'  => %w[controls],
-        'embed'  => %w[height src type width],
+        'a' => RELAXED[:attributes]['a'] + %w(target),
+        'audio' => %w[controls],
+        'embed' => %w[height src type width],
         'iframe' => %w[allowfullscreen frameborder height scrolling src width],
         'source' => %w[src type],
-        'video'  => %w[controls height loop width],
-        'div'    => [:data], # any data-* attributes
+        'video' => %w[controls height loop width autoplay muted poster],
+        'path' => %w[d],
+        'svg' => ['aria-hidden', 'width', 'height', 'viewbox'],
+        'div' => [:data], # any data-* attributes
       },
 
       add_attributes: {
@@ -30,7 +32,7 @@ class Sanitize
           a_tag = env[:node]
           a_tag['href'] ||= '#'
           if a_tag['href'] =~ %r{^(?:[a-z]+:)?//}
-            a_tag['rel']    = 'nofollow noopener'
+            a_tag['rel'] = 'nofollow noopener'
           else
             a_tag.remove_attribute('target')
           end
@@ -38,10 +40,14 @@ class Sanitize
       ],
 
       protocols: {
-        'embed'  => { 'src' => HTTP_PROTOCOLS },
+        'embed' => { 'src' => HTTP_PROTOCOLS },
         'iframe' => { 'src' => HTTP_PROTOCOLS },
         'source' => { 'src' => HTTP_PROTOCOLS },
       },
+
+      css: {
+        properties: RELAXED[:css][:properties] + %w[--aspect-ratio]
+      }
     )
   end
 end

@@ -26,7 +26,6 @@ module Onebox
       @options
     end
 
-
     def initialize(link, cache = nil, timeout = nil)
       @options = DEFAULT
       class_name = self.class.name.split("::").last.to_s
@@ -82,13 +81,12 @@ module Onebox
     end
 
     def link
-      @url.gsub(/['\"&<>]/, {
+      @url.gsub(/['\"<>]/,
         "'" => '&#39;',
-        '&' => '&amp;',
         '"' => '&quot;',
         '<' => '&lt;',
         '>' => '&gt;',
-      })
+      )
     end
 
     def always_https?
@@ -163,7 +161,6 @@ require_relative "engine/slides_onebox"
 require_relative "engine/xkcd_onebox"
 require_relative "engine/giphy_onebox"
 require_relative "engine/gfycat_onebox"
-require_relative "engine/typeform_onebox"
 require_relative "engine/vimeo_onebox"
 require_relative "engine/steam_store_onebox"
 require_relative "engine/sketchfab_onebox"
@@ -183,3 +180,7 @@ require_relative "engine/twitch_video_onebox"
 require_relative "engine/trello_onebox"
 require_relative "engine/wechat_mp_onebox"
 require_relative "engine/cloudapp_onebox"
+require_relative "engine/wistia_onebox"
+require_relative "engine/instagram_onebox"
+require_relative "engine/gitlab_blob_onebox"
+require_relative "engine/google_photos_onebox"

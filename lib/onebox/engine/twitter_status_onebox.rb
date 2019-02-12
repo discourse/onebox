@@ -5,7 +5,7 @@ module Onebox
       include LayoutSupport
       include HTML
 
-      matches_regexp /^https?:\/\/(mobile\.|www\.)?twitter\.com\/.+?\/status(es)?\/\d+(\/(video|photo)\/\d?+)?+\/?$/
+      matches_regexp(/^https?:\/\/(mobile\.|www\.)?twitter\.com\/.+?\/status(es)?\/\d+(\/(video|photo)\/\d?+)?+(\/?\?.*)?\/?$/)
       always_https
 
       private
@@ -84,9 +84,27 @@ module Onebox
 
       def avatar
         if twitter_api_credentials_present?
-          access(:user, :profile_image_url_https)
+          access(:user, :profile_image_url_https).sub('normal', '400x400')
+        elsif twitter_data[:image]
+          twitter_data[:image]
+        end
+      end
+
+      def likes
+        if twitter_api_credentials_present?
+          count = access(:favorite_count).to_i
+          return count > 0 ? client.prettify_number(count) : nil
         else
-          twitter_data[:image].gsub!('400x400', 'normal') if twitter_data[:image]
+          raw.at_css(".request-favorited-popup").attr('data-compact-localized-count') rescue nil
+        end
+      end
+
+      def retweets
+        if twitter_api_credentials_present?
+          count = access(:retweet_count).to_i
+          return count > 0 ? client.prettify_number(count) : nil
+        else
+          raw.at_css(".request-retweeted-popup").attr('data-compact-localized-count') rescue nil
         end
       end
 
@@ -95,7 +113,9 @@ module Onebox
           tweet: tweet,
           timestamp: timestamp,
           title: title,
-          avatar: avatar }
+          avatar: avatar,
+          likes: likes,
+          retweets: retweets }
       end
     end
   end
