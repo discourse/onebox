@@ -1,4 +1,5 @@
 require "cgi"
+require "onebox/open_graph"
 
 module Onebox
   module Engine
@@ -98,7 +99,7 @@ module Onebox
       end
 
       def get_opengraph
-        ::Onebox::Helpers.extract_opengraph(html_doc)
+        @opengraph ||= ::Onebox::OpenGraph.new(html_doc)
       end
 
       def get_twitter

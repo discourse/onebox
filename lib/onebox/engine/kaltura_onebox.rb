@@ -9,20 +9,20 @@ module Onebox
 
       def preview_html
         og = get_opengraph
-        thumbnail_url = ::Onebox::Helpers.normalize_url_for_output(og[:image_secure_url])
+        thumbnail_url = ::Onebox::Helpers.normalize_url_for_output(og.image_secure_url)
 
         <<~HTML
-          <img src="#{thumbnail_url}" width="#{og[:video_width]}" height="#{og[:video_height]}" >
+          <img src="#{thumbnail_url}" width="#{og.video_width}" height="#{og.video_height}" >
         HTML
       end
 
       def to_html
         og = get_opengraph
-        embedded_video_url = ::Onebox::Helpers.normalize_url_for_output(og[:video_secure_url])
+        embedded_video_url = ::Onebox::Helpers.normalize_url_for_output(og.video_secure_url)
 
         <<~HTML
           <iframe src="#{embedded_video_url}"
-                  width="#{og[:video_width]}" height="#{og[:video_height]}"
+                  width="#{og.video_width}" height="#{og.video_height}"
                   frameborder='0'
                   allowfullscreen >
           </iframe>
