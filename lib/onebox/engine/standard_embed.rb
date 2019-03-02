@@ -42,7 +42,12 @@ module Onebox
 
         @raw = {}
 
-        og.each { |k, v| @raw[k] ||= v unless Onebox::Helpers::blank?(v) }
+        og.data.each do |k, v|
+          next if k == "title_attr"
+          v = og.send(k)
+          @raw[k] ||= v unless v.nil?
+        end
+
         twitter.each { |k, v| @raw[k] ||= v unless Onebox::Helpers::blank?(v) }
         oembed.each { |k, v| @raw[k] ||= v unless Onebox::Helpers::blank?(v) }
 

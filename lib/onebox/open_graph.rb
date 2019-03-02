@@ -1,11 +1,10 @@
 module Onebox
   class OpenGraph
 
-    attr_reader :doc, :og
+    attr_reader :data
 
     def initialize(doc)
-      @doc = doc
-      @og = extract
+      @data = extract(doc)
     end
 
     def title
@@ -42,9 +41,9 @@ module Onebox
     end
 
     def get(attr, length = nil)
-      return nil if Onebox::Helpers::blank?(og)
+      return nil if Onebox::Helpers::blank?(data)
 
-      value = og[attr]
+      value = data[attr]
 
       return nil if Onebox::Helpers::blank?(value)
 
@@ -58,25 +57,25 @@ module Onebox
       @html_entities ||= HTMLEntities.new
     end
 
-    def extract
-      return {} unless doc
+    def extract(doc)
+      return {} if Onebox::Helpers::blank?(doc)
 
-      og = {}
+      data = {}
 
       doc.css('meta').each do |m|
         if (m["property"] && m["property"][/^(?:og|article|product):(.+)$/i]) || (m["name"] && m["name"][/^(?:og|article|product):(.+)$/i])
           value = (m["content"] || m["value"]).to_s
-          og[$1.tr('-:', '_').to_sym] ||= value unless Onebox::Helpers::blank?(value)
+          data[$1.tr('-:', '_').to_sym] ||= value unless Onebox::Helpers::blank?(value)
         end
       end
 
       # Attempt to retrieve the title from the meta tag
       title_element = doc.at_css('title')
       if title_element && title_element.text
-        og[:title] ||= title_element.text unless Onebox::Helpers.blank?(title_element.text)
+        data[:title] ||= title_element.text unless Onebox::Helpers.blank?(title_element.text)
       end
 
-      og
+      data
     end
 
   end
