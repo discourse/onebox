@@ -11,4 +11,10 @@ describe Onebox::OpenGraph do
     expect(og.image).to eq("https://i.imgur.com/j1CNCZY.gif?noredirect")
   end
 
+  it "correctly normalizes the url properties" do
+    doc = Nokogiri::HTML("<html><meta property=\"og:image\" content=\"http://test.com/test'ing.mp3\" /></html>")
+    og = described_class.new(doc)
+    expect(og.image).to eq("http://test.com/test&apos;ing.mp3")
+  end
+
 end
