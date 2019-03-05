@@ -49,7 +49,11 @@ module Onebox
         end
 
         twitter.each { |k, v| @raw[k] ||= v unless Onebox::Helpers::blank?(v) }
-        oembed.each { |k, v| @raw[k] ||= v unless Onebox::Helpers::blank?(v) }
+        
+        oembed.data.each do |k, v|
+          v = oembed.send(k)
+          @raw[k] ||= v unless v.nil?
+        end
 
         favicon = get_favicon
         @raw["favicon".to_sym] = favicon unless Onebox::Helpers::blank?(favicon)
@@ -69,38 +73,7 @@ module Onebox
       end
 
       def get_oembed
-        oembed_url = nil
-
-        StandardEmbed.oembed_providers.each do |regexp, endpoint|
-          if url =~ regexp
-            oembed_url = "#{endpoint}?url=#{url}"
-            break
-          end
-        end
-
-        if html_doc
-          if Onebox::Helpers.blank?(oembed_url)
-            application_json = html_doc.at("//link[@type='application/json+oembed']/@href")
-            oembed_url = application_json.value if application_json
-          end
-
-          if Onebox::Helpers.blank?(oembed_url)
-            text_json = html_doc.at("//link[@type='text/json+oembed']/@href")
-            oembed_url ||= text_json.value if text_json
-          end
-        end
-
-        return {} if Onebox::Helpers.blank?(oembed_url)
-
-        json_response = Onebox::Helpers.fetch_response(oembed_url) rescue "{}"
-        oe = Onebox::Helpers.symbolize_keys(::MultiJson.load(json_response))
-
-        # never use oembed from WordPress 4.4 (it's broken)
-        oe.delete(:html) if oe[:html] && oe[:html]["wp-embedded-content"]
-
-        oe
-      rescue Errno::ECONNREFUSED, Net::HTTPError, Net::HTTPFatalError, MultiJson::LoadError
-        {}
+        @oembed ||= Onebox::Oembed.new(get_json_response)
       end
 
       def get_opengraph
@@ -129,6 +102,43 @@ module Onebox
         favicon = favicon.nil? ? nil : (favicon['href'].nil? ? nil : favicon['href'].strip)
 
         Onebox::Helpers::get_absolute_image_url(favicon, url)
+      end
+
+      def get_json_response
+        oembed_url = get_oembed_url
+
+        return "{}" if Onebox::Helpers.blank?(oembed_url)
+
+        Onebox::Helpers.fetch_response(oembed_url) rescue "{}"
+      rescue Errno::ECONNREFUSED, Net::HTTPError, Net::HTTPFatalError, MultiJson::LoadError
+        "{}"
+      end
+
+      protected
+
+      def get_oembed_url
+        oembed_url = nil
+
+        StandardEmbed.oembed_providers.each do |regexp, endpoint|
+          if url =~ regexp
+            oembed_url = "#{endpoint}?url=#{url}"
+            break
+          end
+        end
+
+        if html_doc
+          if Onebox::Helpers.blank?(oembed_url)
+            application_json = html_doc.at("//link[@type='application/json+oembed']/@href")
+            oembed_url = application_json.value if application_json
+          end
+
+          if Onebox::Helpers.blank?(oembed_url)
+            text_json = html_doc.at("//link[@type='text/json+oembed']/@href")
+            oembed_url ||= text_json.value if text_json
+          end
+        end
+
+        oembed_url
       end
     end
   end
