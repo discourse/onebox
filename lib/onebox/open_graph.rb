@@ -36,16 +36,6 @@ module Onebox
       end
     end
 
-    private
-
-    def integer_suffixes
-      ['width', 'height']
-    end
-
-    def url_suffixes
-      ['url', 'image', 'video']
-    end
-
     def get(attr, length = nil)
       return nil if Onebox::Helpers::blank?(data)
 
@@ -57,6 +47,16 @@ module Onebox
       value = Onebox::Helpers.truncate(value, length) unless length.nil?
 
       value
+    end
+
+    private
+
+    def integer_suffixes
+      ['width', 'height']
+    end
+
+    def url_suffixes
+      ['url', 'image', 'video']
     end
 
     def html_entities
