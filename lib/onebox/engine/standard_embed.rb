@@ -49,7 +49,7 @@ module Onebox
         end
 
         twitter.each { |k, v| @raw[k] ||= v unless Onebox::Helpers::blank?(v) }
-        
+
         oembed.data.each do |k, v|
           v = oembed.send(k)
           @raw[k] ||= v unless v.nil?
