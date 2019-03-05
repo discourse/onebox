@@ -15,6 +15,12 @@ module Onebox
       !title.nil? ? "title='#{title}'" : ""
     end
 
+    def get_secure_image
+      secure_link = URI(get(:image))
+      secure_link.scheme = 'https'
+      secure_link.to_s
+    end
+
     def method_missing(attr, *args, &block)
       value = get(attr, *args)
 
@@ -37,7 +43,7 @@ module Onebox
     end
 
     def url_suffixes
-      ['url', 'image']
+      ['url', 'image', 'video']
     end
 
     def get(attr, length = nil)

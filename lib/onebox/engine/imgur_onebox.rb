@@ -38,7 +38,7 @@ module Onebox
                     <span class='album-title'>#{album_title}</span>
                   </span>
                 </span>
-                <img src='#{get_secure_link(og.image)}' #{og.title_attr} height='#{og.image_height}' width='#{og.image_width}'>
+                <img src='#{og.get_secure_image}' #{og.title_attr} height='#{og.image_height}' width='#{og.image_width}'>
               </a>
             </div>
           HTML
@@ -56,17 +56,10 @@ module Onebox
 
         <<-HTML
             <a href='#{escaped_url}' target='_blank' class="onebox">
-              <img src='#{get_secure_link(og.image)}' #{og.title_attr} alt='Imgur' height='#{og.image_height}' width='#{og.image_width}'>
+              <img src='#{og.get_secure_image}' #{og.title_attr} alt='Imgur' height='#{og.image_height}' width='#{og.image_width}'>
             </a>
           HTML
       end
-
-      def get_secure_link(link)
-        secure_link = URI(link)
-        secure_link.scheme = 'https'
-        secure_link.to_s
-      end
-
     end
   end
 end

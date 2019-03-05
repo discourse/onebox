@@ -18,10 +18,8 @@ module Onebox
       private
 
       def video_html(og)
-        escaped_image_src = get_secure_link(og.image)
-
         <<-HTML
-            <video width='#{og.video_width}' height='#{og.video_height}' #{og.title_attr} poster="#{escaped_image_src}" controls loop>
+            <video width='#{og.video_width}' height='#{og.video_height}' #{og.title_attr} poster="#{og.get_secure_image}" controls loop>
               <source src='#{og.video_secure_url}' type='video/mp4'>
             </video>
           HTML
@@ -29,7 +27,6 @@ module Onebox
 
       def album_html(og)
         escaped_url = ::Onebox::Helpers.normalize_url_for_output(url)
-        escaped_src = get_secure_link(og.image)
         album_title = og.description.nil? ? og.title : "[#{og.description}] #{og.title}"
 
         <<-HTML
@@ -40,7 +37,7 @@ module Onebox
                     <span class='album-title'>#{Onebox::Helpers.truncate(album_title, 80)}</span>
                   </span>
                 </span>
-                <img src='#{escaped_src}' #{og.title_attr} height='#{og.image_height}' width='#{og.image_width}'>
+                <img src='#{og.get_secure_image}' #{og.title_attr} height='#{og.image_height}' width='#{og.image_width}'>
               </a>
             </div>
           HTML
@@ -48,19 +45,12 @@ module Onebox
 
       def image_html(og)
         escaped_url = ::Onebox::Helpers.normalize_url_for_output(url)
-        escaped_src = get_secure_link(og.image)
 
         <<-HTML
             <a href='#{escaped_url}' target='_blank' class="onebox">
-              <img src='#{escaped_src}' #{og.title_attr} alt='Google Photos' height='#{og.image_height}' width='#{og.image_width}'>
+              <img src='#{og.get_secure_image}' #{og.title_attr} alt='Google Photos' height='#{og.image_height}' width='#{og.image_width}'>
             </a>
           HTML
-      end
-
-      def get_secure_link(link)
-        secure_link = URI(link)
-        secure_link.scheme = 'https'
-        secure_link.to_s
       end
     end
   end
