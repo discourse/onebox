@@ -30,7 +30,7 @@ module Onebox
       end
 
       def video_html(og)
-        direct_src = ::Onebox::Helpers.normalize_url_for_output("#{og.src}/#{og.title}")
+        direct_src = ::Onebox::Helpers.normalize_url_for_output("#{og.url}/#{og.title}")
 
         <<-HTML
             <video width='480' height='360' #{og.title_attr} controls loop>
