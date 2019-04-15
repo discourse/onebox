@@ -162,7 +162,7 @@ module Onebox
             if @lang == "stl"
 
               @model_file = @lang.dup
-              @raw = "https://render.githubusercontent.com/view/solid?url=" + self.raw_template(m) 
+              @raw = "https://render.githubusercontent.com/view/solid?url=" + self.raw_template(m)
 
             else
               contents = open(self.raw_template(m), read_timeout: timeout).read
@@ -217,8 +217,8 @@ module Onebox
             truncated: @truncated,
             model_file: @model_file,
             width: 480,
-	    height: 360
-	  }
+            height: 360
+          }
         end
       end
     end
