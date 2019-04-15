@@ -159,7 +159,7 @@ module Onebox
             @file = m[:file]
             @lang = Onebox::FileTypeFinder.from_file_name(m[:file])
 
-            if @lang == "stl"
+            if @lang == "stl" && link.match(/^https?:\/\/(www\.)?github\.com.*\/blob\//)
 
               @model_file = @lang.dup
               @raw = "https://render.githubusercontent.com/view/solid?url=" + self.raw_template(m)
