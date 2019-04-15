@@ -215,8 +215,10 @@ module Onebox
             selected_one_liner: @selected_one_liner,
             cr_results: @cr_results,
             truncated: @truncated,
-            model_file: @model_file
-          }
+            model_file: @model_file,
+            width: 480,
+	    height: 360
+	  }
         end
       end
     end
