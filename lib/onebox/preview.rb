@@ -2,6 +2,10 @@ module Onebox
   class Preview
     attr_reader :cache
 
+    # see https://bugs.ruby-lang.org/issues/14688
+    client_exception = defined?(Net::HTTPClientException) ? Net::HTTPClientException : Net::HTTPServerException
+    WEB_EXCEPTIONS ||= [client_exception, OpenURI::HTTPError, Timeout::Error, Net::HTTPError, Errno::ECONNREFUSED]
+
     def initialize(link, parameters = Onebox.options)
       @url = link
       @options = parameters
@@ -11,24 +15,20 @@ module Onebox
 
     def to_s
       return "" unless engine
-      process_html(engine_html)
-    rescue *Onebox::Preview.web_exceptions
+      sanitize process_html engine_html
+    rescue *WEB_EXCEPTIONS
       ""
     end
 
     def placeholder_html
       return "" unless engine
-      process_html(engine.placeholder_html)
-    rescue *Onebox::Preview.web_exceptions
+      sanitize process_html engine.placeholder_html
+    rescue *WEB_EXCEPTIONS
       ""
     end
 
     def options
       OpenStruct.new(@options)
-    end
-
-    def self.web_exceptions
-     [Net::HTTPServerException, OpenURI::HTTPError, Timeout::Error, Net::HTTPError, Errno::ECONNREFUSED]
     end
 
     private
@@ -62,12 +62,19 @@ module Onebox
       html
     end
 
-    def engine
-      return nil unless @engine_class
-      @engine ||= @engine_class.new(@url, cache)
+    def sanitize(html)
+      Sanitize.fragment(html, @options[:sanitize_config] || Sanitize::Config::ONEBOX)
     end
 
-    class InvalidURI < StandardError
+    def engine
+      return nil unless @engine_class
+      return @engine if @engine
+
+      @engine = @engine_class.new(@url, cache)
+      @engine.options = @options
+      @engine
     end
+
+    class InvalidURI < StandardError; end
   end
 end

@@ -11,8 +11,8 @@ module Onebox
         oembed = get_oembed
 
         <<-HTML
-          <a href="#{oembed[:url]}" target="_blank">
-            <img src="#{oembed[:image]}" width="#{oembed[:width]}" height="#{oembed[:height]}" #{Helpers.title_attr(oembed)}>
+          <a href="#{oembed.url}" target="_blank" class="onebox">
+            <img src="#{oembed.url}" width="#{oembed.width}" height="#{oembed.height}" #{oembed.title_attr}>
           </a>
         HTML
       end

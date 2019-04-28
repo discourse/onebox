@@ -5,7 +5,7 @@ module Onebox
       include LayoutSupport
       include JSON
 
-      matches_regexp Regexp.new("^https?://(?:www\.)?(?:(?:\w)+\.)?(github)\.com(?:/)?(?:.)*/commit/")
+      matches_regexp Regexp.new("^https?://(?:www\.)?(?:(?:\w)+\.)?(github)\.com(?:/)?(?:.)*/commits?/")
       always_https
 
       def url
@@ -15,7 +15,13 @@ module Onebox
       private
 
       def match
-        @match ||= @url.match(%{github\.com/(?<owner>[^/]+)/(?<repository>[^/]+)/commit/(?<sha>[^/]+)})
+        return @match if @match
+
+        @match = @url.match(%{github\.com/(?<owner>[^/]+)/(?<repository>[^/]+)/commits?/(?<sha>[^/]+)})
+
+        @match = @url.match(%{github\.com/(?<owner>[^/]+)/(?<repository>[^/]+)/pull/(?<pr>[^/]+)/commits?/(?<sha>[^/]+)}) if @match.nil?
+
+        @match
       end
 
       def data
@@ -24,11 +30,17 @@ module Onebox
         result['title'] = result['commit']['message'].split("\n").first
 
         if result['commit']['message'].lines.count > 1
-          result['message'] = result['commit']['message'].split("\n", 2).last.strip
+          message = result['commit']['message'].split("\n", 2).last.strip
+
+          message_words = message.gsub("\n\n", "\n").gsub("\n", "<br>").split(" ")
+          max_words = 20
+          result['message'] =  message_words[0..max_words].join(" ")
+          result['message'] << "..." if message_words.length > max_words
+          result['message'] = result['message'].gsub("<br>", "\n")
         end
 
         ulink = URI(link)
-        result['commit_date'] = Time.parse(result['commit']['author']['date']).strftime("%I:%M%p - %d %b %y")
+        result['commit_date'] = Time.parse(result['commit']['author']['date']).strftime("%I:%M%p - %d %b %y %Z")
         result['domain'] = "#{ulink.host}/#{ulink.path.split('/')[1]}/#{ulink.path.split('/')[2]}"
         result
       end

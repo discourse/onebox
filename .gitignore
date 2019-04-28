@@ -4,7 +4,6 @@
 /.idea
 .config
 .yardoc
-Gemfile.lock
 InstalledFiles
 _yardoc
 coverage
@@ -18,3 +17,5 @@ test/version_tmp
 tmp
 *.swp
 .DS_Store
+
+.rubocop-https---raw-githubusercontent-com-discourse-discourse-master--rubocop-yml

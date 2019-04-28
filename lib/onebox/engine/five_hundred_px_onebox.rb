@@ -9,7 +9,7 @@ module Onebox
 
       def to_html
         og = get_opengraph
-        "<img src='#{og[:image]}' width='#{og[:image_width]}' height='#{og[:image_height]}' #{Helpers.title_attr(og)}>"
+        "<img src='#{og.image}' width='#{og.image_width}' height='#{og.image_height}' class='onebox' #{og.title_attr}>"
       end
 
     end

@@ -5,14 +5,14 @@ module Onebox
       include LayoutSupport
       include HTML
 
-      matches_regexp Regexp.new("^https?://(?:www\\.)?(?:(?:\\w)+\\.)?(twitter)\\.com(?:/)?(?:.)*/status(es)?/")
+      matches_regexp(/^https?:\/\/(mobile\.|www\.)?twitter\.com\/.+?\/status(es)?\/\d+(\/(video|photo)\/\d?+)?+(\/?\?.*)?\/?$/)
       always_https
 
       private
 
       def get_twitter_data
-        response = Onebox::Helpers.fetch_response(url)
-        html = Nokogiri::HTML(response.body)
+        response = Onebox::Helpers.fetch_response(url) rescue nil
+        html = Nokogiri::HTML(response)
         twitter_data = {}
         html.css('meta').each do |m|
           if m.attribute('property') && m.attribute('property').to_s.match(/^og:/i)
@@ -68,9 +68,9 @@ module Onebox
           date = DateTime.strptime(created_at, "%a %b %d %H:%M:%S %z %Y")
           user_offset = access(:user, :utc_offset).to_i
           offset = (user_offset >= 0 ? "+" : "-") + Time.at(user_offset.abs).gmtime.strftime("%H%M")
-          date.new_offset(offset).strftime("%l:%M %p - %e %b %Y")
+          date.new_offset(offset).strftime("%-l:%M %p - %-d %b %Y")
         else
-          raw.css(".tweet-timestamp")[0].attribute('title')
+          raw.at_css(".tweet-timestamp").attr('title')
         end
       end
 
@@ -84,9 +84,27 @@ module Onebox
 
       def avatar
         if twitter_api_credentials_present?
-          access(:user, :profile_image_url_https)
+          access(:user, :profile_image_url_https).sub('normal', '400x400')
+        elsif twitter_data[:image]
+          twitter_data[:image]
+        end
+      end
+
+      def likes
+        if twitter_api_credentials_present?
+          count = access(:favorite_count).to_i
+          return count > 0 ? client.prettify_number(count) : nil
         else
-          twitter_data[:image].gsub!('400x400', 'normal') if twitter_data[:image]
+          raw.at_css(".request-favorited-popup").attr('data-compact-localized-count') rescue nil
+        end
+      end
+
+      def retweets
+        if twitter_api_credentials_present?
+          count = access(:retweet_count).to_i
+          return count > 0 ? client.prettify_number(count) : nil
+        else
+          raw.at_css(".request-retweeted-popup").attr('data-compact-localized-count') rescue nil
         end
       end
 
@@ -95,7 +113,9 @@ module Onebox
           tweet: tweet,
           timestamp: timestamp,
           title: title,
-          avatar: avatar }
+          avatar: avatar,
+          likes: likes,
+          retweets: retweets }
       end
     end
   end

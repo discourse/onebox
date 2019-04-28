@@ -26,7 +26,7 @@ module Onebox
         og_data = get_og_data
         result = { link: link,
                    title: og_data[:title] || "Google #{shorttype.to_s.capitalize}",
-                   description: og_data[:description] || "This #{shorttype.to_s.chop.capitalize} is private",
+                   description: Onebox::Helpers.truncate(og_data[:description], 250) || "This #{shorttype.to_s.chop.capitalize} is private",
                    type: shorttype
                  }
         result
@@ -45,8 +45,8 @@ module Onebox
       end
 
       def get_og_data
-        response = Onebox::Helpers.fetch_response(url, 10)
-        html = Nokogiri::HTML(response.body)
+        response = Onebox::Helpers.fetch_response(url, 10) rescue nil
+        html = Nokogiri::HTML(response)
         og_data = {}
         html.css('meta').each do |m|
           if m.attribute('property') && m.attribute('property').to_s.match(/^og:/i)

@@ -1,5 +1,15 @@
-{{#image}}<img src="{{image}}" width="{{image_width}}" height="{{image_height}}" class="thumbnail"/>{{/image}}
+{{#image}}<img src="{{image}}" class="thumbnail"/>{{/image}}
 
-<h3><a href='{{{link}}}' target="_blank">{{title}}</a></h3>
+<h3><a href='{{link}}' target="_blank">{{title}}</a></h3>
 
 <p>{{description}}</p>
+
+{{#data_1}}
+  <p><span class="label1">{{label_1}}: {{data_1}}</span>
+  {{#data_2}}
+    <span class="label2">{{label_2}}: {{data_2}}</span></p>
+  {{/data_2}}
+  {{^data_2}}
+    </p>
+  {{/data_2}}
+{{/data_1}}

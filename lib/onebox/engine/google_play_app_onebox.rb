@@ -9,23 +9,22 @@ module Onebox
         MAX_DESCRIPTION_CHARS: 500
       }
 
-
       matches_regexp Regexp.new("^https?://play\\.(?:(?:\\w)+\\.)?(google)\\.com(?:/)?/store/apps/")
       always_https
 
       private
 
       def data
+        price = raw.css("meta[itemprop=price]").first["content"] rescue "Free"
         result = {
           link: link,
-          title: raw.css(".document-title div").inner_text,
-          developer: raw.css(".document-subtitle.primary").inner_text,
-          image: raw.css(".cover-image").first["src"],
-          description: raw.css(".text-body div").inner_text[0..DEFAULTS[:MAX_DESCRIPTION_CHARS]].chop + "...",
-          price: raw.css(".price.buy meta[itemprop=price]").first["content"]
+          title: raw.css("meta[property='og:title']").first["content"].gsub(" - Apps on Google Play", ""),
+          image: ::Onebox::Helpers.normalize_url_for_output(raw.css("meta[property='og:image']").first["content"]),
+          description: raw.css("meta[name=description]").first["content"][0..DEFAULTS[:MAX_DESCRIPTION_CHARS]].chop + "...",
+          price: price
         }
-        if result[:price] == "0" then
-            result[:price] = "Free"
+        if result[:price] == "0"
+          result[:price] = "Free"
         end
         result
       end

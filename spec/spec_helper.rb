@@ -6,6 +6,14 @@ require 'mocha/api'
 
 require_relative "support/html_spec_helper"
 
+# Monkey-patch fakeweb to support Ruby 2.4+.
+# See https://github.com/chrisk/fakeweb/pull/59.
+module FakeWeb
+  class StubSocket
+    def close; end
+  end
+end
+
 RSpec.configure do |config|
   config.before(:all) do
     FakeWeb.allow_net_connect = false
@@ -26,10 +34,6 @@ shared_context "engines" do
   let(:html) { @html }
   let(:data) { @data }
   let(:link) { @link }
-
-  def escaped_data(key)
-    CGI.escapeHTML(data[key])
-  end
 end
 
 shared_examples_for "an engine" do
@@ -54,6 +58,10 @@ shared_examples_for "an engine" do
     it "includes link" do
       expect(data[:link]).not_to be_nil
     end
+
+    it "is serializable" do
+      expect { Marshal.dump(data) }.to_not raise_error
+    end
   end
 end
 
@@ -64,7 +72,7 @@ shared_examples_for "a layout engine" do
     end
 
     it "includes title" do
-      expect(html).to include(escaped_data(:title))
+      expect(html).to include(data[:title])
     end
 
     it "includes link" do
@@ -76,7 +84,7 @@ shared_examples_for "a layout engine" do
     end
 
     it "includes domain" do
-      expect(html).to include(%|class="domain" href="#{escaped_data(:domain)}|)
+      expect(html).to include(%|class="domain" href="#{data[:domain]}|)
     end
   end
 end

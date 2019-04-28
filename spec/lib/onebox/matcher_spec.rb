@@ -15,7 +15,7 @@ describe Onebox::Matcher do
       let(:matcher) { Onebox::Matcher.new(url) }
 
       it "finds an engine" do
-        matcher.stubs(:ordered_engines).returns([TestEngine])
+        allow(matcher).to receive(:ordered_engines) { [TestEngine] }
         expect(matcher.oneboxed).not_to be_nil
       end
     end
@@ -25,7 +25,7 @@ describe Onebox::Matcher do
       let(:matcher) { Onebox::Matcher.new(url) }
 
       it "doesn't find an engine" do
-        matcher.stubs(:ordered_engines).returns([TestEngine])
+        allow(matcher).to receive(:ordered_engines) { [TestEngine] }
         expect(matcher.oneboxed).not_to be_nil
       end
     end
@@ -34,8 +34,8 @@ describe Onebox::Matcher do
       let(:url) { "http://party.time.made.up-url.com/?article_id=1234" }
       let(:matcher) { Onebox::Matcher.new(url) }
 
-      it "it finds an engine" do
-        matcher.stubs(:ordered_engines).returns([TestEngine])
+      it "finds an engine" do
+        allow(matcher).to receive(:ordered_engines) { [TestEngine] }
         expect(matcher.oneboxed).not_to be_nil
       end
     end
@@ -44,9 +44,29 @@ describe Onebox::Matcher do
       let(:url) { "http://party.time.made.up-url.com/#article_id=1234" }
       let(:matcher) { Onebox::Matcher.new(url) }
 
-      it "it finds an engine" do
-        matcher.stubs(:ordered_engines).returns([TestEngine])
+      it "finds an engine" do
+        allow(matcher).to receive(:ordered_engines) { [TestEngine] }
         expect(matcher.oneboxed).not_to be_nil
+      end
+    end
+
+    describe "with a whitelisted port/scheme" do
+      %w{http://example.com https://example.com http://example.com:80 //example.com}.each do |url|
+        it "finds an engine for '#{url}'" do
+          matcher = Onebox::Matcher.new(url)
+          allow(matcher).to receive(:ordered_engines) { [TestEngine] }
+          expect(matcher.oneboxed).not_to be_nil
+        end
+      end
+    end
+
+    describe "without a whitelisted port/scheme" do
+      %w{http://example.com:21 ftp://example.com}.each do |url|
+        it "doesn't find an engine for '#{url}'" do
+          matcher = Onebox::Matcher.new(url)
+          allow(matcher).to receive(:ordered_engines) { [TestEngine] }
+          expect(matcher.oneboxed).to be_nil
+        end
       end
     end
 

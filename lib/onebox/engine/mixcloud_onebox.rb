@@ -9,11 +9,11 @@ module Onebox
 
       def placeholder_html
         oembed = get_oembed
-        "<img src='#{oembed[:image]}' height='#{oembed[:height]}' #{Helpers.title_attr(oembed)}>"
+        "<img src='#{oembed.image}' height='#{oembed.height}' #{oembed.title_attr}>"
       end
 
       def to_html
-        get_oembed[:html]
+        get_oembed.html
       end
     end
   end

@@ -6,7 +6,7 @@ module Onebox
       class << self
         def ===(other)
           if other.kind_of? URI
-            @@matchers && @@matchers.any? {|m| other.to_s =~ m[:regexp] }
+            @@matchers && @@matchers.any? { |m| other.to_s =~ m[:regexp] }
           else
             super
           end
@@ -15,7 +15,7 @@ module Onebox
         private
 
         def matches_regexp(key, regexp)
-          (@@matchers ||= []) << {key: key, regexp: regexp}
+          (@@matchers ||= []) << { key: key, regexp: regexp }
         end
       end
 
@@ -48,13 +48,13 @@ module Onebox
       end
 
       def to_html
-        "<div class='maps-onebox'>#{Helpers.click_to_scroll_div + "<iframe src=\"#{link}\" width=\"690\" height=\"400\" frameborder=\"0\" style=\"border:0\">#{placeholder_html}</iframe>"}</div>"
+        "<div class='maps-onebox'><iframe src=\"#{link}\" width=\"690\" height=\"400\" frameborder=\"0\" style=\"border:0\">#{placeholder_html}</iframe></div>"
       end
 
       def placeholder_html
-        width = @placeholder_width || 690
+        width  = @placeholder_width  || 690
         height = @placeholder_height || 400
-        "<img src=\"#{CGI.escapeHTML(@placeholder)}\" width=\"#{width}\" height=\"#{height}\"/>"
+        "<img src='#{@placeholder}' width='#{width}' height='#{height}'/>"
       end
 
       private
@@ -119,7 +119,8 @@ module Onebox
 
         when :canonical
           uri = URI(@url)
-          query = Hash[*uri.query.split("&").map{|a|a.split("=")}.flatten]
+
+          query = URI::decode_www_form(uri.query).to_h
           if !query.has_key?("ll")
             raise ArgumentError, "canonical url lacks location argument" unless query.has_key?("sll")
             query["ll"] = query["sll"]
