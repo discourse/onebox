@@ -110,14 +110,52 @@ module Onebox
         end
       end
 
+      def quoted_full_name
+        if twitter_api_credentials_present?
+          raw.dig(:quoted_status, :user, :name)
+        else
+          raw.css('.QuoteTweet-fullname')[0].text rescue nil
+        end
+      end
+
+      def quoted_screen_name
+        if twitter_api_credentials_present?
+          raw.dig(:quoted_status, :user, :screen_name)
+        else
+          raw.at_css(".QuoteTweet-innerContainer").attr("data-screen-name").to_s rescue nil
+        end
+      end
+
+      def quoted_tweet
+        if twitter_api_credentials_present?
+          raw.dig(:quoted_status, :full_text)
+        else
+          raw.css('.QuoteTweet-text')[0].text rescue nil
+        end
+      end
+
+      def quoted_link
+        if twitter_api_credentials_present?
+          "https://twitter.com/#{quoted_screen_name}/status/#{raw.dig(:quoted_status, :id)}"
+        else
+          "https://twitter.com#{raw.at_css(".QuoteTweet-innerContainer").attr("href").to_s}" rescue nil
+        end
+      end
+
       def data
-        { link: link,
+        {
+          link: link,
           tweet: tweet,
           timestamp: timestamp,
           title: title,
           avatar: avatar,
           likes: likes,
-          retweets: retweets }
+          retweets: retweets,
+          quoted_tweet: quoted_tweet,
+          quoted_full_name: quoted_full_name,
+          quoted_screen_name: quoted_screen_name,
+          quoted_link: quoted_link
+        }
       end
     end
   end
