@@ -2395,7 +2395,7 @@ data-disclosure-type=""
     <li class="js-stat-count js-stat-favorites stat-count" aria-hidden="true">
       <a tabindex=0 role="button"
          data-tweet-stat-count="1664"
-         data-compact-localized-count="1,7 mil"
+         data-compact-localized-count="1.7K"
          class="request-favorited-popup"
          data-activity-popup-title="1.664 Me gusta">
 

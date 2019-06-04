@@ -28,6 +28,18 @@ describe Onebox::Engine::TwitterStatusOnebox do
     it "includes user avatar" do
       expect(html).to include(avatar)
     end
+
+    it "includes twitter link" do
+      expect(html).to include(link)
+    end
+
+    it "includes twitter likes" do
+      expect(html).to include(favorite_count)
+    end
+
+    it "includes twitter retweets" do
+      expect(html).to include(retweets_count)
+    end
   end
 
   shared_context "standard tweet info" do
@@ -40,6 +52,9 @@ describe Onebox::Engine::TwitterStatusOnebox do
     let(:screen_name) { "vyki_e" }
     let(:avatar) { "732349210264133632/RTNgZLrm_400x400.jpg" }
     let(:timestamp) { "6:59 PM - 1 Aug 2013" }
+    let(:link) { @link }
+    let(:favorite_count) { "0" }
+    let(:retweets_count) { "0" }
   end
 
   shared_context "quoted tweet info" do
@@ -52,6 +67,27 @@ describe Onebox::Engine::TwitterStatusOnebox do
     let(:screen_name) { "Metallica" }
     let(:avatar) { "profile_images/766360293953802240/kt0hiSmv_400x400.jpg" }
     let(:timestamp) { "10:45 PM - 13 May 2019" }
+    let(:link) { @link }
+    let(:favorite_count) { "1.7K" }
+    let(:retweets_count) { "201" }
+  end
+
+  shared_examples "includes quoted tweet data" do
+    it 'includes quoted tweet' do
+      expect(html).to include("If you bought a ticket for tonight’s @Metallica show at Stade de France, you have helped")
+    end
+
+    it "includes quoted tweet name" do
+      expect(html).to include("All Within My Hands Foundation")
+    end
+
+    it "includes quoted username" do
+      expect(html).to include("AWMHFoundation")
+    end
+
+    it "includes quoted tweet link" do
+      expect(html).to include("https://twitter.com/AWMHFoundation/status/1127646016931487744")
+    end
   end
 
   context "with html" do
@@ -75,10 +111,7 @@ describe Onebox::Engine::TwitterStatusOnebox do
 
       it_behaves_like "an engine"
       it_behaves_like '#to_html'
-
-      it 'includes quoted tweet' do
-        expect(html).to include("If you bought a ticket for tonight’s @Metallica show at Stade de France, you have helped")
-      end
+      it_behaves_like "includes quoted tweet data"
     end
   end
 
@@ -97,7 +130,6 @@ describe Onebox::Engine::TwitterStatusOnebox do
     end
 
     context "with a standard tweet" do
-      let(:favorite_count) { "0" }
       let(:tweet_content) do
         "I'm a sucker for pledges.  <a href='https://twitter.com/Peers' target='_blank'>@Peers</a> Pledge <a href='https://twitter.com/search?q=%23sharingeconomy' target='_blank'>#sharingeconomy</a> <a target='_blank' href='http://www.peers.org/action/peers-pledgea/'>peers.org/action/peers-p…</a>"
       end
@@ -232,7 +264,6 @@ describe Onebox::Engine::TwitterStatusOnebox do
     end
 
     context "with quoted tweet" do
-      let(:favorite_count) { "1.7K" }
       let(:tweet_content) do
         "Thank you to everyone who came out for <a href='https://twitter.com/search?q=%23MetInParis' target='_blank'>#MetInParis</a> last night for helping us support <a href='https://twitter.com/EMMAUSolidarite' target='_blank'>@EMMAUSolidarite</a> &amp; <a href='https://twitter.com/PompiersParis' target='_blank'>@PompiersParis</a>. <a href='https://twitter.com/search?q=%23AWMH' target='_blank'>#AWMH</a> <a href='https://twitter.com/search?q=%23MetalicaGivesBack' target='_blank'>#MetalicaGivesBack</a> <a href=\"https://t.co/gLtZSdDFmN\" target=\"_blank\">https://t.co/gLtZSdDFmN</a>"
       end
@@ -614,6 +645,7 @@ describe Onebox::Engine::TwitterStatusOnebox do
 
       it_behaves_like "an engine"
       it_behaves_like '#to_html'
+      it_behaves_like "includes quoted tweet data"
     end
   end
 end
