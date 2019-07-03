@@ -118,8 +118,7 @@ describe Onebox::Engine::TwitterStatusOnebox do
   context "with twitter client" do
     before(:each) do
       @twitter_client = double(
-        "TwitterClient", status: api_response, prettify_tweet: tweet_content,
-        twitter_credentials_missing?: false, prettify_number: favorite_count
+        "TwitterClient", status: api_response, prettify_tweet: tweet_content, twitter_credentials_missing?: false, prettify_number: favorite_count
       )
 
       Onebox.options = { twitter_client: @twitter_client }
