@@ -19,7 +19,7 @@ describe Onebox::Engine::InstagramOnebox do
   end
 
   it "includes description" do
-    expect(html).to include("1.2m Likes, 6,100 Comments - National Geographic (@natgeo) on Instagram")
+    expect(html).to include("1.2m Likes, 5,971 Comments - National Geographic (@natgeo) on Instagram")
   end
 
   it 'oneboxes links that include the username' do
