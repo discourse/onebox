@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files`.split($/).reject { |s| s =~ /^(spec|web)/ }
   spec.require_paths = ['lib']
 
+  spec.add_runtime_dependency 'addressable', '~> 2.7.0'
   spec.add_runtime_dependency 'multi_json', '~> 1.11'
   spec.add_runtime_dependency 'mustache'
   spec.add_runtime_dependency 'nokogiri', '~> 1.7'
