@@ -15,7 +15,7 @@ describe Onebox::Engine::InstagramOnebox do
   end
 
   it "includes image" do
-    expect(html).to include("28751607_101336700703060_7002304208821026816_n.jpg")
+    expect(html).to include("28751607_101336700703060_7002304208821026816_n.jpg?_nc_ht=scontent-waw1-1.cdninstagram.com&amp;_nc_cat=104&amp;_nc_ohc=NXYxExVGcLkAX8-FRp3&amp;oh=add21f207c8533dc3c254c9532b1bcca&amp;oe=5E769EDA")
   end
 
   it "includes description" do
