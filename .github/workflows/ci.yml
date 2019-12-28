@@ -28,7 +28,7 @@ jobs:
           architecture: 'x64'
 
       - name: Setup bundler
-        run: gem install bundler -v 1.17.3 --no-doc
+        run: gem install bundler
 
       - name: Setup gems
         run: bundle install
