@@ -175,7 +175,7 @@ module Onebox
       end
 
       def self.twitter_label_whitelist
-        ['brand', 'price', 'usd', 'cad', 'reading time', 'likes']
+        ['brand', 'price', 'usd', 'cad', 'reading time', 'likes', 'style', 'level']
       end
 
       def self.===(other)
@@ -230,15 +230,15 @@ module Onebox
 
           # Twitter labels
           if !Onebox::Helpers.blank?(d[:label1]) && !Onebox::Helpers.blank?(d[:data1]) && !!WhitelistedGenericOnebox.twitter_label_whitelist.find { |l| d[:label1] =~ /#{l}/i }
-            d[:label_1] = Onebox::Helpers.truncate(d[:label1])
+            d[:label_1] = "label1" # Onebox::Helpers.truncate(d[:label1])
             d[:data_1]  = Onebox::Helpers.truncate(d[:data1])
           end
           if !Onebox::Helpers.blank?(d[:label2]) && !Onebox::Helpers.blank?(d[:data2]) && !!WhitelistedGenericOnebox.twitter_label_whitelist.find { |l| d[:label2] =~ /#{l}/i }
             unless Onebox::Helpers.blank?(d[:label_1])
-              d[:label_2] = Onebox::Helpers.truncate(d[:label2])
+              d[:label_2] = "label2" # Onebox::Helpers.truncate(d[:label1])
               d[:data_2]  = Onebox::Helpers.truncate(d[:data2])
             else
-              d[:label_1] = Onebox::Helpers.truncate(d[:label2])
+              d[:label_1] = "label1-a" # Onebox::Helpers.truncate(d[:label1])
               d[:data_1]  = Onebox::Helpers.truncate(d[:data2])
             end
           end
