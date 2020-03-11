@@ -73,6 +73,7 @@ module Onebox
           imdb.com
           indiatimes.com
           itunes.apple.com
+          jovian.ml
           khanacademy.org
           kickstarter.com
           kinomap.com
