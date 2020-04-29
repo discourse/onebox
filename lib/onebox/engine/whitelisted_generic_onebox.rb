@@ -57,6 +57,7 @@ module Onebox
           ehow.com
           espn.go.com
           etsy.com
+          facebook.com
           findery.com
           folksy.com
           forbes.com
@@ -82,7 +83,6 @@ module Onebox
           livestream.com
           mashable.com
           medium.com
-          meetedgar.com
           meetup.com
           mixcloud.com
           mlb.com
