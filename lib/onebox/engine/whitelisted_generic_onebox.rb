@@ -77,10 +77,12 @@ module Onebox
           kickstarter.com
           kinomap.com
           lessonplanet.com
+          linkedin.com
           liveleak.com
           livestream.com
           mashable.com
           medium.com
+          meetedgar.com
           meetup.com
           mixcloud.com
           mlb.com
