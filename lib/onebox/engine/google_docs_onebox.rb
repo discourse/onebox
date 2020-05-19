@@ -4,6 +4,7 @@ module Onebox
   module Engine
     class GoogleDocsOnebox
       include Engine
+      include StandardEmbed
       include LayoutSupport
 
       def self.supported_endpoints
@@ -25,16 +26,13 @@ module Onebox
       protected
 
       def data
-        og_data = get_og_data
+        og_data = get_opengraph
 
-        if og_data[:description].present?
-          description = Onebox::Helpers.truncate(og_data[:description], 250)
-        else
-          description = "This #{shorttype.to_s.chop.capitalize} is private"
-        end
+        title = og_data.title || "Google #{shorttype.to_s.capitalize}"
+        description = og_data.description.present? ? Onebox::Helpers.truncate(og_data.description, 250) : "This #{shorttype.to_s.chop.capitalize} is private"
 
         result = { link: link,
-                   title: og_data[:title] || "Google #{shorttype.to_s.capitalize}",
+                   title: title,
                    description: description,
                    type: shorttype
                  }
@@ -51,20 +49,6 @@ module Onebox
 
       def match
         @match ||= @url.match(@@matcher)
-      end
-
-      def get_og_data
-        response = Onebox::Helpers.fetch_response(url, 10) rescue nil
-        html = Nokogiri::HTML(response)
-        og_data = {}
-        html.css('meta').each do |m|
-          if m.attribute('property') && m.attribute('property').to_s.match(/^og:/i)
-            m_content = m.attribute('content').to_s.strip
-            m_property = m.attribute('property').to_s.gsub('og:', '')
-            og_data[m_property.to_sym] = m_content
-          end
-        end
-        og_data
       end
     end
   end
