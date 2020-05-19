@@ -26,9 +26,16 @@ module Onebox
 
       def data
         og_data = get_og_data
+
+        if og_data[:description].present?
+          description = Onebox::Helpers.truncate(og_data[:description], 250)
+        else
+          description = "This #{shorttype.to_s.chop.capitalize} is private"
+        end
+
         result = { link: link,
                    title: og_data[:title] || "Google #{shorttype.to_s.capitalize}",
-                   description: Onebox::Helpers.truncate(og_data[:description], 250) || "This #{shorttype.to_s.chop.capitalize} is private",
+                   description: description,
                    type: shorttype
                  }
         result
