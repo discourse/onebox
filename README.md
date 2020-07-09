@@ -75,7 +75,7 @@ Adding Support for a new URL
 ----------------------------
 
   1. Check if the site supports [oEmbed](http://oembed.com/) or [Open Graph](https://developers.facebook.com/docs/opengraph/).
-     If it does, you can probably get away with just allowlisting the URL in `Onebox::Engine::AllowlistedGenericOnebox` (see: [Allowlisted Generic Onebox caveats](#user-content-allowlisted-generic-onebox-caveats)).
+     If it does, you can probably get away with just allowing the URL in `Onebox::Engine::AllowlistedGenericOnebox` (see: [Allowlisted Generic Onebox caveats](#user-content-allowlisted-generic-onebox-caveats)).
      If the site does not support open standards, you can create a new engine.
 
   2. Create new onebox engine

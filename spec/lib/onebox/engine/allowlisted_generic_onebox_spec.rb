@@ -6,7 +6,7 @@ describe Onebox::Engine::AllowlistedGenericOnebox do
 
   describe ".===" do
     before do
-      described_class.allowlist = %w(eviltrout.com discourse.org)
+      described_class.allowed_domains = %w(eviltrout.com discourse.org)
     end
 
     it "matches an entire domain" do
@@ -154,7 +154,7 @@ describe Onebox::Engine::AllowlistedGenericOnebox do
     let(:redirect_link) { 'http://www.dailymail.co.uk/news/article-479146/Brutality-justice-The-truth-tarred-feathered-drug-dealer.html' }
 
     before do
-      described_class.allowlist = %w(dailymail.co.uk discourse.org)
+      described_class.allowed_domains = %w(dailymail.co.uk discourse.org)
       FakeWeb.register_uri(
         :get,
         original_link,

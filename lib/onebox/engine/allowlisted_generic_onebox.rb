@@ -9,15 +9,15 @@ module Onebox
       include StandardEmbed
       include LayoutSupport
 
-      def self.allowlist=(list)
-        @allowlist = list
+      def self.allowed_domains=(list)
+        @allowed_domains = list
       end
 
-      def self.allowlist
-        @allowlist ||= default_allowlist.dup
+      def self.allowed_domains
+        @allowed_domains ||= default_allowed_domains.dup
       end
 
-      def self.default_allowlist
+      def self.default_allowed_domains
         %w(
           23hq.com
           500px.com
@@ -176,13 +176,13 @@ module Onebox
         !!(uri.path =~ /\d{4}\/\d{2}\//)
       end
 
-      def self.twitter_label_allowlist
+      def self.allowed_twitter_labels
         ['brand', 'price', 'usd', 'cad', 'reading time', 'likes']
       end
 
       def self.===(other)
         other.kind_of?(URI) ?
-          host_matches(other, allowlist) || probable_wordpress(other) || probable_discourse(other) :
+          host_matches(other, allowed_domains) || probable_wordpress(other) || probable_discourse(other) :
           super
       end
 
@@ -233,11 +233,11 @@ module Onebox
           end
 
           # Twitter labels
-          if !Onebox::Helpers.blank?(d[:label1]) && !Onebox::Helpers.blank?(d[:data1]) && !!AllowlistedGenericOnebox.twitter_label_allowlist.find { |l| d[:label1] =~ /#{l}/i }
+          if !Onebox::Helpers.blank?(d[:label1]) && !Onebox::Helpers.blank?(d[:data1]) && !!AllowlistedGenericOnebox.allowed_twitter_labels.find { |l| d[:label1] =~ /#{l}/i }
             d[:label_1] = Onebox::Helpers.truncate(d[:label1])
             d[:data_1]  = Onebox::Helpers.truncate(d[:data1])
           end
-          if !Onebox::Helpers.blank?(d[:label2]) && !Onebox::Helpers.blank?(d[:data2]) && !!AllowlistedGenericOnebox.twitter_label_allowlist.find { |l| d[:label2] =~ /#{l}/i }
+          if !Onebox::Helpers.blank?(d[:label2]) && !Onebox::Helpers.blank?(d[:data2]) && !!AllowlistedGenericOnebox.allowed_twitter_labels.find { |l| d[:label2] =~ /#{l}/i }
             unless Onebox::Helpers.blank?(d[:label_1])
               d[:label_2] = Onebox::Helpers.truncate(d[:label2])
               d[:data_2]  = Onebox::Helpers.truncate(d[:data2])

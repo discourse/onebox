@@ -24,7 +24,7 @@ describe Onebox do
 
   describe 'has_matcher?' do
     before do
-      Onebox::Engine::AllowlistedGenericOnebox.allowlist = %w(youtube.com)
+      Onebox::Engine::AllowlistedGenericOnebox.allowed_domains = %w(youtube.com)
     end
 
     it "has no matcher for a made up url" do
