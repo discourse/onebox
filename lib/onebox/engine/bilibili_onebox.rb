@@ -29,7 +29,7 @@ module Onebox
       def decode(in_)
         r = 0
         for a in 0..5
-          @@r = @@dic[@@in_[@@s[a]]] * 58**a + @@r
+          @@r = @@dic[in_[@@s[a]]] * 58**a + @@r
         end
       (@@r - @@add) ^ @@xor
       end
