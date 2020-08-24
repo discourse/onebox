@@ -11,4 +11,5 @@ describe Onebox::Engine::BiliBiliOnebox do
     it "has the url" do
       expect(html).to include("https://player.bilibili.com")
     end
+  end
 end
