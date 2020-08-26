@@ -19,7 +19,13 @@ module Onebox
       end
 
       def to_html
-        "<iframe src=\"https://player.youku.com/embed/#{video_id()}\" frameborder=\"0\" width=\"640\" height=\"430\" allowfullscreen=\"true\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>"
+<<~HTML
+  <iframe src="https://player.youku.com/embed/#{video_id}"
+          width="640" height="430"
+          frameborder='0'
+          allowfullscreen >
+  </iframe>
+HTML
       end
 
       private
