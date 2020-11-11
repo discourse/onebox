@@ -21,11 +21,11 @@ module Onebox
         # - "3,227 Likes, 88 Comments - An Account (@user.name) on Instagram: “Look at my picture!”"
         # - "@user.name posted on their Instagram profile: “Look at my picture!”"
 
-        m = og.description.match(/\(@([\w\.]+)\) on Instagram/)
+        m = og.description&.match(/\(@([\w\.]+)\) on Instagram/)
         author_name = m[1] if m
 
         author_name ||= begin
-          m = og.description.match(/^\@([\w\.]+)\ posted/)
+          m = og.description&.match(/^\@([\w\.]+)\ posted/)
           m[1] if m
         end
 
