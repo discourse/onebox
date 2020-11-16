@@ -261,7 +261,7 @@ module Onebox
             next if skip_missing_tags.include?(k)
             if v == nil || v == ''
               errors[k] ||= []
-              errors[k] = 'is blank'
+              errors[k] << 'is blank'
             end
           end
 
