@@ -29,11 +29,11 @@ module Onebox
       protected
 
       def access_token
-        options[:facebook_app_access_token]
+        (options[:facebook_app_access_token] || Onebox.options.facebook_app_access_token).to_s
       end
 
       def get_oembed_url
-        if access_token && access_token != ''
+        if access_token != ''
           oembed_url = "https://graph.facebook.com/v9.0/instagram_oembed?url=#{clean_url}&access_token=#{access_token}"
         else
           # The following is officially deprecated by Instagram, but works in some limited circumstances.
