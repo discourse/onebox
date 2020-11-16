@@ -21,7 +21,7 @@ module Onebox
         { link: permalink,
           title: "@#{oembed.author_name}",
           image: oembed.thumbnail_url,
-          description: oembed.title,
+          description: Onebox::Helpers.truncate(oembed.title, 250),
         }
 
       end
