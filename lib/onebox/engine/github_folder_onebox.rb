@@ -26,7 +26,8 @@ module Onebox
           image: og.image,
           title: og.title,
           path: display_path,
-          description: display_description
+          description: display_description,
+          favicon: get_favicon
         }
       end
 
