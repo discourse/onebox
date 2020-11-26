@@ -5,6 +5,8 @@ require "pry"
 require "fakeweb"
 require "onebox"
 require 'mocha/api'
+require 'webmock/rspec'
+include WebMock
 
 require_relative "support/html_spec_helper"
 
