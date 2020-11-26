@@ -47,7 +47,7 @@ RSpec.describe Onebox::Helpers do
   describe "fetch_html_doc" do
     it "can handle unicode URIs" do
       uri = 'https://www.reddit.com/r/UFOs/comments/k18ukd/𝗨𝗙𝗢_𝗱𝗿𝗼𝗽𝘀_𝗰𝗼𝘄_𝘁𝗵𝗿𝗼𝘂𝗴𝗵_𝗯𝗮𝗿𝗻_𝗿𝗼𝗼𝗳/'
-      stub_request(:get, uri).to_return(status: 200, body: "<!DOCTYPE html><p>success</p>")
+      fake(uri, "<!DOCTYPE html><p>success</p>")
 
       expect(described_class.fetch_html_doc(uri).to_s).to match("success")
     end

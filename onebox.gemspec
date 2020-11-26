@@ -31,7 +31,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '>= 12.3.3'
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_development_dependency 'fakeweb', '~> 1.3'
-  spec.add_development_dependency 'webmock'
   spec.add_development_dependency 'pry', '~> 0.10'
   spec.add_development_dependency 'mocha', '~> 1.1'
   spec.add_development_dependency 'rubocop-discourse', '~> 2.4.0'
