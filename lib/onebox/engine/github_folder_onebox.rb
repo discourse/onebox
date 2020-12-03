@@ -7,7 +7,7 @@ module Onebox
       include StandardEmbed
       include LayoutSupport
 
-      matches_regexp Regexp.new(/^https?:\/\/(?:www\.)?(?:(?:\w)+\.)?(github)\.com[\:\d]*(\/\w*){2}(\/tree)?/)
+      matches_regexp Regexp.new(/^https?:\/\/(?:www\.)?(?:(?:\w)+\.)?(github)\.com[\:\d]*(\/[^\/]+){2}/)
       always_https
 
       def self.priority
