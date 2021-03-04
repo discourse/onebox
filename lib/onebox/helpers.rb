@@ -180,7 +180,7 @@ module Onebox
       url.gsub!(/[^\w\-`.~:\/?#\[\]@!$&'\(\)*+,;=%\p{M}’]/, "")
 
       parsed = Addressable::URI.parse(url)
-      return "" unless parsed.host && parsed
+      return "" unless parsed.host
 
       url
     end
