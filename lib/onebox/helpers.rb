@@ -25,7 +25,7 @@ module Onebox
     end
 
     def self.fetch_html_doc(url, headers = nil, body_cacher = nil)
-      response = (fetch_response(url, nil, nil, headers, body_cacher) rescue nil)
+      response = (fetch_response(url, headers: headers, body_cacher: body_cacher) rescue nil)
       doc = Nokogiri::HTML(response)
       uri = Addressable::URI.parse(url)
 
@@ -37,7 +37,7 @@ module Onebox
         canonical_link = doc.at('//link[@rel="canonical"]/@href')
         canonical_uri = Addressable::URI.parse(canonical_link)
         if canonical_link && "#{canonical_uri.host}#{canonical_uri.path}" != "#{uri.host}#{uri.path}"
-          response = (fetch_response(canonical_uri.to_s, nil, nil, headers, body_cacher) rescue nil)
+          response = (fetch_response(canonical_uri.to_s, headers: headers, body_cacher: body_cacher) rescue nil)
           doc = Nokogiri::HTML(response) if response
         end
       end
@@ -45,11 +45,10 @@ module Onebox
       doc
     end
 
-    def self.fetch_response(location, limit = nil, domain = nil, headers = nil, body_cacher = nil)
-      limit ||= 5
-      limit = Onebox.options.redirect_limit if limit > Onebox.options.redirect_limit
+    def self.fetch_response(location, redirect_limit: 5, domain: nil, headers: nil, body_cacher: nil)
+      redirect_limit = Onebox.options.redirect_limit if redirect_limit > Onebox.options.redirect_limit
 
-      raise Net::HTTPError.new('HTTP redirect too deep', location) if limit == 0
+      raise Net::HTTPError.new('HTTP redirect too deep', location) if redirect_limit == 0
 
       uri = Addressable::URI.parse(location)
       uri = Addressable::URI.join(domain, uri) if !uri.host
@@ -94,9 +93,9 @@ module Onebox
             response.error! unless [301, 302].include?(code)
             return fetch_response(
               response['location'],
-              limit - 1,
-              "#{uri.scheme}://#{uri.host}",
-              redir_header
+              redirect_limit: redirect_limit - 1,
+              domain: "#{uri.scheme}://#{uri.host}",
+              headers: redir_header
             )
           end
 
