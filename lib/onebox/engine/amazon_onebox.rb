@@ -45,7 +45,11 @@ module Onebox
       private
 
       def match
-        @match ||= @url.match(/(?:d|g)p\/(?:product\/|video\/detail\/)?(?<id>[^\/]+)(?:\/|$)/mi)
+        @match ||= @url.match(/(?:d|g)p\/(?:product\/|video\/detail\/)?(?<id>[A-Z0-9]+)(?:\/|\?|$)/mi)
+      end
+
+      def link
+        @link ||= ::Onebox::Helpers.uri_encode(url)
       end
 
       def image
@@ -60,6 +64,10 @@ module Onebox
         end
 
         if (landing_image = raw.css("#landingImage")) && landing_image.any?
+          attributes = landing_image.first.attributes
+
+          return attributes["data-old-hires"].to_s if attributes["data-old-hires"]
+
           landing_image.first["src"].to_s
         end
 
@@ -110,7 +118,7 @@ module Onebox
           end
 
           result = {
-            link: link,
+            link: url,
             title: title,
             by_info: authors,
             image: og.image || image,
@@ -141,7 +149,7 @@ module Onebox
           end
 
           result = {
-            link: link,
+            link: url,
             title: title,
             by_info: authors,
             image: og.image || image,
@@ -157,7 +165,7 @@ module Onebox
         else
           title = og.title || CGI.unescapeHTML(raw.css("title").inner_text)
           result = {
-            link: link,
+            link: url,
             title: title,
             image: og.image || image,
             price: price
