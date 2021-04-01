@@ -175,7 +175,8 @@ module Onebox
           result[:by_info] = Onebox::Helpers.clean(result[:by_info].inner_html) if result[:by_info]
 
           summary = raw.at("#productDescription")
-          result[:description] = og.description || (summary && summary.inner_text) || CGI.unescapeHTML(Onebox::Helpers.truncate(raw.css("meta[name=description]").first["content"], 250))
+          description = og.description || (summary && summary.inner_text) || raw.css("meta[name=description]").first["content"]
+          result[:description] = CGI.unescapeHTML(Onebox::Helpers.truncate(description, 250))
         end
 
         result[:price] = nil if result[:price].start_with?("$0") || result[:price] == 0
