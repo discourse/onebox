@@ -23,7 +23,7 @@ module Onebox
           end
         end
 
-        if @raw.present?
+        if @raw
           canonical_link = @raw.at('//link[@rel="canonical"]/@href')
           return canonical_link.to_s if canonical_link
         end
@@ -174,8 +174,13 @@ module Onebox
           result[:by_info] = Onebox::Helpers.clean(result[:by_info].inner_html) if result[:by_info]
 
           summary = raw.at("#productDescription")
-          description = og.description || (summary && summary.inner_text) || raw.css("meta[name=description]").first["content"]
-          result[:description] = CGI.unescapeHTML(Onebox::Helpers.truncate(description, 250))
+
+          description = og.description || (summary && summary.inner_text)
+          description ||= begin
+            meta_description = raw.css("meta[name=description]")
+            meta_description.first["content"] if meta_description.length > 0
+          end
+          result[:description] = CGI.unescapeHTML(Onebox::Helpers.truncate(description, 250)) if description
         end
 
         result[:price] = nil if result[:price].start_with?("$0") || result[:price] == 0

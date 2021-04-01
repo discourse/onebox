@@ -98,10 +98,6 @@ describe Onebox::Engine::AmazonOnebox do
       it "includes title" do
         expect(html).to include("Seven Languages in Seven Weeks: A Pragmatic Guide to Learning Programming Languages (Pragmatic Programmers)")
       end
-
-      it "includes canonical link" do
-        expect(html).to include(@uri)
-      end
     end
   end
 
