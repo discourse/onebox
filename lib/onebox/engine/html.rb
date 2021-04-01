@@ -11,8 +11,8 @@ module Onebox
       end
 
       def raw
-        body_cacher = self.options[:body_cacher] if self.options
-        @raw ||= Onebox::Helpers.fetch_html_doc(url, http_params, body_cacher)
+        @body_cacher = self.options[:body_cacher] if self.options
+        @raw ||= Onebox::Helpers.fetch_html_doc(url, http_params, @body_cacher)
       end
 
       def html?
