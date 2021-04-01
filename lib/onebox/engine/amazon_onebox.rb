@@ -14,15 +14,18 @@ module Onebox
       matches_regexp(/^https?:\/\/(?:www\.)?(?:smile\.)?(amazon|amzn)\.(?<tld>com|ca|de|it|es|fr|co\.jp|co\.uk|cn|in|com\.br|com\.mx|nl|pl|sa|sg|se|com\.tr|ae)\//)
 
       def url
-        # Have we cached the HTML body of the requested URL?
-        # If so, try to grab the canonical URL from that document,
+        # If possible, fetch the cached HTML body immediately so we can
+        # try to grab the canonical URL from that document,
         # rather than guess at the best URL structure to use
         if @body_cacher && @body_cacher.respond_to?('cache_response_body?')
-          if @body_cacher.cached_response_body_exists?(uri.to_s)
+          if @body_cacher.cache_response_body?(uri.to_s) && @body_cacher.cached_response_body_exists?(uri.to_s)
             @raw ||= Onebox::Helpers.fetch_html_doc(@url, http_params, @body_cacher)
-            canonical_link = @raw.at('//link[@rel="canonical"]/@href')
-            return canonical_link.to_s if canonical_link
           end
+        end
+
+        if @raw.present?
+          canonical_link = @raw.at('//link[@rel="canonical"]/@href')
+          return canonical_link.to_s if canonical_link
         end
 
         if match && match[:id]
@@ -46,10 +49,6 @@ module Onebox
 
       def match
         @match ||= @url.match(/(?:d|g)p\/(?:product\/|video\/detail\/)?(?<id>[A-Z0-9]+)(?:\/|\?|$)/mi)
-      end
-
-      def link
-        @link ||= ::Onebox::Helpers.uri_encode(url)
       end
 
       def image
