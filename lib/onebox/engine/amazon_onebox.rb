@@ -17,7 +17,7 @@ module Onebox
         # If possible, fetch the cached HTML body immediately so we can
         # try to grab the canonical URL from that document,
         # rather than guess at the best URL structure to use
-        if @body_cacher && @body_cacher.respond_to?('cache_response_body?')
+        if @body_cacher&.respond_to?('cache_response_body?')
           if @body_cacher.cache_response_body?(uri.to_s) && @body_cacher.cached_response_body_exists?(uri.to_s)
             @raw ||= Onebox::Helpers.fetch_html_doc(@url, http_params, @body_cacher)
           end
@@ -175,11 +175,8 @@ module Onebox
 
           summary = raw.at("#productDescription")
 
-          description = og.description || (summary && summary.inner_text)
-          description ||= begin
-            meta_description = raw.css("meta[name=description]")
-            meta_description.first["content"] if meta_description.length > 0
-          end
+          description = og.description || summary&.inner_text
+          description ||= raw.css("meta[name=description]").first&.[]("content")
           result[:description] = CGI.unescapeHTML(Onebox::Helpers.truncate(description, 250)) if description
         end
 
