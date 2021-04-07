@@ -15,7 +15,7 @@ module Onebox
 
       def parse_embed_response
         return unless video_id
-
+        return @parse_embed_response if defined?(@parse_embed_response)
         embed_url = "https://www.youtube.com/embed/#{video_id}"
         @embed_doc ||= Onebox::Helpers.fetch_html_doc(embed_url)
 
@@ -34,7 +34,7 @@ module Onebox
           return
         end
 
-        { image: image, title: title }
+        @parse_embed_response = { image: image, title: title }
       end
 
       def placeholder_html
@@ -77,10 +77,10 @@ module Onebox
       end
 
       def video_title
-        result = parse_embed_response
-        result ||= get_opengraph.data
-
-        @video_title ||= result[:title]
+        @video_title ||= begin
+          result = parse_embed_response || get_opengraph.data
+          result[:title]
+        end
       end
 
       private
