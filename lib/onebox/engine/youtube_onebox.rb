@@ -16,6 +16,7 @@ module Onebox
       def parse_embed_response
         return unless video_id
         return @parse_embed_response if defined?(@parse_embed_response)
+
         embed_url = "https://www.youtube.com/embed/#{video_id}"
         @embed_doc ||= Onebox::Helpers.fetch_html_doc(embed_url)
 
@@ -28,7 +29,6 @@ module Onebox
 
           title = renderer['title']['runs'].first['text']
 
-          # image = renderer['defaultThumbnail']['thumbnails'].collect { |t| t['url'] }.find { |u| u.include?('sqdefault') }
           image = "https://img.youtube.com/vi/#{video_id}/hqdefault.jpg"
         rescue
           return
