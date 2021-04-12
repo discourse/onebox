@@ -34,7 +34,7 @@ module Onebox
         result['domain'] = "#{ulink.host}/#{ulink.path.split('/')[1]}/#{ulink.path.split('/')[2]}"
 
         body = (result['body'] || '').gsub(GITHUB_COMMENT_REGEX, '')
-        result['body'] = body.present? ? body : nil
+        result['body'] = body.length > 0 ? body : nil
 
         result
       end
