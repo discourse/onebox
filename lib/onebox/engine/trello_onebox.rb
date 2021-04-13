@@ -26,7 +26,7 @@ module Onebox
 
       private
       def match
-        return @match if @match
+        return @match if defined?(@match)
 
         @match = @url.match(%{trello\.com/(?<type>[^/]+)/(?<key>[^/]+)/?\W*})
 
