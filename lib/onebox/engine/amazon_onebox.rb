@@ -31,7 +31,8 @@ module Onebox
         end
 
         if match && match[:id]
-          return "https://www.amazon.#{tld}/dp/#{Onebox::Helpers.uri_encode(match[:id])}"
+          id = Addressable::URI.encode_component(match[:id], Addressable::URI::CharacterClasses::PATH)
+          return "https://www.amazon.#{tld}/dp/#{id}"
         end
 
         @url
