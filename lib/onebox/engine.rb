@@ -44,7 +44,7 @@ module Onebox
       @options
     end
 
-    def initialize(link, timeout = nil)
+    def initialize(url, timeout = nil)
       @errors = {}
       @options = DEFAULT
       class_name = self.class.name.split("::").last.to_s
@@ -52,8 +52,8 @@ module Onebox
       # Set the engine options extracted from global options.
       self.options = Onebox.options[class_name] || {}
 
-      @url = link
-      @uri = URI(link)
+      @url = url
+      @uri = URI(url)
       if always_https?
         @uri.scheme = 'https'
         @url = @uri.to_s
