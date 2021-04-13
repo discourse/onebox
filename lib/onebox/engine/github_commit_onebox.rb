@@ -20,7 +20,6 @@ module Onebox
         return @match if @match
 
         @match = @url.match(%{github\.com/(?<owner>[^/]+)/(?<repository>[^/]+)/commit/(?<sha>[^/]+)})
-
         @match = @url.match(%{github\.com/(?<owner>[^/]+)/(?<repository>[^/]+)/pull/(?<pr>[^/]+)/commit/(?<sha>[^/]+)}) if @match.nil?
 
         @match
