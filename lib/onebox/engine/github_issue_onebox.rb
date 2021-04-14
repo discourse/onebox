@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../mixins/github_body'
+
 module Onebox
   module Engine
     class GithubIssueOnebox
@@ -7,6 +9,8 @@ module Onebox
       include Engine
       include LayoutSupport
       include JSON
+      include Onebox::Mixins::GithubBody
+
       matches_regexp Regexp.new("^https?:\/\/(?:www\.)?(?:(?:\w)+\.)?github\.com\/(?<org>.+)\/(?<repo>.+)\/issues\/([[:digit:]]+)")
       always_https
 
@@ -22,22 +26,17 @@ module Onebox
       end
 
       def data
-        @raw ||= ::MultiJson.load(URI.open(url, "Accept" => "application/vnd.github.v3.text+json", read_timeout: timeout)) #custom Accept header so we can get body as text.
-        body_text = @raw["body_text"]
-
-        content_words = body_text.gsub("\n\n", "\n").gsub("\n", "<br>").split(" ") #one pass of removing double newline, then we change \n to <br> and later on we revert it back to \n this is a workaround to avoid losing newlines after we join it back.
-        max_words = 20
-        short_content =  content_words[0..max_words].join(" ")
-        short_content += "..." if content_words.length > max_words
-
+        @raw ||= ::MultiJson.load(URI.open(url, "Accept" => "application/vnd.github.v3.raw+json", read_timeout: timeout)) #custom Accept header so we can get body as text.
         created_at = Time.parse(@raw['created_at'])
         closed_at = Time.parse(@raw['closed_at']) if @raw['closed_at']
-
+        body, excerpt = compute_body(@raw['body'])
         ulink = URI(link)
+
         {
           link: @url,
           title: @raw["title"],
-          content: short_content.gsub("<br>", "\n"),
+          body: body,
+          excerpt: excerpt,
           labels: @raw["labels"],
           user: @raw['user'],
           created_at: created_at.strftime("%I:%M%p - %d %b %y %Z"),

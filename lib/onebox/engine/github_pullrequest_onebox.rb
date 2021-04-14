@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
+require_relative '../mixins/github_body'
+
 module Onebox
   module Engine
     class GithubPullRequestOnebox
       include Engine
       include LayoutSupport
       include JSON
+      include Onebox::Mixins::GithubBody
 
       matches_regexp Regexp.new("^https?://(?:www\\.)?(?:(?:\\w)+\\.)?(github)\\.com(?:/)?(?:.)*/pull/")
       always_https
@@ -20,7 +23,6 @@ module Onebox
         @match ||= @url.match(%r{github\.com/(?<owner>[^/]+)/(?<repository>[^/]+)/pull/(?<number>[^/]+)})
       end
 
-      GITHUB_COMMENT_REGEX = /(<!--.*?-->\r\n)/
       def data
         result = raw.clone
         result['link'] = link
@@ -33,8 +35,7 @@ module Onebox
         ulink = URI(link)
         result['domain'] = "#{ulink.host}/#{ulink.path.split('/')[1]}/#{ulink.path.split('/')[2]}"
 
-        body = (result['body'] || '').gsub(GITHUB_COMMENT_REGEX, '')
-        result['body'] = body.length > 0 ? body : nil
+        result['body'], result['excerpt'] = compute_body(result['body'])
 
         result
       end
