@@ -19,7 +19,7 @@ module Onebox
           body = body.length > 0 ? body : nil
           if body && body.length > MAX_BODY_LENGTH
             excerpt = body[MAX_BODY_LENGTH..body.length].rstrip
-            body = body[0..MAX_BODY_LENGTH - 1].rstrip
+            body = body[0..MAX_BODY_LENGTH - 1]
           end
 
           [body, excerpt]
