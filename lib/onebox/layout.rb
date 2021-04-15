@@ -35,10 +35,6 @@ module Onebox
       @uri ||= URI(link)
     end
 
-    def checksum
-      @md5.hexdigest("#{VERSION}:#{link}")
-    end
-
     def link
       ::Onebox::Helpers.normalize_url_for_output(record[:link])
     end
