@@ -275,7 +275,6 @@ module Onebox
 
       def rewrite_https(html)
         return unless html
-        uri = URI(@url)
         if AllowlistedGenericOnebox.host_matches(uri, AllowlistedGenericOnebox.rewrites)
           html = html.gsub("http://", "https://")
         end
