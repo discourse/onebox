@@ -32,7 +32,7 @@ module Onebox
     private
 
     def uri
-      @uri = URI(link)
+      @uri ||= URI(link)
     end
 
     def checksum
