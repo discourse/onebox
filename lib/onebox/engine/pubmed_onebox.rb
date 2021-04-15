@@ -29,10 +29,15 @@ module Onebox
       end
 
       def date
-        date_arr = (xml.css("PubDate").children).map { |x| x.content }
-        date_arr = date_arr.select { |s| !s.match(/^\s+$/) }
-        date_arr = (date_arr.map { |s| s.split }).flatten
-        date_arr.sort.reverse.join(" ") # Reverse sort so month before year.
+        xml.css("PubDate")
+          .children
+          .map { |x| x.content }
+          .select { |s| !s.match(/^\s+$/) }
+          .map { |s| s.split }
+          .flatten
+          .sort
+          .reverse
+          .join(" ") # Reverse sort so month before year.
       end
 
       def data
