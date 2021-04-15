@@ -32,11 +32,7 @@ module Onebox
     private
 
     def uri
-      @uri ||= URI(link)
-    end
-
-    def link
-      ::Onebox::Helpers.normalize_url_for_output(record[:link])
+      @uri ||= URI(::Onebox::Helpers.normalize_url_for_output(record[:link]))
     end
 
     def details
