@@ -39,16 +39,12 @@ module Onebox
       ::Onebox::Helpers.normalize_url_for_output(record[:link])
     end
 
-    def domain
-      record[:domain] || URI(link || '').host.to_s.sub(/^www\./, '')
-    end
-
     def details
       {
         link: record[:link],
         title: record[:title],
         favicon: record[:favicon],
-        domain: domain,
+        domain: record[:domain] || uri.host.to_s.sub(/^www\./, ''),
         article_published_time: record[:article_published_time],
         article_published_time_title: record[:article_published_time_title],
         metadata_1_label: record[:metadata_1_label],
