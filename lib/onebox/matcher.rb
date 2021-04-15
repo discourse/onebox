@@ -2,8 +2,8 @@
 
 module Onebox
   class Matcher
-    def initialize(link, options = {})
-      @url = link
+    def initialize(url, options = {})
+      @url = url
       @options = options
     end
 
