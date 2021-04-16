@@ -8,7 +8,7 @@
   {{/model_file}}
 
   {{^model_file}}
-    <pre><code class='{{lang}}'>{{content}}</code></pre>
+    <pre><code class="{{lang}}">{{content}}</code></pre>
   {{/model_file}}
 {{/has_lines}}
 
@@ -38,9 +38,9 @@
   </style>
   }}
 
-  <pre class='onebox'>
-    <code class='{{lang}}'>
-      <ol class='start lines' start="{{cr_results.from}}" style='counter-reset: li-counter {{cr_results.from_minus_one}} ;'>
+  <pre class="onebox">
+    <code class="{{lang}}">
+      <ol class="start lines" start="{{cr_results.from}}" style="counter-reset: li-counter {{cr_results.from_minus_one}} ;">
         {{#lines}}
           <li{{#selected}} class="selected"{{/selected}}>{{data}}</li>
         {{/lines}}
