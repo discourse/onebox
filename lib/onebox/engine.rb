@@ -28,18 +28,14 @@ module Onebox
       end
     end
 
-    attr_reader :url, :uri
-    attr_reader :timeout
+    attr_reader :url, :uri, :options, :timeout
     attr :errors
 
     DEFAULT = {}
-    def options
-      @options
-    end
 
     def options=(opt)
-      return @options if opt.nil? #make sure options provided
-      opt = opt.to_h  if opt.instance_of?(OpenStruct)
+      return @options if opt.nil? # make sure options provided
+      opt = opt.to_h if opt.instance_of?(OpenStruct)
       @options.merge!(opt)
       @options
     end
