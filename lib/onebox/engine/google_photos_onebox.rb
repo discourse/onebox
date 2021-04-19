@@ -11,9 +11,9 @@ module Onebox
 
       def to_html
         og = get_opengraph
-        return video_html(og) if !og.video_secure_url.nil?
-        return album_html(og) if !og.type.nil? && og.type == "google_photos:photo_album"
-        return image_html(og) if !og.image.nil?
+        return video_html(og) if og.video_secure_url
+        return album_html(og) if og.type == "google_photos:photo_album"
+        return image_html(og) if og.image
         nil
       end
 
