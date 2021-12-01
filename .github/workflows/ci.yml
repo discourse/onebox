@@ -5,8 +5,7 @@ on:
   push:
     branches:
       - master
-    tags:
-      - v*
+      - main
 
 jobs:
   build:
@@ -36,7 +35,7 @@ jobs:
         run: bundle exec rspec
 
   publish:
-    if: contains(github.ref, 'refs/tags/v')
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     needs: build
     runs-on: ubuntu-latest
 
@@ -44,6 +43,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Release Gem
-        uses: discourse/publish-rubygems-action@main
+        uses: discourse/publish-rubygems-action@v2
         env:
-          RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
+          RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+          GIT_EMAIL: team@discourse.org
+          GIT_NAME: discoursebot
