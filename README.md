@@ -1,3 +1,5 @@
+# :warning: This project isn't maintained anymore as the onebox library has [moved into core repository](https://github.com/discourse/discourse/tree/main/lib/onebox). If you wish to help by maintaining the project please contact sam.saffron@discourse.org.
+
 onebox
 ======
 
