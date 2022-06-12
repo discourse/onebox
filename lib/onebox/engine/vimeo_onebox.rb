@@ -18,11 +18,13 @@ module Onebox
       end
 
       def to_html
-        video_id = oembed_data[:video_id]
-        if video_id.nil?
-          # for private videos
-          video_id = uri.path[/\/(\d+)/, 1]
-        end
+        oembed = oembed_data
+
+        return oembed[:html] if oembed[:html]
+
+        # for private videos
+        video_id = oembed[:video_id] || uri.path[/\/(\d+)/, 1]
+
         video_src = "https://player.vimeo.com/video/#{video_id}"
         video_src = video_src.gsub('autoplay=1', '').chomp("?")
 
